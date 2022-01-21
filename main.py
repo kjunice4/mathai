@@ -77,14 +77,24 @@ Builder.load_string("""
                 text: "Menu"
             
             Button:
+                text: "Calculus Calculator"
                 font_size: 50
                 background_color: 0, 0, 1, 1
                 size_hint_y: None
                 height: 200
-                text: "Calculus Calculator"
                 on_release:
                     app.root.current = "Calculus_Calculator"
                     root.manager.transition.direction = "left"
+
+            Button:
+                text: "Decimals Converter"
+                font_size: 50
+                size_hint_y: None
+                background_color: 0, 0, 1, 1
+                height: 200
+                on_release:
+                    app.root.current = "Decimals_converter"
+                    root.manager.transition.direction = "left" 
                     
             Button:
                 text: "Exponents Calculator"   
@@ -109,14 +119,13 @@ Builder.load_string("""
                     root.manager.transition.direction = "left"    
                     
             Button:
-                text: "Fractions, Decimals, Percent Converter"   
+                text: "Fractions Converter"
                 font_size: 50
                 size_hint_y: None
-                background_color: 0, 0, 1, 1
+                background_color: 0, 0 , 1 , 1
                 height: 200
-                padding: 10, 10
                 on_release:
-                    app.root.current = "List_of_Converters"
+                    app.root.current = "Fractions_converter"
                     root.manager.transition.direction = "left"
             
             Button:
@@ -173,7 +182,17 @@ Builder.load_string("""
                 on_release:
                     app.root.current = "Quadratic_Formula_Solver"
                     root.manager.transition.direction = "left"
-                    
+            
+            Button:
+                font_size: 50
+                size_hint_y: None
+                background_color: 0, 0, 1, 1
+                height: 200
+                text: "Percentages Converter"
+                on_release:
+                    app.root.current = "Percentages_converter"
+                    root.manager.transition.direction = "left"        
+            
             Button:
                 text: "Statistical Calculator"   
                 font_size: 50
@@ -198,7 +217,7 @@ Builder.load_string("""
             Button:
                 font_size: 50
                 size_hint_y: None
-                background_color: 0, 0, 1, 1
+                background_color: 0, 1, 1, 1
                 height: 200
                 text: "Visit KSquared-math,LLC ©"
                 on_release:
@@ -344,6 +363,7 @@ class Exponents_steps(Screen):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
             sm.current = "Menu"
+            
     layouts = []
     def steps(self,entry):
         print()
@@ -538,7 +558,8 @@ class Percentage_Calculator(Screen):
     def set_previous_screen(self):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
-            sm.current = sm.previous()    
+            sm.current = "Menu"   
+            
     layouts = []
     def increase(self,entry):
         layout = GridLayout(cols=1,size_hint_y= None)
@@ -1308,7 +1329,7 @@ class Fractions(Screen):
     def set_previous_screen(self):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
-            sm.current = sm.previous()
+            sm.current = "Menu" 
             
     layouts = []
     def add(self,entry):
@@ -3144,7 +3165,7 @@ class Pythagorean(Screen):
         if sm.current != "Homepage":
             print("Its working List")
             sm.transition.direction = 'right'
-            sm.current = sm.previous()
+            sm.current = "Menu" 
             
     layouts = []
     def steps(self,entry):
@@ -3352,7 +3373,7 @@ class Quadratic_Formula_Solver(Screen):
         if sm.current != "Homepage":
             print("Its working List")
             sm.transition.direction = 'right'
-            sm.current = sm.previous()
+            sm.current = "Menu" 
             
     layouts = []
     def steps(self,entry):
@@ -3452,67 +3473,6 @@ class Quadratic_Formula_Solver(Screen):
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
             self.layouts.append(layout)
-
-
-#FDP Converter
-#List of converters
-Builder.load_string("""
-<List_of_Converters>:
-    id: List_of_Converters
-    name: "List_of_Converters"
-        
-    ScrollView:
-        name: "Scroll"
-        do_scroll_x: False
-        do_scroll_y: True
-    
-        GridLayout:
-            cols: 1
-            padding:10
-            spacing:10
-            size_hint: 1, None
-            width:200
-            height: self.minimum_height
-            
-            Button:
-                font_size: 75
-                size_hint_y: None
-                background_color: 0, 0 , 1 , 1
-                height: 300
-                text: "Fractions Converter"
-                on_release:
-                    app.root.current = "Fractions_converter"
-                    root.manager.transition.direction = "left" 
-            
-            Button:
-                font_size: 75
-                size_hint_y: None
-                background_color: 0, 1 , 1 , 1
-                height: 300
-                text: "Decimals converter"
-                on_release:
-                    app.root.current = "Decimals_converter"
-                    root.manager.transition.direction = "left" 
-        
-            Button:
-                font_size: 75
-                size_hint_y: None
-                background_color: 1, 0 , 1 , 1
-                height: 300
-                text: "Percentages converter"
-                on_release:
-                    app.root.current = "Percentages_converter"
-                    root.manager.transition.direction = "left" 
-                    
-            Button:
-                font_size: 75
-                size_hint_y: None
-                height: 300
-                text: "Back to Menu"
-                on_release:
-                    app.root.current = "Menu"
-                    root.manager.transition.direction = "right" 
-""")
 
 Builder.load_string("""
 <Percentages_converter>
@@ -3903,11 +3863,20 @@ Builder.load_string("""
     
 """)
 
-class List_of_Converters(Screen):
-    pass
-
 class Decimals_converter(Screen):
-            
+    def __init__(self, **kwargs):
+        super(Decimals_converter, self).__init__(**kwargs)
+        Window.bind(on_keyboard=self._key_handler)
+
+    def _key_handler(self, instance, key, *args):
+        if key == 27:
+            self.set_previous_screen()
+            return True
+
+    def set_previous_screen(self):
+        if sm.current != "Homepage":
+            sm.transition.direction = 'right'
+            sm.current = "Menu"
     layouts = []
     def convert_dec_to_frac(self,entry):
         print("entry ",entry)
@@ -4044,7 +4013,19 @@ class Decimals_converter(Screen):
             self.layouts.append(layout)      
             
 class Fractions_converter(Screen):
-            
+    def __init__(self, **kwargs):
+        super(Fractions_converter, self).__init__(**kwargs)
+        Window.bind(on_keyboard=self._key_handler)
+
+    def _key_handler(self, instance, key, *args):
+        if key == 27:
+            self.set_previous_screen()
+            return True
+
+    def set_previous_screen(self):
+        if sm.current != "Homepage":
+            sm.transition.direction = 'right'
+            sm.current = "Menu"        
     layouts = []
     def convert_frac_to_perc(self,entry):
         print("entry ",entry)
@@ -4154,24 +4135,16 @@ class Percentages_converter(Screen):
     def __init__(self, **kwargs):
         super(Percentages_converter, self).__init__(**kwargs)
         Window.bind(on_keyboard=self._key_handler)
-    
+
     def _key_handler(self, instance, key, *args):
         if key == 27:
-            print("Its working ESC = 27 LENGTH at Perc")
+            self.set_previous_screen()
             return True
-    
+
     def set_previous_screen(self):
-        print("Length is almost working")   
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("Current Page:",sm.current)
-        if sm.current != "Homepage" and sm.current != "Menu" and sm.current != "List_of_Converters":
+        if sm.current != "Homepage":
             sm.transition.direction = 'right'
-            sm.current = "List_of_Converters"
-            print("To list from Calc")
-        elif sm.current == "List_of_Converters":
-            sm.transition.direction = 'right'
-            sm.current = "Menu"
-            print("To Menu from List")
+            sm.current = "Menu"    
     
     layouts = []
     def convert_perc_to_frac(self,entry):
@@ -4800,7 +4773,7 @@ class FOIL(Screen):
         if sm.current != "Homepage":
             print("Its working List")
             sm.transition.direction = 'right'
-            sm.current = sm.previous()
+            sm.current = "Menu" 
             
     layouts = []
     def steps(self,entry):
@@ -5937,7 +5910,8 @@ class Calculus_Calculator(Screen):
     def set_previous_screen(self):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
-            sm.current = sm.previous()    
+            sm.current = "Menu" 
+            
     layouts = []
     def derive(self,entry):
         layout = GridLayout(cols=1,size_hint_y= None)
@@ -6129,7 +6103,6 @@ sm.add_widget(PEMDAS(name="PEMDAS")) #Line 573 ,individual app and apart of bund
 sm.add_widget(Fractions(name="Fractions")) #1101 ,individual app and apart of bundle
 sm.add_widget(Pythagorean(name="Pythagorean"))    #Line 2996, individual app and apart of bundle
 sm.add_widget(Quadratic_Formula_Solver(name="Quadratic_Formula_Solver")) #Line 3183, individual app and apart of bundle
-sm.add_widget(List_of_Converters(name="List_of_Converters")) #individual app and apart of bundle
 sm.add_widget(Fractions_converter(name="Fractions_converter")) #individual app and apart of bundle
 sm.add_widget(Decimals_converter(name="Decimals_converter"))     #individual app and apart of bundle
 sm.add_widget(Percentages_converter(name="Percentages_converter"))#individual app and apart of bundle
