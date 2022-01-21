@@ -332,7 +332,7 @@ class Exponents_steps(Screen):
         print("display :" + display)
         self.ids.list_of_steps.add_widget(Label(text="Expression entered : " + display, font_size = 50, size_hint_y= None, height=100))
         Answer = str(eval(str(display).replace("^","**")))
-        Answer = "{:,}".format(int(Answer.replace(",","")))
+        Answer = "{:,}".format(float(Answer.replace(",","")))
         print("Answer",Answer)
         self.ids.list_of_steps.add_widget(Label(text="Answer: " + '[color=33CAFF]' + Answer + '[/color]', markup=True, font_size = 50, size_hint_y= None, height=100))
 
@@ -349,23 +349,24 @@ class Exponents_steps(Screen):
             power = entry_list[1]
             print("power",power)
             
-            self.ids.list_of_steps.add_widget(Label(text="Proof of work:", font_size = 50, size_hint_y= None, height=100))
-            
-            i = 0
-            product = base
-            power_ = power
-            while i < int(power_):
-                length = '[color=33CAFF]' + product + '[/color]' + " * " + base
-                print("length",length)
-                if int(power) > 1:
-                    self.ids.list_of_steps.add_widget(Label(text= length ,font_size = 50, markup=True, size_hint_y= None, height=100))
-                else:
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + product + '[/color]', markup=True, font_size = 50, size_hint_y= None, height=100))
-                power = int(power) - 1
-                print("power",power)
-                product = "{:,}".format(int(product.replace(",","")) * int(base))
-                print("product",product)
-                i = i + 1
+            if power.find("-") < 0:
+                self.ids.list_of_steps.add_widget(Label(text="Proof of work:", font_size = 50, size_hint_y= None, height=100))
+                
+                i = 0
+                product = base
+                power_ = power
+                while i < float(power_):
+                    length = '[color=33CAFF]' + product + '[/color]' + " * " + base
+                    print("length",length)
+                    if int(power) > 1:
+                        self.ids.list_of_steps.add_widget(Label(text= length ,font_size = 50, markup=True, size_hint_y= None, height=100))
+                    else:
+                        self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + product + '[/color]', markup=True, font_size = 50, size_hint_y= None, height=100))
+                    power = int(power) - 1
+                    print("power",power)
+                    product = "{:,}".format(float(product.replace(",","")) * float(base))
+                    print("product",product)
+                    i = i + 1
             
         except Exception:
             try:
