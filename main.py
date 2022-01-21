@@ -76,171 +76,134 @@ Builder.load_string("""
                 padding: 10, 10
                 text: "Menu"
             
-            BoxLayout:
-                cols: 2
-                id: steps
+            Button:
+                font_size: 50
+                background_color: 0, 0, 1, 1
                 size_hint_y: None
-                height: self.minimum_height 
-                padding: 5,5
-                
-                Button:
-                    font_size: 50
-                    background_color: 0, 0, 1, 1
-                    size_hint_y: None
-                    height: 200
-                    text: "Calculus Calculator"
-                    on_release:
-                        app.root.current = "Calculus_Calculator"
-                        root.manager.transition.direction = "left"
-                        
-                Button:
-                    text: "Exponents Calculator"   
-                    font_size: 50
-                    size_hint_y: None
-                    background_color: 0, 0, 1, 1
-                    height: 200
-                    padding: 10, 10
-                    on_release:
-                        app.root.current = "Exponents_steps"
-                        root.manager.transition.direction = "left"    
-            BoxLayout:
-                cols: 2
-                id: steps
+                height: 200
+                text: "Calculus Calculator"
+                on_release:
+                    app.root.current = "Calculus_Calculator"
+                    root.manager.transition.direction = "left"
+                    
+            Button:
+                text: "Exponents Calculator"   
+                font_size: 50
                 size_hint_y: None
-                height: self.minimum_height 
-                padding: 5,5
-                
-                Button:
-                    text: "Fractions Calculator"   
-                    font_size: 50
-                    size_hint_y: None
-                    background_color: 0, 0, 1, 1
-                    height: 200
-                    padding: 10, 10
-                    on_release:
-                        app.root.current = "Fractions"
-                        root.manager.transition.direction = "left"    
-                        
-                Button:
-                    text: "Fractions, Decimals, Percent Converter"   
-                    font_size: 50
-                    size_hint_y: None
-                    background_color: 0, 0, 1, 1
-                    height: 200
-                    padding: 10, 10
-                    on_release:
-                        app.root.current = "List_of_Converters"
-                        root.manager.transition.direction = "left"
-            BoxLayout:
-                cols: 2
-                id: steps
+                background_color: 0, 0, 1, 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "Exponents_steps"
+                    root.manager.transition.direction = "left"    
+            
+            Button:
+                text: "Fractions Calculator"   
+                font_size: 50
                 size_hint_y: None
-                height: self.minimum_height 
-                padding: 5,5
-                
-                Button:
-                    text: "FOIL Method"   
-                    font_size: 50
-                    size_hint_y: None
-                    background_color: 0, 0, 1, 1
-                    height: 200
-                    padding: 10, 10
-                    on_release:
-                        app.root.current = "FOIL"
-                        root.manager.transition.direction = "left"  
-                
-                Button:
-                    text: "PEMDAS"   
-                    font_size: 50
-                    size_hint_y: None
-                    background_color: 0, 0, 1, 1
-                    height: 200
-                    padding: 10, 10
-                    on_release:
-                        app.root.current = "PEMDAS"
-                        root.manager.transition.direction = "left"        
-            BoxLayout:
-                cols: 2
-                id: steps
+                background_color: 0, 0, 1, 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "Fractions"
+                    root.manager.transition.direction = "left"    
+                    
+            Button:
+                text: "Fractions, Decimals, Percent Converter"   
+                font_size: 50
                 size_hint_y: None
-                height: self.minimum_height 
-                padding: 5,5
-                
-                Button:
-                    text: "Percentage Calculator"   
-                    font_size: 50
-                    size_hint_y: None
-                    background_color: 0, 0, 1, 1
-                    height: 200
-                    padding: 10, 10
-                    on_release:
-                        app.root.current = "Percentage_Calculator"
-                        root.manager.transition.direction = "left" 
-                        
-                Button:
-                    text: "Pythagorean Calculator"   
-                    font_size: 50
-                    size_hint_y: None
-                    background_color: 0, 0, 1, 1
-                    height: 200
-                    padding: 10, 10
-                    on_release:
-                        app.root.current = "Pythagorean"
-                        root.manager.transition.direction = "left"
-            BoxLayout:
-                cols: 2
-                id: steps
+                background_color: 0, 0, 1, 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "List_of_Converters"
+                    root.manager.transition.direction = "left"
+            
+            Button:
+                text: "FOIL Method"   
+                font_size: 50
                 size_hint_y: None
-                height: self.minimum_height 
-                padding: 5,5
-                
-                Button:
-                    text: "Quadratic Calculator"   
-                    font_size: 50
-                    size_hint_y: None
-                    background_color: 0, 0, 1, 1
-                    height: 200
-                    padding: 10, 10
-                    on_release:
-                        app.root.current = "Quadratic_Formula_Solver"
-                        root.manager.transition.direction = "left"
-                        
-                Button:
-                    text: "Statistical Calculator"   
-                    font_size: 50
-                    size_hint_y: None
-                    background_color: 0, 0, 1, 1
-                    height: 200
-                    padding: 10, 10
-                    on_release:
-                        app.root.current = "Statistical_Calculator"
-                        root.manager.transition.direction = "left"
-            BoxLayout:
-                cols: 2
-                id: steps
+                background_color: 0, 0, 1, 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "FOIL"
+                    root.manager.transition.direction = "left"  
+            
+            Button:
+                text: "PEMDAS"   
+                font_size: 50
                 size_hint_y: None
-                height: self.minimum_height 
-                padding: 5,5
-                
-                Button:
-                    font_size: 50
-                    size_hint_y: None
-                    background_color: 0, 0, 1, 1
-                    height: 200
-                    text: "Tip Calculator"
-                    on_release:
-                        app.root.current = "Tip_Calculator"
-                        root.manager.transition.direction = "left"         
-                        
-                Button:
-                    font_size: 50
-                    size_hint_y: None
-                    background_color: 0, 0, 1, 1
-                    height: 200
-                    text: "Visit KSquared,LLC"
-                    on_release:
-                        import webbrowser
-                        webbrowser.open('https://kevinjunice.wixsite.com/ksquaredllc')
+                background_color: 0, 0, 1, 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "PEMDAS"
+                    root.manager.transition.direction = "left"        
+            
+            Button:
+                text: "Percentage Calculator"   
+                font_size: 50
+                size_hint_y: None
+                background_color: 0, 0, 1, 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "Percentage_Calculator"
+                    root.manager.transition.direction = "left" 
+                    
+            Button:
+                text: "Pythagorean Calculator"   
+                font_size: 50
+                size_hint_y: None
+                background_color: 0, 0, 1, 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "Pythagorean"
+                    root.manager.transition.direction = "left"
+            
+            Button:
+                text: "Quadratic Calculator"   
+                font_size: 50
+                size_hint_y: None
+                background_color: 0, 0, 1, 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "Quadratic_Formula_Solver"
+                    root.manager.transition.direction = "left"
+                    
+            Button:
+                text: "Statistical Calculator"   
+                font_size: 50
+                size_hint_y: None
+                background_color: 0, 0, 1, 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "Statistical_Calculator"
+                    root.manager.transition.direction = "left"
+                    
+            Button:
+                font_size: 50
+                size_hint_y: None
+                background_color: 0, 0, 1, 1
+                height: 200
+                text: "Tip Calculator"
+                on_release:
+                    app.root.current = "Tip_Calculator"
+                    root.manager.transition.direction = "left"         
+                    
+            Button:
+                font_size: 50
+                size_hint_y: None
+                background_color: 0, 0, 1, 1
+                height: 200
+                text: "Visit KSquared-math,LLC ©"
+                on_release:
+                    import webbrowser
+                    webbrowser.open('https://kevinjunice.wixsite.com/ksquaredllc')
 """)
 
 #EXPONENTS STEPS
@@ -6182,3 +6145,5 @@ class Bundled(App):
 
 if __name__ == '__main__':
     Bundled().run()
+    
+
