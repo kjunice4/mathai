@@ -8,7 +8,10 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 import numpy as np
 from sympy import Symbol
+import sympy as sym
+from sympy import Symbol, diff, integrate
 from colorama import Back, Style 
+
 #Opening Page
 Builder.load_string("""
 <Homepage>:
@@ -73,113 +76,171 @@ Builder.load_string("""
                 padding: 10, 10
                 text: "Menu"
             
-            Button:
-                text: "Fractions Calculator"   
-                font_size: 75
-                background_color: 0, 1 , 1 , 1
+            BoxLayout:
+                cols: 2
+                id: steps
                 size_hint_y: None
-                height: 200
-                padding: 10, 10
-                on_release:
-                    app.root.current = "Fractions"
-                    root.manager.transition.direction = "left"
-            
-            Button:
-                text: "Exponents Calculator"   
-                font_size: 75
-                background_color: 0, 0 , 1 , 1
+                height: self.minimum_height 
+                padding: 5,5
+                
+                Button:
+                    font_size: 50
+                    background_color: 0, 0, 1, 1
+                    size_hint_y: None
+                    height: 200
+                    text: "Calculus Calculator"
+                    on_release:
+                        app.root.current = "Calculus_Calculator"
+                        root.manager.transition.direction = "left"
+                        
+                Button:
+                    text: "Exponents Calculator"   
+                    font_size: 50
+                    size_hint_y: None
+                    background_color: 0, 0, 1, 1
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        app.root.current = "Exponents_steps"
+                        root.manager.transition.direction = "left"    
+            BoxLayout:
+                cols: 2
+                id: steps
                 size_hint_y: None
-                height: 200
-                padding: 10, 10
-                on_release:
-                    app.root.current = "Exponents_steps"
-                    root.manager.transition.direction = "left" 
-                    
-            Button:
-                text: "FOIL Method"   
-                font_size: 75
-                background_color: 1, 1 , 1 , 1
+                height: self.minimum_height 
+                padding: 5,5
+                
+                Button:
+                    text: "Fractions Calculator"   
+                    font_size: 50
+                    size_hint_y: None
+                    background_color: 0, 0, 1, 1
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        app.root.current = "Fractions"
+                        root.manager.transition.direction = "left"    
+                        
+                Button:
+                    text: "Fractions, Decimals, Percent Converter"   
+                    font_size: 50
+                    size_hint_y: None
+                    background_color: 0, 0, 1, 1
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        app.root.current = "List_of_Converters"
+                        root.manager.transition.direction = "left"
+            BoxLayout:
+                cols: 2
+                id: steps
                 size_hint_y: None
-                height: 200
-                padding: 10, 10
-                on_release:
-                    app.root.current = "FOIL"
-                    root.manager.transition.direction = "left"  
-                    
-            Button:
-                text: "Percentage Calculator"   
-                font_size: 75
-                background_color: 1, 0 , 1 , 1
+                height: self.minimum_height 
+                padding: 5,5
+                
+                Button:
+                    text: "FOIL Method"   
+                    font_size: 50
+                    size_hint_y: None
+                    background_color: 0, 0, 1, 1
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        app.root.current = "FOIL"
+                        root.manager.transition.direction = "left"  
+                
+                Button:
+                    text: "PEMDAS"   
+                    font_size: 50
+                    size_hint_y: None
+                    background_color: 0, 0, 1, 1
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        app.root.current = "PEMDAS"
+                        root.manager.transition.direction = "left"        
+            BoxLayout:
+                cols: 2
+                id: steps
                 size_hint_y: None
-                height: 200
-                padding: 10, 10
-                on_release:
-                    app.root.current = "Percentage_Calculator"
-                    root.manager.transition.direction = "left" 
-                    
-            Button:
-                text: "PEMDAS"   
-                font_size: 75
-                background_color: 2, 0 , 1 , 1
+                height: self.minimum_height 
+                padding: 5,5
+                
+                Button:
+                    text: "Percentage Calculator"   
+                    font_size: 50
+                    size_hint_y: None
+                    background_color: 0, 0, 1, 1
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        app.root.current = "Percentage_Calculator"
+                        root.manager.transition.direction = "left" 
+                        
+                Button:
+                    text: "Pythagorean Calculator"   
+                    font_size: 50
+                    size_hint_y: None
+                    background_color: 0, 0, 1, 1
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        app.root.current = "Pythagorean"
+                        root.manager.transition.direction = "left"
+            BoxLayout:
+                cols: 2
+                id: steps
                 size_hint_y: None
-                height: 200
-                padding: 10, 10
-                on_release:
-                    app.root.current = "PEMDAS"
-                    root.manager.transition.direction = "left"
-                    
-            Button:
-                text: "Pythagorean Calculator"   
-                font_size: 75
-                background_color: 3, 0 , 1 , 1
+                height: self.minimum_height 
+                padding: 5,5
+                
+                Button:
+                    text: "Quadratic Calculator"   
+                    font_size: 50
+                    size_hint_y: None
+                    background_color: 0, 0, 1, 1
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        app.root.current = "Quadratic_Formula_Solver"
+                        root.manager.transition.direction = "left"
+                        
+                Button:
+                    text: "Statistical Calculator"   
+                    font_size: 50
+                    size_hint_y: None
+                    background_color: 0, 0, 1, 1
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        app.root.current = "Statistical_Calculator"
+                        root.manager.transition.direction = "left"
+            BoxLayout:
+                cols: 2
+                id: steps
                 size_hint_y: None
-                height: 200
-                padding: 10, 10
-                on_release:
-                    app.root.current = "Pythagorean"
-                    root.manager.transition.direction = "left"
-                    
-            Button:
-                text: "Quadratic Calculator"   
-                font_size: 75
-                background_color: 0, 2 , 1 , 1
-                size_hint_y: None
-                height: 200
-                padding: 10, 10
-                on_release:
-                    app.root.current = "Quadratic_Formula_Solver"
-                    root.manager.transition.direction = "left"
-                    
-            Button:
-                text: "Statistical Calculator"   
-                font_size: 75
-                background_color: 0, 3 , 1 , 1
-                size_hint_y: None
-                height: 200
-                padding: 10, 10
-                on_release:
-                    app.root.current = "Statistical_Calculator"
-                    root.manager.transition.direction = "left"
-            
-            Button:
-                text: "Fractions, Decimals, Percent Converter"   
-                font_size: 50
-                background_color: 2, 2 , 1 , 1
-                size_hint_y: None
-                height: 200
-                padding: 10, 10
-                on_release:
-                    app.root.current = "List_of_Converters"
-                    root.manager.transition.direction = "left"
-                    
-            Button:
-                font_size: 75
-                size_hint_y: None
-                height: 400
-                text: "Visit KSquared,LLC"
-                on_release:
-                    import webbrowser
-                    webbrowser.open('https://kevinjunice.wixsite.com/ksquaredllc')
+                height: self.minimum_height 
+                padding: 5,5
+                
+                Button:
+                    font_size: 50
+                    size_hint_y: None
+                    background_color: 0, 0, 1, 1
+                    height: 200
+                    text: "Tip Calculator"
+                    on_release:
+                        app.root.current = "Tip_Calculator"
+                        root.manager.transition.direction = "left"         
+                        
+                Button:
+                    font_size: 50
+                    size_hint_y: None
+                    background_color: 0, 0, 1, 1
+                    height: 200
+                    text: "Visit KSquared,LLC"
+                    on_release:
+                        import webbrowser
+                        webbrowser.open('https://kevinjunice.wixsite.com/ksquaredllc')
 """)
 
 #EXPONENTS STEPS
@@ -4376,7 +4437,7 @@ Builder.load_string("""
                 text: entry.text
                 hint_text: "Numbers seperated by a comma"
                 multiline: False
-                font_size: 75
+                font_size: 60
                 size_hint_y: None
                 height: 200
                 padding: 10
@@ -5539,7 +5600,557 @@ class FOIL(Screen):
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
             self.layouts.append(layout)
+            
+#Tip calc
+Builder.load_string("""
+<Tip_Calculator>
+    id:Tip_Calculator
+    name:"Tip_Calculator"
+
+    ScrollView:
+        name: "Scroll"
+        do_scroll_x: False
+        do_scroll_y: True
         
+        GridLayout:
+            cols: 1
+            padding:10
+            spacing:10
+            size_hint: 1, None
+            width:200
+            height: self.minimum_height
+            
+            Label:
+                font_size: 75
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                text: "Tip Calculator"
+            
+            BoxLayout:
+                cols: 2
+                padding:10
+                spacing:10
+                size_hint: 1, None
+                width:300
+                size_hint_y: None
+                height: self.minimum_height 
+                
+                Button:
+                    text: "Menu"   
+                    font_size: 75
+                    size_hint_y: None
+                    height: 200
+                    padding: 10, 10
+                    background_color: 0, 0 , 1 , 1
+                    on_release:
+                        app.root.current = "Menu"
+                        root.manager.transition.direction = "right" 
+                        
+                Button:
+                    id: steps
+                    text: "Clear All"   
+                    font_size: 75
+                    size_hint_y: None
+                    background_color: 1, 0 , 0 , 1
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        Bill.text = ""
+                        Percent.text = ""
+                        Split.text = ""
+                        list_of_steps.clear_widgets()       
+                                   
+            TextInput:
+                id: Bill
+                text: Bill.text
+                hint_text: "Bill: $"
+                multiline: False
+                font_size: 125
+                size_hint_y: None
+                height: 200
+                padding: 10
+                input_filter: lambda text, from_undo: text[:6 - len(Bill.text)]           
+        
+            TextInput:
+                id: Percent
+                text: Percent.text
+                hint_text: "Percent: %"
+                multiline: False
+                font_size: 125
+                size_hint_y: None
+                height: 200
+                padding: 10              
+                input_filter: lambda text, from_undo: text[:2 - len(Percent.text)]         
+                
+            TextInput:
+                id: Split
+                text: Split.text
+                hint_text: "Split:"
+                multiline: False
+                font_size: 125
+                size_hint_y: None
+                height: 200
+                padding: 10              
+                input_filter: lambda text, from_undo: text[:3 - len(Split.text)] 
+            
+            Button:
+                id: steps
+                text: "Calculate"   
+                font_size: 75
+                size_hint_y: None
+                background_color: 0, 1 , 0 , 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    list_of_steps.clear_widgets() 
+                    Tip_Calculator.steps(Bill.text + "$" + Percent.text + "&" + Split.text)    
+                       
+            GridLayout:
+                id: list_of_steps
+                cols: 1
+                size_hint: 1, None
+                height: self.minimum_height   
+
+""")
+
+class Tip_Calculator(Screen):
+    sm = ScreenManager()
+
+    def __init__(self, **kwargs):
+        super(Tip_Calculator, self).__init__(**kwargs)
+        Window.bind(on_keyboard=self._key_handler)
+
+    def _key_handler(self, instance, key, *args):
+        if key == 27:
+            self.set_previous_screen()
+            return True
+
+    def set_previous_screen(self):
+        if sm.current != "Homepage":
+            sm.transition.direction = 'right'
+            sm.current = "Menu"
+    layouts = []
+    def steps(self,entry):
+        layout = GridLayout(cols=1,size_hint_y= None)
+        self.ids.list_of_steps.add_widget(layout)
+        self.layouts.append(layout)
+        
+        try:
+            # Tip Calculator
+            print("~~~~~~~~~~~~~~~~")
+            print(entry)
+            bill = entry[:entry.find("$")]
+            print()
+            print("Bill",bill)
+            perc = entry[entry.find("$")+1:entry.find("&")]
+            
+            if perc == "":
+                perc = 0
+                print("perc",perc)
+            
+            tip = str(float(bill) * float(perc) / 100)
+            print()
+            print("Tip: $",tip)
+            
+            total = str(float(bill) + (float(bill) * float(perc) / 100))
+            print()
+            print("Total Bill: $", total)
+            
+            split = entry[entry.find("&")+1:]
+            print()
+            print("split",split)
+            
+            if split == "":
+                split = 0
+                print()
+                print("Split:",split)
+            
+            if int(split) > 1:
+                bill_split = str(float(bill) / float(split))
+                print("Bill split", bill_split)
+                
+                tip_split = str(float(tip) / float(split))
+                print("tip_split",tip_split)
+                
+                total_split = str(float(total) / float(split))
+                print("total_split",total_split)
+                
+                self.ids.list_of_steps.add_widget(Label(text= "Bill = $" + "{:,.2f}".format(float(bill)) ,font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+                 
+                self.ids.list_of_steps.add_widget(Label(text= "Percent for Tip = " + str(perc) + "%" ,font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+                 
+                self.ids.list_of_steps.add_widget(Label(text= "Tip = $" + "{:,.2f}".format(float(tip)),font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+                
+                self.ids.list_of_steps.add_widget(Label(text= "Total Bill = $" + "{:,.2f}".format(float(total)),font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout) 
+
+            
+            if float(split) == 1 or float(split) == 0: 
+                self.ids.list_of_steps.add_widget(Label(text= "Bill = $" + "{:,.2f}".format(float(bill)) ,font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+                 
+                self.ids.list_of_steps.add_widget(Label(text= "Percent for Tip = " + str(perc) + "%" ,font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+                
+                self.ids.list_of_steps.add_widget(Label(text= "Tip = $" + "{:,.2f}".format(float(tip)),font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+                
+                self.ids.list_of_steps.add_widget(Label(text= "Total Bill = ${:,.2f}".format(float(total)) ,font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+                
+            elif float(split) > 1:
+                self.ids.list_of_steps.add_widget(Label(text= "${:,.2f}".format(float(bill)) + " bill split " + str(split) + " ways = ${:,.2f}".format(float(bill_split)) ,font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+                
+                self.ids.list_of_steps.add_widget(Label(text= "${:,.2f}".format(float(tip)) + " tip split " + str(split) + " ways = ${:,.2f}".format(float(tip_split)) ,font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+                
+                self.ids.list_of_steps.add_widget(Label(text= "Each person's total = ${:,.2f}".format(float(total_split)) ,font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+            else:
+                print("Invalid Input")
+                self.ids.list_of_steps.add_widget(Label(text= "" ,font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+                
+            
+        except Exception:
+            try:
+                self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+                    
+            except Exception:               
+                self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout)        
+
+#Calculus Calculator
+Builder.load_string("""
+<Calculus_Calculator>
+    id:Calculus_Calculator
+    name:"Calculus_Calculator"
+
+    ScrollView:
+        name: "Scroll"
+        do_scroll_x: False
+        do_scroll_y: True
+        
+        GridLayout:
+            cols: 1
+            padding:10
+            spacing:10
+            size_hint: 1, None
+            width:200
+            height: self.minimum_height
+            
+            Label:
+                font_size: 75
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                text: "Calculus Calculator"
+                
+            BoxLayout:
+                cols: 2
+                padding: 10
+                spacing: 10
+                size_hint: 1, None
+                width: 300
+                size_hint_y: None
+                height: self.minimum_height
+                
+                Button:
+                    id: steps
+                    text: "Menu"   
+                    font_size: 75
+                    size_hint_y: None
+                    background_color: 0, 0 , 1 , 1
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        app.root.current = "Menu"
+                        root.manager.transition.direction = "right" 
+                
+                Button:
+                    id: steps
+                    text: "Clear All"   
+                    font_size: 75
+                    size_hint_y: None
+                    background_color: 1, 0 , 0 , 1
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        entry.text = ""
+                        prime.text = ""
+                        respect.text = ""
+                        list_of_steps.clear_widgets()       
+        
+            TextInput:
+                id: entry
+                text: entry.text
+                hint_text: "f(x)="
+                multiline: False
+                font_size: 75
+                size_hint_y: None
+                height: 125
+                padding: 10              
+            
+            TextInput:
+                id: prime
+                text: prime.text
+                hint_text: "# of times to derive, integrate"
+                multiline: False
+                font_size: 75
+                size_hint_y: None
+                height: 125
+                padding: 10              
+                
+            TextInput:
+                id: respect
+                text: respect.text
+                hint_text: "With respect to: x, y or z"
+                multiline: False
+                font_size: 75
+                size_hint_y: None
+                height: 125
+                padding: 10  
+                input_filter: lambda text, from_undo: text[:1 - len(respect.text)]
+                
+            BoxLayout:
+                cols: 2
+                padding: 10
+                spacing: 10
+                size_hint: 1, None
+                width: 300
+                size_hint_y: None
+                height: self.minimum_height
+                
+                Button:
+                    id: steps
+                    text: "Derivative"   
+                    font_size: 75
+                    size_hint_y: None
+                    background_color: 0, 1 , 0 , 1
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        list_of_steps.clear_widgets()
+                        Calculus_Calculator.derive(entry.text + "&" + prime.text + "$" + respect.text)
+                        
+                Button:
+                    id: steps
+                    text: "Integral"   
+                    font_size: 75
+                    size_hint_y: None
+                    background_color: 0, 0 , 1 , 1
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        list_of_steps.clear_widgets()
+                        Calculus_Calculator.Integrate(entry.text + "&" + prime.text + "$" + respect.text)
+                    
+            GridLayout:
+                id: list_of_steps
+                cols: 1
+                size_hint: 1, None
+                height: self.minimum_height   
+
+""")
+
+class Calculus_Calculator(Screen):
+    sm = ScreenManager()
+
+    def __init__(self, **kwargs):
+        super(Calculus_Calculator, self).__init__(**kwargs)
+        Window.bind(on_keyboard=self._key_handler)
+
+    def _key_handler(self, instance, key, *args):
+        if key == 27:
+            self.set_previous_screen()
+            return True
+
+    def set_previous_screen(self):
+        if sm.current != "Homepage":
+            sm.transition.direction = 'right'
+            sm.current = sm.previous()    
+    layouts = []
+    def derive(self,entry):
+        layout = GridLayout(cols=1,size_hint_y= None)
+        self.ids.list_of_steps.add_widget(layout)
+        self.layouts.append(layout)
+        print("~~~~~~~~~~~~~~~~~~~~")
+        print("DERIVATE")
+        
+        try:
+            print("Entry",entry)
+            amp = entry.find("&")
+            dollar = entry.find("$")
+            
+            func = entry[:amp].replace("^","**")
+            print("func",func)       
+            
+            prime = entry[amp+1:dollar]
+            print("Prime:",prime)
+            if prime == "":
+                prime = 0
+            
+            respect = entry[dollar + 1:]
+            print("respect:",respect)
+            
+            x = sym.Symbol(respect)
+            y = sym.Symbol(respect)
+            z = sym.Symbol(respect)
+            
+            if int(prime) > 0 and str(respect) != "":
+                self.ids.list_of_steps.add_widget(Label(text= "Entry = " + str(func).replace("**","^").replace("*x","x").replace("*y","y").replace("*z","z") ,font_size = 60, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Derive " + str(prime) + " time(s) with respect to " + str(respect),font_size = 60, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+                
+                i = 1
+                while i - 1 < int(prime):
+                    try:
+                        print("func:",func)
+                        func = sym.diff(func,respect)
+                        print("Answer:",func)
+                    except Exception:
+                        print("func:",func)
+                        func = func.replace("x","*x").replace("y","*y").replace("z","*z")
+                        func = func.replace("+*x","+1*x").replace("+*y","+1*y").replace("+*z","+1*z").replace("-*x","-1*x").replace("-*y","-1*y").replace("-*z","-1*z")
+                        print("func fixed:",func)
+                        
+                        if func[0] == "*":
+                            func = "1" + func
+                            print("func fixed:",func)
+                        
+                        func = sym.diff(func,respect)
+                        print("Answer:",func)
+                    self.ids.list_of_steps.add_widget(Label(text= "f" + "'" * i + "(" + respect + ") = " + str(func).replace("**","^").replace("*","") ,font_size = 60, size_hint_y= None, height=100))
+                    self.layouts.append(layout)
+                    i = i + 1
+                    
+            else:
+                if int(prime) == 0:
+                    self.ids.list_of_steps.add_widget(Label(text= "Prime must be greater than 0!" ,font_size = 60, size_hint_y= None, height=100))
+                    self.layouts.append(layout)
+                elif respect == "":
+                    self.ids.list_of_steps.add_widget(Label(text= "Respect must be entered" ,font_size = 60, size_hint_y= None, height=100))
+                    self.layouts.append(layout)
+                    
+                    
+        except Exception:
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 60, size_hint_y= None, height=100))
+            self.layouts.append(layout)
+            
+            
+    layouts = []
+    def Integrate(self,entry):
+        layout = GridLayout(cols=1,size_hint_y= None)
+        self.ids.list_of_steps.add_widget(layout)
+        self.layouts.append(layout)
+        print("~~~~~~~~~~~~~~~~~~~~")
+        print("INTEGRATE")
+        
+        try:
+            print("Entry",entry)
+            amp = entry.find("&")
+            dollar = entry.find("$")
+            
+            func = entry[:amp].replace("^","**")
+            print("func",func)       
+            
+            prime = entry[amp+1:dollar]
+            print("Prime:",prime)
+            if prime == "":
+                prime = 0
+            
+            respect = entry[dollar + 1:]
+            print("respect:",respect)
+            
+            x = sym.Symbol("x")
+            y = sym.Symbol("y")
+            z = sym.Symbol("z")
+            
+            if int(prime) > 0 and str(respect) != "":
+                self.ids.list_of_steps.add_widget(Label(text= "Entry = " + str(func).replace("**","^").replace("*x","x").replace("*y","y").replace("*z","z") ,font_size = 60, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Integrate " + str(prime) + " time(s) with respect to " + str(respect),font_size = 60, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+                
+                i = 1
+                while i - 1 < int(prime):
+                    try:
+                        print("func:",func)
+                        if respect == "x":
+                            func = str(sym.integrate(func,x))
+                            print("Answer x:",func)
+                        elif respect == "y":
+                            func = str(sym.integrate(func,y))
+                            print("Answer y:",func)
+                        elif respect == "z":
+                            func = str(sym.integrate(func,z))
+                            print("Answer z:",func)
+                        
+                    except Exception:
+                        print("func,exception:",func)
+                        func = str(func).replace("x","*x").replace("y","*y").replace("z","*z")
+                        func = func.replace("+*x","+1*x").replace("+*y","+1*y").replace("+*z","+1*z").replace("-*x","-1*x").replace("-*y","-1*y").replace("-*z","-1*z")
+                        print("func fixed:",func)
+                        
+                        if func[0] == "*":
+                            func = "1" + func
+                            print("func fixed:",func)
+                            
+                        if respect == "x":
+                            func = str(sym.integrate(func,x))
+                            print("Answer except x:",func)
+                        elif respect == "y":
+                            func = str(sym.integrate(func,y))
+                            print("Answer except y:",func)
+                        elif respect == "z":
+                            func = str(sym.integrate(func,z))
+                            print("Answer except z:",func)
+                        print("Answer:",str(func))
+                        
+                    print()
+                    print("answer before () edit: ",func)
+                    func_list = str(func).split(" ")
+                    print("func_list",func_list)
+                    print()
+                    
+                    func_display = ""
+                    j = 0
+                    while j < len(func_list):
+                        if func_list[j].count("/") == 1:
+                            print("Found div sign in:", func_list[j])
+                            div_sign_index = func_list[j].find("/")
+                            print("index of div sign:",div_sign_index)
+                            func_edited = "(" + func_list[j][:div_sign_index] + ")" + func_list[j][div_sign_index:]
+                            print("edited:",func_edited)
+                            func_display = func_display + " " + func_edited
+                        else:
+                            func_display = func_display + " " + func_list[j]
+                        j = j + 1
+                    print("func_display",func_display)
+                    
+                    self.ids.list_of_steps.add_widget(Label(text= "∫" * i + "f(" + respect + ") = " + str(func_display).replace("**","^").replace("*","") ,font_size = 60, size_hint_y= None, height=100))
+                    self.layouts.append(layout)
+                    i = i + 1
+                    
+            else:
+                if int(prime) == 0:
+                    self.ids.list_of_steps.add_widget(Label(text= "Prime must be greater than 0!" ,font_size = 60, size_hint_y= None, height=100))
+                    self.layouts.append(layout)
+                elif respect == "":
+                    self.ids.list_of_steps.add_widget(Label(text= "Respect must be entered" ,font_size = 60, size_hint_y= None, height=100))
+                    self.layouts.append(layout)
+                    
+        except Exception:
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 60, size_hint_y= None, height=100))
+            self.layouts.append(layout)
+
+
+                
 class Homepage(Screen):
     pass            
 
@@ -5549,20 +6160,21 @@ class Menu(Screen):
 sm = ScreenManager()
 sm.add_widget(Homepage(name="Homepage"))
 sm.add_widget(Menu(name="Menu"))     
-sm.add_widget(Exponents_steps(name="Exponents_steps")) #Line 186
-sm.add_widget(Percentage_Calculator(name="Percentage_Calculator"))  #Line 379
-sm.add_widget(PEMDAS(name="PEMDAS")) #Line 573
-sm.add_widget(Fractions(name="Fractions")) #1101 
-sm.add_widget(Pythagorean(name="Pythagorean"))    #Line 2996
-sm.add_widget(Quadratic_Formula_Solver(name="Quadratic_Formula_Solver")) #Line 3183
-sm.add_widget(List_of_Converters(name="List_of_Converters")) 
-sm.add_widget(Fractions_converter(name="Fractions_converter")) #
-sm.add_widget(Decimals_converter(name="Decimals_converter"))     
-sm.add_widget(Percentages_converter(name="Percentages_converter"))
-sm.add_widget(Statistical_Calculator(name="Statistical_Calculator")) #4315
-sm.add_widget(FOIL(name="FOIL"))     
+sm.add_widget(Exponents_steps(name="Exponents_steps")) #Line 186, individual app and apart of bundle
+sm.add_widget(Percentage_Calculator(name="Percentage_Calculator"))  #Line 379, individual app and apart of bundle
+sm.add_widget(PEMDAS(name="PEMDAS")) #Line 573 ,individual app and apart of bundle
+sm.add_widget(Fractions(name="Fractions")) #1101 ,individual app and apart of bundle
+sm.add_widget(Pythagorean(name="Pythagorean"))    #Line 2996, individual app and apart of bundle
+sm.add_widget(Quadratic_Formula_Solver(name="Quadratic_Formula_Solver")) #Line 3183, individual app and apart of bundle
+sm.add_widget(List_of_Converters(name="List_of_Converters")) #individual app and apart of bundle
+sm.add_widget(Fractions_converter(name="Fractions_converter")) #individual app and apart of bundle
+sm.add_widget(Decimals_converter(name="Decimals_converter"))     #individual app and apart of bundle
+sm.add_widget(Percentages_converter(name="Percentages_converter"))#individual app and apart of bundle
+sm.add_widget(Statistical_Calculator(name="Statistical_Calculator")) #Line 4315
+sm.add_widget(FOIL(name="FOIL")) #4677, individual app and apart of bundle 
+sm.add_widget(Tip_Calculator(name="Tip_Calculator"))    #Line 5544, individual app and apart of bundle 
+sm.add_widget(Calculus_Calculator(name="Calculus_Calculator"))     #Line 5772, individual app and apart of bundle 
 sm.current = "Homepage"   
-
 
 class Bundled(App):
     def build(app):
@@ -5570,5 +6182,3 @@ class Bundled(App):
 
 if __name__ == '__main__':
     Bundled().run()
-    
-
