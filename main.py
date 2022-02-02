@@ -45,9 +45,6 @@ Builder.load_string("""
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left" 
-                
-        
-
 """)
 
 # Menu
@@ -78,7 +75,7 @@ Builder.load_string("""
             
             Button:
                 text: "Calculus Calculator"
-                font_size: 50
+                font_size: 75
                 background_color: 0, 0, 1, 1
                 size_hint_y: None
                 height: 200
@@ -88,7 +85,7 @@ Builder.load_string("""
 
             Button:
                 text: "Decimals Converter"
-                font_size: 50
+                font_size: 75
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
                 height: 200
@@ -98,7 +95,7 @@ Builder.load_string("""
                     
             Button:
                 text: "Exponents Calculator"   
-                font_size: 50
+                font_size: 75
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
                 height: 200
@@ -109,7 +106,7 @@ Builder.load_string("""
             
             Button:
                 text: "Fractions Calculator"   
-                font_size: 50
+                font_size: 75
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
                 height: 200
@@ -120,7 +117,7 @@ Builder.load_string("""
                     
             Button:
                 text: "Fractions Converter"
-                font_size: 50
+                font_size: 75
                 size_hint_y: None
                 background_color: 0, 0 , 1 , 1
                 height: 200
@@ -130,7 +127,7 @@ Builder.load_string("""
             
             Button:
                 text: "FOIL Method"   
-                font_size: 50
+                font_size: 75
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
                 height: 200
@@ -141,7 +138,7 @@ Builder.load_string("""
             
             Button:
                 text: "PEMDAS"   
-                font_size: 50
+                font_size: 75
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
                 height: 200
@@ -152,7 +149,7 @@ Builder.load_string("""
             
             Button:
                 text: "Percentage Calculator"   
-                font_size: 50
+                font_size: 75
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
                 height: 200
@@ -163,7 +160,7 @@ Builder.load_string("""
                     
             Button:
                 text: "Pythagorean Calculator"   
-                font_size: 50
+                font_size: 75
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
                 height: 200
@@ -174,7 +171,7 @@ Builder.load_string("""
             
             Button:
                 text: "Quadratic Calculator"   
-                font_size: 50
+                font_size: 75
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
                 height: 200
@@ -184,7 +181,7 @@ Builder.load_string("""
                     root.manager.transition.direction = "left"
             
             Button:
-                font_size: 50
+                font_size: 75
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
                 height: 200
@@ -195,7 +192,7 @@ Builder.load_string("""
             
             Button:
                 text: "Statistical Calculator"   
-                font_size: 50
+                font_size: 75
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
                 height: 200
@@ -205,7 +202,7 @@ Builder.load_string("""
                     root.manager.transition.direction = "left"
                     
             Button:
-                font_size: 50
+                font_size: 75
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
                 height: 200
@@ -215,14 +212,92 @@ Builder.load_string("""
                     root.manager.transition.direction = "left"         
                     
             Button:
-                font_size: 50
+                font_size: 75
+                background_color: 1, 0, 1, 1
                 size_hint_y: None
-                background_color: 0, 1, 1, 1
                 height: 200
+                padding: 10, 10
+                text: "What's new?"
+                on_release:
+                    app.root.current = "updates"
+                    root.manager.transition.direction = "left"
+                    
+            Button:
+                font_size: 75
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
                 text: "Visit KSquared-math,LLC ©"
                 on_release:
                     import webbrowser
-                    webbrowser.open('https://kevinjunice.wixsite.com/ksquaredllc')
+                    webbrowser.open('https://kevinjunice.wixsite.com/ksquaredllc/subscribe')
+                    
+            Label:
+                font_size: 75
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                text: "Share KSquared-math,LLC ©"
+                    
+            Image:
+                source: 'KSquared_QR_code.png'
+                size_hint_y: None
+                height: 1000
+                width: 1000
+""")
+
+#Updates
+Builder.load_string("""
+<updates>
+    id:updates
+    name:"updates"
+    
+    ScrollView:
+        name: "Scroll"
+        do_scroll_x: False
+        do_scroll_y: True
+    
+        GridLayout:
+            cols: 1
+            padding:10
+            spacing:10
+            size_hint: 1, None
+            width:200
+            height: self.minimum_height
+            
+            Label:
+                font_size: 60
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                text: "What's new at KSquared-math?"
+            
+            Button:
+                id: steps
+                text: "Menu"   
+                font_size: 75
+                size_hint_y: None
+                background_color: 0, 0 , 1 , 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "Menu"
+                    root.manager.transition.direction = "right" 
+                    
+            Label:
+                font_size: 40
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                text: "Derivatives, Integration, Limits Calculators v0.1"
+                
+            Label:
+                font_size: 40
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                text: "No new updates as of 1/26/2022"
+            
 """)
 
 #EXPONENTS STEPS
@@ -6094,6 +6169,9 @@ class Homepage(Screen):
 class Menu(Screen):
     pass
 
+class updates(Screen):
+    pass
+
 sm = ScreenManager()
 sm.add_widget(Homepage(name="Homepage"))
 sm.add_widget(Menu(name="Menu"))     
@@ -6110,6 +6188,7 @@ sm.add_widget(Statistical_Calculator(name="Statistical_Calculator")) #Line 4315
 sm.add_widget(FOIL(name="FOIL")) #4677, individual app and apart of bundle 
 sm.add_widget(Tip_Calculator(name="Tip_Calculator"))    #Line 5544, individual app and apart of bundle 
 sm.add_widget(Calculus_Calculator(name="Calculus_Calculator"))     #Line 5772, individual app and apart of bundle 
+sm.add_widget(updates(name="updates"))
 sm.current = "Homepage"   
 
 class Bundled(App):
@@ -6119,4 +6198,3 @@ class Bundled(App):
 if __name__ == '__main__':
     Bundled().run()
     
-
