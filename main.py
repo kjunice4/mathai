@@ -289,7 +289,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "Derivatives, Integration, Limits Calculators v0.1"
+                text: "Bundled App v0.1"
                 
             Label:
                 font_size: 40
