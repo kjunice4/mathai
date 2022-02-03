@@ -3614,7 +3614,7 @@ Builder.load_string("""
                     background_color: 0, 0 , 1 , 1
                     text: "Back"
                     on_release:
-                        app.root.current = "List_of_Converters"
+                        app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
                         
                 Button:
@@ -3730,7 +3730,7 @@ Builder.load_string("""
                     background_color: 0, 0 , 1 , 1
                     text: "Back"
                     on_release:
-                        app.root.current = "List_of_Converters"
+                        app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
                         
                 Button:
@@ -3885,7 +3885,7 @@ Builder.load_string("""
                     background_color: 0, 0 , 1 , 1
                     text: "Back"
                     on_release:
-                        app.root.current = "List_of_Converters"
+                        app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
                         
                 Button:
