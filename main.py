@@ -6364,15 +6364,15 @@ class Derivatives(Screen):
                     
             else:
                 if int(prime) == 0:
-                    self.ids.list_of_steps.add_widget(Label(text= "Prime must be greater than 0!" ,font_size = 60, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Prime must be greater than 0!" ,font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                 elif respect == "":
-                    self.ids.list_of_steps.add_widget(Label(text= "Respect must be entered" ,font_size = 60, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Respect must be entered" ,font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     
         except Exception:
-            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 60, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
             self.layouts.append(layout)
             
             
@@ -6605,9 +6605,9 @@ class Integration(Screen):
                         func_integrated_list_empty_five_out = str(func_integrated_list_empty[5:]).replace("[","").replace("]","").replace(",","").replace("'","")
                         print("func_integrated_list_empty_five_out",func_integrated_list_empty_five_out)
                     
-                        self.ids.list_of_steps.add_widget(Label(text= "_________________________________________________________________",font_size = 60, size_hint_y= None, height=100))
-                        self.ids.list_of_steps.add_widget(Label(text= "∫" * (k+1) + "f" + "(" + respect + ") = " + func_integrated_list_empty_to_five,font_size = 60, size_hint_y= None, height=100))
-                        self.ids.list_of_steps.add_widget(Label(text= func_integrated_list_empty_five_out,font_size = 60, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= "_________________________________________________________________",font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= "∫" * (k+1) + "f" + "(" + respect + ") = " + func_integrated_list_empty_to_five,font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= func_integrated_list_empty_five_out,font_size = 50, size_hint_y= None, height=100))
                         self.layouts.append(layout)
                     
                     func = func_integrated.replace("**","^").replace("*","")
@@ -6619,14 +6619,14 @@ class Integration(Screen):
                 
             else:
                 if int(prime) == 0:
-                    self.ids.list_of_steps.add_widget(Label(text= "Prime must be greater than 0!" ,font_size = 60, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Prime must be greater than 0!" ,font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                 elif respect == "":
-                    self.ids.list_of_steps.add_widget(Label(text= "Respect must be entered" ,font_size = 60, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Respect must be entered" ,font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
         except Exception:
-            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 60, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
             self.layouts.append(layout)        
 
 
@@ -6714,16 +6714,15 @@ class Limits(Screen):
                 print()
                 print("Answer: ",Answer)
                 
-            self.ids.list_of_steps.add_widget(Label(text= "The Limit of :" ,font_size = 60, size_hint_y= None, height=100))
-            self.ids.list_of_steps.add_widget(Label(text= "Lim (x -> " + str(limit) + ") " + direction + " : " + str(func).replace("**","^") ,font_size = 60, size_hint_y= None, height=100))
-            self.ids.list_of_steps.add_widget(Label(text= "=" ,font_size = 60, size_hint_y= None, height=100))
-            self.ids.list_of_steps.add_widget(Label(text= "Lim (x -> " + str(limit) + ") " + direction + " : "  + str(Answer).replace("**","^") ,font_size = 60, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "The Limit of :" ,font_size = 50, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "Lim (x -> " + str(limit) + ") " + direction + " : " + str(func).replace("**","^") ,font_size = 50, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "=" ,font_size = 50, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "Lim (x -> " + str(limit) + ") " + direction + " : "  + str(Answer).replace("**","^") ,font_size = 50, size_hint_y= None, height=100))
             self.layouts.append(layout)
             
         except Exception:
-            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 60, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
             self.layouts.append(layout)
-
 
                 
 class Homepage(Screen):
