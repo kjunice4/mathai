@@ -33,15 +33,6 @@ Builder.load_string("""
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
             height: 200
-            text: "Bundled App"
-            on_release:
-                app.root.current = "Menu"
-                root.manager.transition.direction = "left"         
-        Button:
-            font_size: 50
-            background_color: 0, 0 , 0 , 1
-            size_hint_y: None
-            height: 200
             text: "KSquared-math,LLC ©"
             on_release:
                 app.root.current = "Menu"
@@ -73,28 +64,14 @@ Builder.load_string("""
                 height: 200
                 padding: 10, 10
                 text: "Menu"
-            
-            Button:
-                text: "Decimals Converter"
+                
+            Label:
                 font_size: 75
-                size_hint_y: None
-                background_color: 0, 0, 1, 1
-                height: 200
-                on_release:
-                    app.root.current = "Decimals_converter"
-                    root.manager.transition.direction = "left" 
-            
-            Button:
-                text: "Derivatives Calculator"
-                font_size: 75
-                background_color: 0, 0, 1, 1
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                on_release:
-                    app.root.current = "Derivatives"
-                    root.manager.transition.direction = "left" 
-                    
+                text: "Algebra"
+                
             Button:
                 text: "Exponents Calculator"   
                 font_size: 75
@@ -107,27 +84,6 @@ Builder.load_string("""
                     root.manager.transition.direction = "left"    
             
             Button:
-                text: "Fractions Calculator"   
-                font_size: 75
-                size_hint_y: None
-                background_color: 0, 0, 1, 1
-                height: 200
-                padding: 10, 10
-                on_release:
-                    app.root.current = "Fractions"
-                    root.manager.transition.direction = "left"    
-                    
-            Button:
-                text: "Fractions Converter"
-                font_size: 75
-                size_hint_y: None
-                background_color: 0, 0 , 1 , 1
-                height: 200
-                on_release:
-                    app.root.current = "Fractions_converter"
-                    root.manager.transition.direction = "left"
-            
-            Button:
                 text: "FOIL Method"   
                 font_size: 75
                 size_hint_y: None
@@ -136,30 +92,8 @@ Builder.load_string("""
                 padding: 10, 10
                 on_release:
                     app.root.current = "FOIL"
-                    root.manager.transition.direction = "left"  
-                               
-            Button:
-                text: "Integration Calculator"
-                font_size: 75
-                background_color: 0, 0, 1, 1
-                size_hint_y: None
-                height: 200
-                padding: 10, 10
-                on_release:
-                    app.root.current = "Integration"
                     root.manager.transition.direction = "left"
-                    
-            Button:
-                text: "Limits Calculator"
-                font_size: 75
-                background_color: 0, 0, 1, 1
-                size_hint_y: None
-                height: 200
-                padding: 10, 10
-                on_release:
-                    app.root.current = "Limits"
-                    root.manager.transition.direction = "left"
-        
+            
             Button:
                 text: "PEMDAS"   
                 font_size: 75
@@ -169,29 +103,7 @@ Builder.load_string("""
                 padding: 10, 10
                 on_release:
                     app.root.current = "PEMDAS"
-                    root.manager.transition.direction = "left"        
-            
-            Button:
-                text: "Percentage Calculator"   
-                font_size: 75
-                size_hint_y: None
-                background_color: 0, 0, 1, 1
-                height: 200
-                padding: 10, 10
-                on_release:
-                    app.root.current = "Percentage_Calculator"
-                    root.manager.transition.direction = "left" 
-                    
-            Button:
-                text: "Pythagorean Calculator"   
-                font_size: 75
-                size_hint_y: None
-                background_color: 0, 0, 1, 1
-                height: 200
-                padding: 10, 10
-                on_release:
-                    app.root.current = "Pythagorean"
-                    root.manager.transition.direction = "left"
+                    root.manager.transition.direction = "left"       
             
             Button:
                 text: "Quadratic Calculator"   
@@ -204,31 +116,163 @@ Builder.load_string("""
                     app.root.current = "Quadratic_Formula_Solver"
                     root.manager.transition.direction = "left"
             
-            Button:
+            Label:
                 font_size: 75
                 size_hint_y: None
-                background_color: 0, 0, 1, 1
                 height: 200
-                text: "Percentages Converter"
-                on_release:
-                    app.root.current = "Percentages_converter"
-                    root.manager.transition.direction = "left"        
+                padding: 10, 10
+                text: "Basic"
             
             Button:
-                text: "Statistical Calculator"   
+                text: "Fractions Calculator"   
                 font_size: 75
                 size_hint_y: None
-                background_color: 0, 0, 1, 1
+                background_color: 1, 0, 1, 1
                 height: 200
                 padding: 10, 10
                 on_release:
-                    app.root.current = "Statistical_Calculator"
+                    app.root.current = "Fractions"
+                    root.manager.transition.direction = "left"    
+                    
+            Button:
+                text: "Percentage Calculator"   
+                font_size: 75
+                size_hint_y: None
+                background_color: 1, 0, 1, 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "Percentage_Calculator"
+                    root.manager.transition.direction = "left" 
+                    
+            Label:
+                font_size: 75
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                background_color: 0, 0, 1, 1
+                text: "Calculus"
+                
+            Button:
+                text: "Derivatives Calculator"
+                font_size: 75
+                background_color: 0, 1, 1, 1
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "Derivatives"
+                    root.manager.transition.direction = "left" 
+                    
+            Button:
+                text: "Integration Calculator"
+                font_size: 75
+                background_color: 0, 1, 1, 1
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "Integration"
+                    root.manager.transition.direction = "left"
+                    
+            Button:
+                text: "Limits Calculator"
+                font_size: 75
+                background_color: 0, 1, 1, 1
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "Limits"
+                    root.manager.transition.direction = "left"
+            
+            Label:
+                font_size: 75
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                text: "Converters"
+            
+            Button:
+                text: "Decimals Converter"
+                font_size: 75
+                size_hint_y: None
+                background_color: 0, 1, 0, 1
+                height: 200
+                on_release:
+                    app.root.current = "Decimals_converter"
+                    root.manager.transition.direction = "left" 
+                    
+            Button:
+                text: "Fractions Converter"
+                font_size: 75
+                size_hint_y: None
+                background_color: 0, 1, 0, 1
+                height: 200
+                on_release:
+                    app.root.current = "Fractions_converter"
                     root.manager.transition.direction = "left"
                     
             Button:
                 font_size: 75
                 size_hint_y: None
+                background_color: 0, 1, 0, 1
+                height: 200
+                text: "Percentages Converter"
+                on_release:
+                    app.root.current = "Percentages_converter"
+                    root.manager.transition.direction = "left"     
+            
+            Label:
+                font_size: 75
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
                 background_color: 0, 0, 1, 1
+                text: "Geometry"
+            
+            Button:
+                text: "Pythagorean Calculator"   
+                font_size: 75
+                size_hint_y: None
+                background_color: 1, 0, 1, 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "Pythagorean"
+                    root.manager.transition.direction = "left"
+            
+            Label:
+                font_size: 75
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                background_color: 0, 0, 1, 1
+                text: "Statistics"
+            
+            Button:
+                text: "Statistical Calculator"   
+                font_size: 75
+                size_hint_y: None
+                background_color: 1, 0, 0, 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "Statistical_Calculator"
+                    root.manager.transition.direction = "left"
+            
+            Label:
+                font_size: 75
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                background_color: 0, 0, 1, 1
+                text: "Other"
+                
+            Button:
+                font_size: 75
+                size_hint_y: None
+                background_color: 0, 1.5, 0, 1
                 height: 200
                 text: "Tip Calculator"
                 on_release:
