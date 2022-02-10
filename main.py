@@ -7,11 +7,10 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 import numpy as np
-from sympy import Symbol
 import sympy as sym
-from sympy import Symbol, diff, integrate
 from colorama import Back, Style 
 from sympy import Limit, Symbol, S, diff, integrate
+import math
 
 #Opening Page
 Builder.load_string("""
@@ -6425,6 +6424,7 @@ class Derivatives(Screen):
             print("Entry",entry)
             amp = entry.find("&")
             dollar = entry.find("$")
+            percent_sign = entry.find("%")
             
             func = entry[:amp]
             print("func",func)       
@@ -6434,8 +6434,13 @@ class Derivatives(Screen):
             if prime == "":
                 prime = 0
             
-            respect = entry[dollar + 1:]
+            respect = entry[dollar + 1:percent_sign]
             print("respect:",respect)
+            
+            value = entry[percent_sign+1:]
+            print("value:",value)
+            if value == "":
+                value = "Nothing"
             
             x = sym.Symbol(respect)
             y = sym.Symbol(respect)
@@ -6520,7 +6525,19 @@ class Derivatives(Screen):
                     print("Completed",i+1,"derivative")
                     print("_________________________________________")
                     i = i + 1
-                    
+            if value != "Nothing":
+                print("func = ",func)
+                
+                func = str(func).replace(respect,value).replace("sqrt","math.sqrt").replace("pi","math.pi").replace("^","**").replace("sin","math.sin").replace("cos","math.cos").replace("tan","math.tan").replace("csc","math.csc").replace("sec","math.sec").replace("cot","math.cot").replace("log","math.log").replace("e","math.e").replace("smath.ec","math.sec").replace("math.smath.secc","math.sec")
+                print("func replaced x = ",func)
+                
+                func_evaled = eval(str(func))
+                print("func_evaled = ",func_evaled)
+                
+                self.ids.list_of_steps.add_widget(Label(text= "-----------------------------------------------------------------------------------------------" ,font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "f" + "'" * (i) + "(" + value + ") = " + str(func_evaled),font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+                
             else:
                 if int(prime) == 0:
                     self.ids.list_of_steps.add_widget(Label(text= "Prime must be greater than 0!" ,font_size = 50, size_hint_y= None, height=100))
@@ -6528,8 +6545,7 @@ class Derivatives(Screen):
                 elif respect == "":
                     self.ids.list_of_steps.add_widget(Label(text= "Respect must be entered" ,font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
-                    
-                    
+            
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
             self.layouts.append(layout)
@@ -6564,6 +6580,7 @@ class Integration(Screen):
             print("Entry",entry)
             amp = entry.find("&")
             dollar = entry.find("$")
+            percent_sign = entry.find("%")
             
             func = entry[:amp]
             print("func",func)       
@@ -6573,8 +6590,20 @@ class Integration(Screen):
             if prime == "":
                 prime = 0
             
-            respect = entry[dollar + 1:]
+            respect = entry[dollar + 1:percent_sign]
             print("respect:",respect)
+            
+            value = entry[percent_sign+1:]
+            print("value:",value)
+            if value == "":
+                value = "Nothing"
+            if value.count(",") == 1:
+                comma = value.find(",")
+                a = value[:comma]
+                print("a = ",a)
+                
+                b = value[comma+1:]
+                print("b = ",b)
             
             x = sym.Symbol("x")
             y = sym.Symbol("y")
@@ -6768,14 +6797,70 @@ class Integration(Screen):
                         self.ids.list_of_steps.add_widget(Label(text= "∫" * (k+1) + "f" + "(" + respect + ") = " + func_integrated_list_empty_to_five,font_size = 50, size_hint_y= None, height=100))
                         self.ids.list_of_steps.add_widget(Label(text= func_integrated_list_empty_five_out,font_size = 50, size_hint_y= None, height=100))
                         self.layouts.append(layout)
+                        
+                    else:
+                        func_integrated_list_empty = str(func_integrated_list_empty[:]).replace("[","").replace("]","").replace(",","").replace("'","")
+                        self.ids.list_of_steps.add_widget(Label(text= "_________________________________________________________________",font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= "∫" * (k+1) + "f" + "(" + respect + ") = " + func_integrated_list_empty,font_size = 50, size_hint_y= None, height=100))
+
                     
                     func = func_integrated.replace("**","^").replace("*","")
                     print("func ready for next loop, func = ",func_integrated)
                     print()
                     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                     k = k + 1
+                    
+            if value != "Nothing":
+                print("func = ",func_integrated)
                 
+                func_a = str(func_integrated).replace(respect,a).replace("sqrt","*math.sqrt").replace("pi","*math.pi").replace("^","**").replace("sin","*math.sin").replace("cos","*math.cos").replace("tan","*math.tan").replace("csc","*math.csc").replace("sec","*math.sec").replace("cot","*math.cot").replace("log","*math.log").replace("e","*math.e").replace("smath.ec","*math.sec").replace("math.smath.secc","*math.sec").replace("-*","-").replace(" *m"," m").replace("(*m","(m")
+                print("func_a replaced respect = ",func_a)
                 
+                if func_a[:2] == "*m":
+                    func_a = func_a[1:]
+                    print("func_a cleaned front",func_a)
+                
+                func_a_evaled = eval(str(func_a))
+                print("func_a_evaled = ",func_a_evaled)
+                
+                self.ids.list_of_steps.add_widget(Label(text= "-----------------------------------------------------------------------------------------------" ,font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "∫f" + "(" + a + ") = " + "{:,.2f}".format(float(str(func_a_evaled))),font_size = 50, size_hint_y= None, height=100))
+                self.layouts.append(layout)
+                
+                func_b = str(func_integrated).replace(respect,b).replace("sqrt","*math.sqrt").replace("pi","*math.pi").replace("^","**").replace("sin","*math.sin").replace("cos","*math.cos").replace("tan","*math.tan").replace("csc","*math.csc").replace("sec","*math.sec").replace("cot","*math.cot").replace("log","*math.log").replace("e","*math.e").replace("smath.ec","*math.sec").replace("math.smath.secc","*math.sec").replace("-*","-").replace(" *m"," m").replace("(*m","(m")
+                print("func_b replaced respect = ",func_b)
+                
+                if func_b[:2] == "*m":
+                    func_b = func_b[1:]
+                    print("func_b cleaned front",func_b)
+                
+                func_b_evaled = eval(str(func_b))
+                print("func_b_evaled = ",func_b_evaled)
+
+                self.ids.list_of_steps.add_widget(Label(text= "-----------------------------------------------------------------------------------------------" ,font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "∫f" + "(" + b + ") = " + "{:,.2f}".format(float(str(func_b_evaled))),font_size = 50, size_hint_y= None, height=100))
+                
+                a = str(eval(a.replace("sqrt","math.sqrt").replace("pi","math.pi").replace("ln","math.log").replace("log","math.log").replace("e","math.e").replace("^","**")))
+                    
+                b = str(eval(b.replace("sqrt","math.sqrt").replace("pi","math.pi").replace("ln","math.log").replace("log","math.log").replace("e","math.e").replace("^","**")))
+                
+                print("a = ",a)
+                print("b = ",b)
+                
+                if float(a) < float(b):
+                    self.ids.list_of_steps.add_widget(Label(text= "-----------------------------------------------------------------------------------------------" ,font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "∫f" + "(" + b + ") - " + "∫f" + "(" + a + ") =",font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "{:,.2f}".format(float(str(func_b_evaled))) + " - " + "{:,.2f}".format(float(str(func_a_evaled))) + " =",font_size = 50, size_hint_y= None, height=100))
+                    
+                    integral_evaled = "{:,.2f}".format(float(str(eval(str("{:,.2f}".format(float(str(func_b_evaled))) + " - " + "{:,.2f}".format(float(str(func_a_evaled))))))))
+                    print("integral_evaled",integral_evaled)
+ 
+                    self.ids.list_of_steps.add_widget(Label(text= str(integral_evaled),font_size = 50, size_hint_y= None, height=100))
+                
+                else:
+                    self.ids.list_of_steps.add_widget(Label(text= "-----------------------------------------------------------------------------------------------" ,font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "b must be greater than a!" ,font_size = 50, size_hint_y= None, height=100))
+                    self.layouts.append(layout)
             else:
                 if int(prime) == 0:
                     self.ids.list_of_steps.add_widget(Label(text= "Prime must be greater than 0!" ,font_size = 50, size_hint_y= None, height=100))
@@ -6882,7 +6967,6 @@ class Limits(Screen):
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
             self.layouts.append(layout)
-
                 
 class Homepage(Screen):
     pass            
