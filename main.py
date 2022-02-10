@@ -6078,6 +6078,7 @@ Builder.load_string("""
                         entry.text = ""
                         prime.text = ""
                         respect.text = ""
+                        value.text = ""
                         list_of_steps.clear_widgets()       
         
             TextInput:
@@ -6112,6 +6113,16 @@ Builder.load_string("""
                 padding: 10  
                 input_filter: lambda text, from_undo: text[:1 - len(respect.text)]
                 
+            TextInput:
+                id: value
+                text: value.text
+                hint_text: "x = #"
+                multiline: False
+                font_size: 75
+                size_hint_y: None
+                height: 125
+                padding: 10  
+                
             BoxLayout:
                 cols: 2
                 padding: 10
@@ -6131,7 +6142,7 @@ Builder.load_string("""
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets()
-                        Derivatives.derive(entry.text + "&" + prime.text + "$" + respect.text)
+                        Derivatives.derive(entry.text + "&" + prime.text + "$" + respect.text + "%" + value.text)
                     
             GridLayout:
                 id: list_of_steps
@@ -6200,6 +6211,7 @@ Builder.load_string("""
                         entry.text = ""
                         prime.text = ""
                         respect.text = ""
+                        value.text = ""
                         list_of_steps.clear_widgets()       
         
             TextInput:
@@ -6234,6 +6246,16 @@ Builder.load_string("""
                 padding: 10  
                 input_filter: lambda text, from_undo: text[:1 - len(respect.text)]
                 
+            TextInput:
+                id: value
+                text: value.text
+                hint_text: "Definite Integral: a,b"
+                multiline: False
+                font_size: 75
+                size_hint_y: None
+                height: 125
+                padding: 10  
+                
                     
             Button:
                 id: steps
@@ -6245,7 +6267,7 @@ Builder.load_string("""
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets()
-                    Integration.Integrate(entry.text + "&" + prime.text + "$" + respect.text)
+                    Integration.Integrate(entry.text + "&" + prime.text + "$" + respect.text + "%" + value.text)
                     
             GridLayout:
                 id: list_of_steps
@@ -6254,6 +6276,7 @@ Builder.load_string("""
                 height: self.minimum_height   
 
 """)
+
 
 #Limits
 Builder.load_string("""
