@@ -352,21 +352,23 @@ Builder.load_string("""
                     root.manager.transition.direction = "right" 
                     
             Label:
-                font_size: 40
+                font_size: 50
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
                 text: "KSquared-Math App v0.1"
                 
             Label:
-                font_size: 40
+                font_size: 50
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "As KSquared-Math continues to grow and develop more apps, this app will update with new releases at no additional charges."
+                text: 
+                    '''As KSquared-Math continues to grow and develop more apps, 
+                    this app will update with new releases at no additional charges.'''
                 
             Label:
-                font_size: 40
+                font_size: 50
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
