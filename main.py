@@ -356,7 +356,14 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "Bundled App v0.1"
+                text: "KSquared-Math App v0.1"
+                
+            Label:
+                font_size: 40
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                text: "As KSquared-Math continues to grow and develop more apps, this app will update with new releases at no additional charges."
                 
             Label:
                 font_size: 40
@@ -364,6 +371,7 @@ Builder.load_string("""
                 height: 200
                 padding: 10, 10
                 text: "No new updates as of 1/26/2022"
+                
             
 """)
 
