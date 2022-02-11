@@ -364,8 +364,10 @@ Builder.load_string("""
                 height: 200
                 padding: 10, 10
                 text: 
-                    '''As KSquared-Math continues to grow and develop more apps, 
-                    this app will update with new releases at no additional charges.'''
+                    '''As KSquared-Math continues to grow 
+                    and develop more apps, this app will 
+                    update with new releases 
+                    at no additional charges.'''
                 
             Label:
                 font_size: 50
