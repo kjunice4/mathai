@@ -366,8 +366,8 @@ Builder.load_string("""
                 text: 
                     '''As KSquared-Math continues to grow 
                     and develop more apps, this app will 
-                    update with new releases 
-                    at no additional charges.'''
+                    update with new releases at no 
+                    additional charge.'''
                 
             Label:
                 font_size: 50
@@ -883,7 +883,6 @@ class PEMDAS(Screen):
         self.layouts.append(layout)
         print("entry",entry)
         
-        
         try:
             #Parentheses
             a = entry
@@ -902,6 +901,15 @@ class PEMDAS(Screen):
             a = a.replace("*"," * ")
             a = a.replace("/"," / ")
             a = a.replace(" ^ - ","^-")
+            a = a.replace("**(","^(")
+            a = a.replace("*(","(")
+            a = a.replace("(","*(")
+            a = a.replace("^*","^")
+            
+            if a[0] == "*":
+                a = a[1:]
+                print("a =",a)
+            
             
             print("Expression Entered :      ",a)
             print()
@@ -959,6 +967,14 @@ class PEMDAS(Screen):
             a = a.replace("*"," * ")
             a = a.replace("/"," / ")
             a = a.replace(" ^ - ","^-")
+            a = a.replace("**(","^(")
+            a = a.replace("*(","(")
+            a = a.replace("(","*(")
+            a = a.replace("^*","^")
+            
+            if a[0] == "*":
+                a = a[1:]
+                print("a =",a)
 
             
             #String Method to look for Exponents
@@ -1026,6 +1042,14 @@ class PEMDAS(Screen):
                     a = a.replace("*"," * ")
                     a = a.replace("/"," / ")
                     a = a.replace(" ^ - ","^-")
+                    a = a.replace("**(","^(")
+                    a = a.replace("*(","(")
+                    a = a.replace("(","*(")
+                    a = a.replace("^*","^")
+                    
+                    if a[0] == "*":
+                        a = a[1:]
+                        print("a =",a)
 
                 i = i + 1
             
@@ -1090,6 +1114,14 @@ class PEMDAS(Screen):
                     a = a.replace("*"," * ")
                     a = a.replace("/"," / ")
                     a = a.replace(" ^ - ","^-")
+                    a = a.replace("**(","^(")
+                    a = a.replace("*(","(")
+                    a = a.replace("(","*(")
+                    a = a.replace("^*","^")
+                    
+                    if a[0] == "*":
+                        a = a[1:]
+                        print("a =",a)
    
                 i = i + 1
             
@@ -1154,6 +1186,14 @@ class PEMDAS(Screen):
                     a = a.replace("*"," * ")
                     a = a.replace("/"," / ")
                     a = a.replace(" ^ - ","^-")
+                    a = a.replace("**(","^(")
+                    a = a.replace("*(","(")
+                    a = a.replace("(","*(")
+                    a = a.replace("^*","^")
+                    
+                    if a[0] == "*":
+                        a = a[1:]
+                        print("a =",a)
 
                 i = i + 1
             
@@ -1213,6 +1253,14 @@ class PEMDAS(Screen):
                     a = a.replace("*"," * ")
                     a = a.replace("/"," / ")
                     a = a.replace(" ^ - ","^-")
+                    a = a.replace("**(","^(")
+                    a = a.replace("*(","(")
+                    a = a.replace("(","*(")
+                    a = a.replace("^*","^")
+                    
+                    if a[0] == "*":
+                        a = a[1:]
+                        print("a =",a)
 
                 i = i + 1
             
@@ -1272,6 +1320,14 @@ class PEMDAS(Screen):
                     a = a.replace("*"," * ")
                     a = a.replace("/"," / ")
                     a = a.replace(" ^ - ","^-")
+                    a = a.replace("**(","^(")
+                    a = a.replace("*(","(")
+                    a = a.replace("(","*(")
+                    a = a.replace("^*","^")
+                    
+                    if a[0] == "*":
+                        a = a[1:]
+                        print("a =",a)
 
                 i = i + 1
             a = a.replace(" ","")
