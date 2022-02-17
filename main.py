@@ -892,6 +892,7 @@ class PEMDAS(Screen):
             print()
             print("------------------------------")
             print()
+            
             a = a.replace(" ","")
             a = a.replace("+-","-")
             a = a.replace("-+","-")
@@ -901,10 +902,13 @@ class PEMDAS(Screen):
             a = a.replace("*"," * ")
             a = a.replace("/"," / ")
             a = a.replace(" ^ - ","^-")
-            a = a.replace("**(","^(")
-            a = a.replace("*(","(")
-            a = a.replace("(","*(")
             a = a.replace("^*","^")
+            a = a.replace("*(","(")
+            a = a.replace("* (","(")
+            a = a.replace("(","*(")
+            a = a.replace("+ *(","+ (")
+            a = a.replace("- *(","- (")
+            
             
             if a[0] == "*":
                 a = a[1:]
@@ -939,25 +943,27 @@ class PEMDAS(Screen):
                         break
                     print()
                     print()
-                    #print("Parentheses to Solve :    ",a[:left_par],Back.GREEN,range_pars,Style.RESET_ALL,a[right_par+1:])
+                    print("Parentheses to Solve :    ",a[:left_par],Back.GREEN,range_pars,Style.RESET_ALL,a[right_par+1:])
                     self.ids.list_of_steps.add_widget(Label(text="Parentheses Step : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:left_par] + range_pars + a[right_par+1:], font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:left_par] + '[color=33CAFF]' + range_pars + '[/color]' + a[right_par+1:],markup=True, font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     replaced = a.replace(range_pars,evaled)
                     print()
-                    #print("Parentheses Solved :      ",a[:left_par],Back.GREEN,evaled,Style.RESET_ALL,a[right_par+1:])
+                    print("Parentheses Solved :      ",a[:left_par],Back.GREEN,evaled,Style.RESET_ALL,a[right_par+1:])
                     self.ids.list_of_steps.add_widget(Label(text="Parentheses Solved : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:left_par] + evaled + a[right_par+1:], font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:left_par] + '[color=33CAFF]' + evaled + '[/color]' + a[right_par+1:],markup=True, font_size = 50, size_hint_y= None, height=100))
                     self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     a = replaced
+                    print("a =",a)
                     i = i + 1 
                     
             else:
                 print("Parentheses Unbalanced!")
             
+            a = replaced
             a = a.replace(" ","")
             a = a.replace("+-","-")
             a = a.replace("-+","-")
@@ -967,15 +973,15 @@ class PEMDAS(Screen):
             a = a.replace("*"," * ")
             a = a.replace("/"," / ")
             a = a.replace(" ^ - ","^-")
-            a = a.replace("**(","^(")
-            a = a.replace("*(","(")
-            a = a.replace("(","*(")
             a = a.replace("^*","^")
+            a = a.replace("* (","(")
+            a = a.replace("(","*(")
+            a = a.replace("+ *(","+ (")
+            a = a.replace("- *(","- (")
             
             if a[0] == "*":
                 a = a[1:]
                 print("a =",a)
-
             
             #String Method to look for Exponents
             i = 0
@@ -1018,20 +1024,21 @@ class PEMDAS(Screen):
                     replaced = a.replace(exponent_range,evaled)
                     print()
                     print()
-                    #print("Exponent to Solve :       ",a[:exp_left_space],Back.GREEN,exponent_range,Style.RESET_ALL,a[carrot + exp_right_space+1:])
+                    
+                    print("Exponent to Solve :       ",a[:exp_left_space],Back.GREEN,exponent_range,Style.RESET_ALL,a[carrot + exp_right_space+1:])
                     self.ids.list_of_steps.add_widget(Label(text="Exponent Step : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:exp_left_space] + exponent_range + a[carrot + exp_right_space+1:], font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:exp_left_space] + '[color=33CAFF]' + exponent_range + '[/color]' + a[carrot + exp_right_space+1:],markup=True, font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
-                    
                     print()
-                    #print("Exponent Sovled :         ",a[:exp_left_space],Back.GREEN,evaled,Style.RESET_ALL,a[carrot+exp_right_space+1:])
+                    print("Exponent Sovled :         ",a[:exp_left_space],Back.GREEN,evaled,Style.RESET_ALL,a[carrot+exp_right_space+1:])
                     self.ids.list_of_steps.add_widget(Label(text="Exponent Solved : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:exp_left_space] + evaled + a[carrot+exp_right_space+1:], font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:exp_left_space] + '[color=33CAFF]' + evaled + '[/color]' + a[carrot+exp_right_space+1:],markup=True, font_size = 50, size_hint_y= None, height=100))
                     self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     print("",replaced)
+                    
                     a = replaced
                     a = a.replace(" ","")
                     a = a.replace("+-","-")
@@ -1042,10 +1049,11 @@ class PEMDAS(Screen):
                     a = a.replace("*"," * ")
                     a = a.replace("/"," / ")
                     a = a.replace(" ^ - ","^-")
-                    a = a.replace("**(","^(")
-                    a = a.replace("*(","(")
-                    a = a.replace("(","*(")
                     a = a.replace("^*","^")
+                    a = a.replace("* (","(")
+                    a = a.replace("(","*(")
+                    a = a.replace("+ *(","+ (")
+                    a = a.replace("- *(","- (")
                     
                     if a[0] == "*":
                         a = a[1:]
@@ -1093,14 +1101,14 @@ class PEMDAS(Screen):
                     
                     print()
                     print()
-                    #print("Multiplication to Solve : ",a[:mult_left_space],Back.GREEN,mult_range,Style.RESET_ALL,a[found_mult+mult_right_space+1:])
+                    print("Multiplication to Solve : ",a[:mult_left_space],Back.GREEN,mult_range,Style.RESET_ALL,a[found_mult+mult_right_space+1:])
                     self.ids.list_of_steps.add_widget(Label(text="Multiplication Step : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:mult_left_space] + mult_range + a[found_mult+mult_right_space+1:], font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:mult_left_space] + '[color=33CAFF]' + mult_range + '[/color]' + a[found_mult+mult_right_space+1:],markup=True , font_size = 50, size_hint_y= None, height=100))
                     
                     print()
-                    #print("Multiplication Solved :   ", a[:mult_left_space],Back.GREEN,evaled,Style.RESET_ALL,a[found_mult+mult_right_space+1:])
+                    print("Multiplication Solved :   ", a[:mult_left_space],Back.GREEN,evaled,Style.RESET_ALL,a[found_mult+mult_right_space+1:])
                     self.ids.list_of_steps.add_widget(Label(text="Multiplication Solved : ", font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:mult_left_space] + evaled + a[found_mult+mult_right_space+1:], font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:mult_left_space] + '[color=33CAFF]' + evaled + '[/color]'  + a[found_mult+mult_right_space+1:], markup=True, font_size = 50, size_hint_y= None, height=100))
                     self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
@@ -1114,10 +1122,11 @@ class PEMDAS(Screen):
                     a = a.replace("*"," * ")
                     a = a.replace("/"," / ")
                     a = a.replace(" ^ - ","^-")
-                    a = a.replace("**(","^(")
-                    a = a.replace("*(","(")
-                    a = a.replace("(","*(")
                     a = a.replace("^*","^")
+                    a = a.replace("* (","(")
+                    a = a.replace("(","*(")
+                    a = a.replace("+ *(","+ (")
+                    a = a.replace("- *(","- (")
                     
                     if a[0] == "*":
                         a = a[1:]
@@ -1162,17 +1171,17 @@ class PEMDAS(Screen):
                     
                     if evaled.count("-") == 1:
                         evaled = "(" + evaled + ")"
-                    
+
                     print()
                     print()
                     #print("Division to Solve : ",a[:div_left_space],Back.GREEN,div_range,Style.RESET_ALL,a[found_div+div_right_space+1:])
                     self.ids.list_of_steps.add_widget(Label(text="Division Step : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:div_left_space] + div_range + a[found_div+div_right_space+1:], font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:div_left_space] + '[color=33CAFF]' + div_range + '[/color]' + a[found_div+div_right_space+1:],markup=True, font_size = 50, size_hint_y= None, height=100))
                     
                     print()
                     #print("Division Solved :   ", a[:div_left_space],Back.GREEN,evaled,Style.RESET_ALL,a[found_div+div_right_space+1:])
                     self.ids.list_of_steps.add_widget(Label(text="Division Solved : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:div_left_space] + evaled + a[found_div+div_right_space+1:], font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:div_left_space] + '[color=33CAFF]' + evaled + '[/color]' + a[found_div+div_right_space+1:],markup=True, font_size = 50, size_hint_y= None, height=100))
                     self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
@@ -1186,10 +1195,11 @@ class PEMDAS(Screen):
                     a = a.replace("*"," * ")
                     a = a.replace("/"," / ")
                     a = a.replace(" ^ - ","^-")
-                    a = a.replace("**(","^(")
-                    a = a.replace("*(","(")
-                    a = a.replace("(","*(")
                     a = a.replace("^*","^")
+                    a = a.replace("* (","(")
+                    a = a.replace("(","*(")
+                    a = a.replace("+ *(","+ (")
+                    a = a.replace("- *(","- (")
                     
                     if a[0] == "*":
                         a = a[1:]
@@ -1230,16 +1240,17 @@ class PEMDAS(Screen):
                     evaled = str(evaled)
                     replaced = a.replace(add_range,evaled)
                     print('replaced',replaced)
+
                     print()
                     print()
                     #print("Addition to Solve :       ",a[:add_left_space],Back.GREEN,add_range,Style.RESET_ALL,a[found_add+add_right_space+1:])
                     self.ids.list_of_steps.add_widget(Label(text="Addition Step : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:add_left_space] + add_range + a[found_add+add_right_space+1:], font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:add_left_space] + '[color=33CAFF]' + add_range + '[/color]' + a[found_add+add_right_space+1:],markup=True , font_size = 50, size_hint_y= None, height=100))
                     
                     print()
                     #print("Addition  Solved :        ",a[:add_left_space],Back.GREEN,evaled,Style.RESET_ALL,a[found_add+add_right_space+1:])
                     self.ids.list_of_steps.add_widget(Label(text="Addition Solved : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:add_left_space] + evaled + a[found_add+add_right_space+1:], font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:add_left_space] + '[color=33CAFF]' + evaled + '[/color]' + a[found_add+add_right_space+1:],markup=True , font_size = 50, size_hint_y= None, height=100))
                     self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
@@ -1253,10 +1264,11 @@ class PEMDAS(Screen):
                     a = a.replace("*"," * ")
                     a = a.replace("/"," / ")
                     a = a.replace(" ^ - ","^-")
-                    a = a.replace("**(","^(")
-                    a = a.replace("*(","(")
-                    a = a.replace("(","*(")
                     a = a.replace("^*","^")
+                    a = a.replace("* (","(")
+                    a = a.replace("(","*(")
+                    a = a.replace("+ *(","+ (")
+                    a = a.replace("- *(","- (")
                     
                     if a[0] == "*":
                         a = a[1:]
@@ -1298,19 +1310,21 @@ class PEMDAS(Screen):
                     replaced = a.replace(sub_range, evaled)
                     a = replaced
                     print("s",a)
+ 
                     print()
                     print()
                     #print("Subtraction to Solve :    ",a[:sub_left_space],Back.GREEN,sub_range,Style.RESET_ALL,a[found_sub+sub_right_space+1:])
                     self.ids.list_of_steps.add_widget(Label(text="Subtraction Step : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:sub_left_space] + sub_range + a[found_sub+sub_right_space+1:], font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:sub_left_space] + '[color=33CAFF]'  + sub_range + '[/color]' + a[found_sub+sub_right_space+1:],markup=True , font_size = 50, size_hint_y= None, height=100))
                     
                     print()
                     #print("Subtraction  Solved :     ",a[:sub_left_space],Back.GREEN,evaled,Style.RESET_ALL,a[found_sub+sub_right_space+1:])
                     self.ids.list_of_steps.add_widget(Label(text="Subtraction Solved : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:sub_left_space] + evaled + a[found_sub+sub_right_space+1:], font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:sub_left_space] + '[color=33CAFF]'  + evaled + '[/color]'  + a[found_sub+sub_right_space+1:],markup=True , font_size = 50, size_hint_y= None, height=100))
                     self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
+                    a = replaced
                     a = a.replace(" ","")
                     a = a.replace("+-","-")
                     a = a.replace("-+","-")
@@ -1320,10 +1334,11 @@ class PEMDAS(Screen):
                     a = a.replace("*"," * ")
                     a = a.replace("/"," / ")
                     a = a.replace(" ^ - ","^-")
-                    a = a.replace("**(","^(")
-                    a = a.replace("*(","(")
-                    a = a.replace("(","*(")
                     a = a.replace("^*","^")
+                    a = a.replace("* (","(")
+                    a = a.replace("(","*(")
+                    a = a.replace("+ *(","+ (")
+                    a = a.replace("- *(","- (")
                     
                     if a[0] == "*":
                         a = a[1:]
