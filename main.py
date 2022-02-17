@@ -963,7 +963,6 @@ class PEMDAS(Screen):
             else:
                 print("Parentheses Unbalanced!")
             
-            a = replaced
             a = a.replace(" ","")
             a = a.replace("+-","-")
             a = a.replace("-+","-")
