@@ -908,6 +908,7 @@ class PEMDAS(Screen):
             a = a.replace("(","*(")
             a = a.replace("+ *(","+ (")
             a = a.replace("- *(","- (")
+            a = a.replace("^*","^")
             
             
             if a[0] == "*":
@@ -925,12 +926,13 @@ class PEMDAS(Screen):
             self.layouts.append(layout)
             
             #String Method to look for Parentheses
-            if a.count("(") == a.count(")"):
+            if a.count("(") == a.count(")") and a.count("(") > 0 and a.count("(") > 0:
                   i = 0
                   while i < len(a):
                     right_par = a.find(")")
                     left_par = a[:right_par].rfind("(")
                     if right_par and left_par == -1:
+                        print("breaking loop, no pars")
                         break
                     range_pars = a[left_par:right_par+1]
                     range_pars = range_pars.replace("^","**")
@@ -940,6 +942,7 @@ class PEMDAS(Screen):
                     print(evaled)
                     range_pars = range_pars.replace("**","^")
                     if a.count("(") and a.count(")") == 0:
+                        print("breaking loop, a.count(()) = 0")
                         break
                     print()
                     print()
@@ -956,12 +959,14 @@ class PEMDAS(Screen):
                     self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
+                    print("replaced to a:",replaced)
                     a = replaced
                     print("a =",a)
                     i = i + 1 
                     
             else:
                 print("Parentheses Unbalanced!")
+            
             
             a = a.replace(" ","")
             a = a.replace("+-","-")
@@ -977,6 +982,7 @@ class PEMDAS(Screen):
             a = a.replace("(","*(")
             a = a.replace("+ *(","+ (")
             a = a.replace("- *(","- (")
+            a = a.replace("^*","^")
             
             if a[0] == "*":
                 a = a[1:]
@@ -1021,6 +1027,7 @@ class PEMDAS(Screen):
                     evaled = str(eval(exponent_range))
                     exponent_range = exponent_range.replace("**","^").replace("(","").replace(")","")
                     replaced = a.replace(exponent_range,evaled)
+                    print("replaced to a:",replaced)
                     print()
                     print()
                     
@@ -1036,7 +1043,6 @@ class PEMDAS(Screen):
                     self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
-                    print("",replaced)
                     
                     a = replaced
                     a = a.replace(" ","")
@@ -1053,6 +1059,7 @@ class PEMDAS(Screen):
                     a = a.replace("(","*(")
                     a = a.replace("+ *(","+ (")
                     a = a.replace("- *(","- (")
+                    a = a.replace("^*","^")
                     
                     if a[0] == "*":
                         a = a[1:]
@@ -1092,8 +1099,7 @@ class PEMDAS(Screen):
                     evaled = str(evaled)
                     evaled = evaled.replace("*"," * ")
                     replaced = a.replace(mult_range,evaled)
-                    print("replaced",replaced)
-                    print("m",a)
+                    print("replaced to a:",replaced)
                     
                     if evaled.count("-") == 1:
                         evaled = "(" + evaled + ")"
@@ -1126,6 +1132,7 @@ class PEMDAS(Screen):
                     a = a.replace("(","*(")
                     a = a.replace("+ *(","+ (")
                     a = a.replace("- *(","- (")
+                    a = a.replace("^*","^")
                     
                     if a[0] == "*":
                         a = a[1:]
@@ -1165,8 +1172,7 @@ class PEMDAS(Screen):
                     evaled = str(evaled)
                     evaled = evaled.replace("/"," / ")
                     replaced = a.replace(div_range,evaled)
-                    print("replaced",replaced)
-                    print("m",a)
+                    print("replaced to a:",replaced)
                     
                     if evaled.count("-") == 1:
                         evaled = "(" + evaled + ")"
@@ -1199,6 +1205,7 @@ class PEMDAS(Screen):
                     a = a.replace("(","*(")
                     a = a.replace("+ *(","+ (")
                     a = a.replace("- *(","- (")
+                    a = a.replace("^*","^")
                     
                     if a[0] == "*":
                         a = a[1:]
@@ -1238,7 +1245,7 @@ class PEMDAS(Screen):
                     print('evaled',evaled)
                     evaled = str(evaled)
                     replaced = a.replace(add_range,evaled)
-                    print('replaced',replaced)
+                    print("replaced to a:",replaced)
 
                     print()
                     print()
@@ -1268,6 +1275,7 @@ class PEMDAS(Screen):
                     a = a.replace("(","*(")
                     a = a.replace("+ *(","+ (")
                     a = a.replace("- *(","- (")
+                    a = a.replace("^*","^")
                     
                     if a[0] == "*":
                         a = a[1:]
@@ -1307,6 +1315,7 @@ class PEMDAS(Screen):
                     print("evaled",evaled)
                     evaled = str(evaled)
                     replaced = a.replace(sub_range, evaled)
+                    print("replaced to a:",replaced)
                     a = replaced
                     print("s",a)
  
@@ -1338,6 +1347,7 @@ class PEMDAS(Screen):
                     a = a.replace("(","*(")
                     a = a.replace("+ *(","+ (")
                     a = a.replace("- *(","- (")
+                    a = a.replace("^*","^")
                     
                     if a[0] == "*":
                         a = a[1:]
@@ -1356,7 +1366,6 @@ class PEMDAS(Screen):
             print("Answer:                     ",a)
             self.ids.list_of_steps.add_widget(Label(text="Final Answer : ", font_size = 50, size_hint_y= None, height=100))
             self.ids.list_of_steps.add_widget(Label(text= a, font_size = 50, size_hint_y= None, height=100))
-
 
         except Exception:
             try:
