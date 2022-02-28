@@ -6981,6 +6981,7 @@ class Integration(Screen):
                     print("integral_evaled",integral_evaled)
  
                     self.ids.list_of_steps.add_widget(Label(text= str(integral_evaled),font_size = 50, size_hint_y= None, height=100))
+
                 
                 else:
                     self.ids.list_of_steps.add_widget(Label(text= "-----------------------------------------------------------------------------------------------" ,font_size = 50, size_hint_y= None, height=100))
@@ -7092,7 +7093,7 @@ class Limits(Screen):
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
             self.layouts.append(layout)
-                
+            
 class Homepage(Screen):
     pass            
 
