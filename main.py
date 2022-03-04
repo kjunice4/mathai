@@ -7353,7 +7353,6 @@ class Domain_and_Range(Screen):
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 60, size_hint_y= None, height=100))
             self.layouts.append(layout)
-                
 
 class Homepage(Screen):
     pass            
@@ -7391,4 +7390,5 @@ class Bundled(App):
         return sm
 
 if __name__ == '__main__':
-    Bundled().run()      
+    Bundled().run()
+    
