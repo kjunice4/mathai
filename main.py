@@ -83,7 +83,7 @@ Builder.load_string("""
                 text: "Algebra"
                 
             Button:
-                text: "Equation Calculator"
+                text: "Domain and Range"
                 font_size: 75
                 background_color: 0, 0 , 1 , 1
                 size_hint_y: None
@@ -7105,7 +7105,7 @@ class Limits(Screen):
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
             self.layouts.append(layout)
             
-#Equartion Calculator 
+#Domain and Range Calculator 
 Builder.load_string("""
 <Domain_and_Range>
     id:Domain_and_Range
@@ -7129,7 +7129,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "Equation Calculator"
+                text: "Domain and Range"
                     
             BoxLayout:
                 cols: 2
@@ -7176,7 +7176,7 @@ Builder.load_string("""
                 text: y.text
                 multiline: False
                 hint_text: "f(x) ="
-                font_size: 125
+                font_size: 75
                 size_hint_y: None
                 height: 200
                 padding: 10
@@ -7186,7 +7186,7 @@ Builder.load_string("""
                 text: domain.text
                 multiline: False
                 hint_text:"Domain = min,max,sequence"
-                font_size: 125
+                font_size: 75
                 size_hint_y: None
                 height: 200
                 padding: 10  
@@ -7229,7 +7229,6 @@ class Domain_and_Range(Screen):
         if sm.current != "Homepage":
             print("Its working List")
             sm.transition.direction = 'right'
-            sm.current = sm.previous()
             
     layouts = []
     def steps(self,entry):
@@ -7240,7 +7239,6 @@ class Domain_and_Range(Screen):
         layout = GridLayout(cols=1,size_hint_y= None)
         self.ids.list_of_steps.add_widget(layout)
         self.layouts.append(layout)
-        
         try:
             print()
             amp = entry.find("&")
@@ -7260,7 +7258,7 @@ class Domain_and_Range(Screen):
             print("domain_comma",domain_comma)
             
             if comma_count == 0 and y.count("x") > 0:
-                y = y.replace("x","*" + str(domain)).replace("+*","+").replace("-*","-").replace("/*","/").replace("(*","(").replace("(*","(").replace("sqrt","math.sqrt").replace("pi","math.pi").replace("^","**").replace("sin","math.sin").replace("cos","math.cos").replace("tan","math.tan").replace("csc","math.csc").replace("sec","math.sec").replace("cot","math.cot").replace("log","math.log").replace("e","math.e").replace("smath.ec","math.sec").replace("math.smath.secc","math.sec")
+                y = y.replace("x","*" + str(domain)).replace("+*","+").replace("-*","-").replace("/*","/").replace("(*","(").replace("(*","(").replace("sqrt","math.sqrt").replace("pi","math.pi").replace("^","**").replace("sin","math.sin").replace("cos","math.cos").replace("tan","math.tan").replace("csc","mpmath.csc").replace("sec","mpmath.sec").replace("cot","mpmath.cot").replace("log","math.log").replace("e","math.e").replace("smath.ec","mp.sec").replace("math.smath.secc","mp.sec").replace("math.math","math").replace("mp.mp","mp")
                 print("y = ",y)
                 if y[0] == "*":
                     y = y.replace("*","")
@@ -7289,7 +7287,7 @@ class Domain_and_Range(Screen):
                 self.layouts.append(layout)
                 
                 while i < len(empty_domain):
-                    y_input = str(y).replace("x","*" + str(empty_domain[i])).replace("+*","+").replace("-*","-").replace("/*","/").replace("(*","(").replace("sqrt","math.sqrt").replace("pi","math.pi").replace("^","**").replace("sin","math.sin").replace("cos","math.cos").replace("tan","math.tan").replace("csc","math.csc").replace("sec","math.sec").replace("cot","math.cot").replace("log","math.log").replace("e","math.e").replace("smath.ec","math.sec").replace("math.smath.secc","math.sec")
+                    y_input = str(y).replace("x","*" + str(empty_domain[i])).replace("+*","+").replace("-*","-").replace("/*","/").replace("(*","(").replace("sqrt","math.sqrt").replace("pi","math.pi").replace("^","**").replace("sin","math.sin").replace("cos","math.cos").replace("tan","math.tan").replace("csc","mpmath.csc").replace("sec","mpmath.sec").replace("cot","mpmath.cot").replace("log","math.log").replace("e","math.e").replace("smath.ec","mp.sec").replace("math.smath.secc","mp.sec").replace("math.math","math").replace("mp.mp","mp")
                     if y_input[0] == "*":
                         y_input = y_input.replace("*"," ")
                     print("y_input",y_input)
@@ -7326,7 +7324,7 @@ class Domain_and_Range(Screen):
                     self.layouts.append(layout)
                     
                     while i < len(sequence_list):
-                        y_input = str(y).replace("x","*" + str(sequence_list[i])).replace("+*","+").replace("-*","-").replace("/*","/").replace("(*","(").replace("sqrt","math.sqrt").replace("pi","math.pi").replace("^","**").replace("sin","math.sin").replace("cos","math.cos").replace("tan","math.tan").replace("csc","math.csc").replace("sec","math.sec").replace("cot","math.cot").replace("log","math.log").replace("e","math.e").replace("smath.ec","math.sec").replace("math.smath.secc","math.sec")
+                        y_input = str(y).replace("x","*" + str(sequence_list[i])).replace("+*","+").replace("-*","-").replace("/*","/").replace("(*","(").replace("sqrt","math.sqrt").replace("pi","math.pi").replace("^","**").replace("sin","math.sin").replace("cos","math.cos").replace("tan","math.tan").replace("csc","mpmath.csc").replace("sec","mpmath.sec").replace("cot","mpmath.cot").replace("log","math.log").replace("e","math.e").replace("smath.ec","mp.sec").replace("math.smath.secc","mp.sec").replace("math.math","math").replace("mp.mp","mp")
                         if y_input[0] == "*":
                             y_input = y_input.replace("*","")
                         print("y_input",y_input)
@@ -7353,7 +7351,6 @@ class Domain_and_Range(Screen):
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 60, size_hint_y= None, height=100))
             self.layouts.append(layout)
-
 class Homepage(Screen):
     pass            
 
