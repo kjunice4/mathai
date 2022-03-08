@@ -931,6 +931,7 @@ class PEMDAS(Screen):
             a = a.replace("+ *(","+ (")
             a = a.replace("- *(","- (")
             a = a.replace("^*","^")
+            a = a.replace("/ *","/")
             
             
             if a[0] == "*":
@@ -1005,6 +1006,7 @@ class PEMDAS(Screen):
             a = a.replace("+ *(","+ (")
             a = a.replace("- *(","- (")
             a = a.replace("^*","^")
+            a = a.replace("/ *","/")
             
             if a[0] == "*":
                 a = a[1:]
@@ -1082,6 +1084,7 @@ class PEMDAS(Screen):
                     a = a.replace("+ *(","+ (")
                     a = a.replace("- *(","- (")
                     a = a.replace("^*","^")
+                    a = a.replace("/ *","/")
                     
                     if a[0] == "*":
                         a = a[1:]
@@ -1155,6 +1158,7 @@ class PEMDAS(Screen):
                     a = a.replace("+ *(","+ (")
                     a = a.replace("- *(","- (")
                     a = a.replace("^*","^")
+                    a = a.replace("/ *","/")
                     
                     if a[0] == "*":
                         a = a[1:]
@@ -1228,6 +1232,7 @@ class PEMDAS(Screen):
                     a = a.replace("+ *(","+ (")
                     a = a.replace("- *(","- (")
                     a = a.replace("^*","^")
+                    a = a.replace("/ *","/")
                     
                     if a[0] == "*":
                         a = a[1:]
@@ -1298,6 +1303,7 @@ class PEMDAS(Screen):
                     a = a.replace("+ *(","+ (")
                     a = a.replace("- *(","- (")
                     a = a.replace("^*","^")
+                    a = a.replace("/ *","/")
                     
                     if a[0] == "*":
                         a = a[1:]
@@ -1370,6 +1376,7 @@ class PEMDAS(Screen):
                     a = a.replace("+ *(","+ (")
                     a = a.replace("- *(","- (")
                     a = a.replace("^*","^")
+                    a = a.replace("/ *","/")
                     
                     if a[0] == "*":
                         a = a[1:]
