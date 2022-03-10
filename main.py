@@ -905,6 +905,7 @@ class PEMDAS(Screen):
         self.layouts.append(layout)
         print("entry",entry)
         
+        
         try:
             #Parentheses
             a = entry
@@ -986,7 +987,10 @@ class PEMDAS(Screen):
                     a = replaced
                     print("a =",a)
                     i = i + 1 
-                    
+            
+            elif a.count("(") == 0 and a.count(")") == 0:
+                print("No Parenthesis, continue to exponents step")
+                
             else:
                 print("Parentheses Unbalanced!")
             
@@ -1321,6 +1325,8 @@ class PEMDAS(Screen):
                     if found_sub == -1:
                         break
                     print("found_sub",found_sub)
+                    if found_sub == 0:
+                        found_sub = a.rfind("-")
                     sub_left = a[:found_sub]
                     print("sub_left",sub_left)
                     if sub_left == "":
