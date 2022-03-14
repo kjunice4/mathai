@@ -6462,6 +6462,7 @@ Builder.load_string("""
                     on_release:
                         entry.text = ""
                         range.text = ""
+                        direction.text = ""
                         list_of_steps.clear_widgets()       
         
             TextInput:
@@ -7062,7 +7063,7 @@ class Limits(Screen):
             
             func = func.replace("^","**").replace("x","*x").replace("***","**")
             func = func.replace("sin","*sin").replace("cos","*cos").replace("tan","*tan").replace("sec","*sec").replace("csc","*csc").replace("cot","*cot")
-            func = func.replace("e","*e").replace("-*","-").replace("+*","+").replace("(*x","(x").replace("(*y","(y").replace("(*z","(z").replace("/*","/")
+            func = func.replace("e","*e").replace("s*ec","sec").replace("-*","-").replace("+*","+").replace("(*x","(x").replace("(*y","(y").replace("(*z","(z").replace("/*","/")
             print("func cleaned: ",func)
             
             if func[0] == "*":
@@ -7084,7 +7085,7 @@ class Limits(Screen):
                 
                 L = Limit(func,x,limit,dir=str(direction))
                 
-                Answer = L.doit()
+                Answer = str(L.doit()).replace("AccumBounds","Range : ")
                 
                 print()
                 print("Answer: ",Answer)
@@ -7096,7 +7097,7 @@ class Limits(Screen):
                 
                 x = Symbol("x")
                 L = Limit(func,x,limit,dir=direction)
-                Answer = L.doit()
+                Answer = str(L.doit()).replace("AccumBounds","Range : ")
                 print()
                 print("Answer: ",Answer)
                 
@@ -7104,14 +7105,15 @@ class Limits(Screen):
                 print("func: ",func)
                 x = Symbol("x")
                 L = Limit(func,x,limit,dir=direction)
-                Answer = L.doit()
+                Answer = str(L.doit()).replace("AccumBounds","Range : ")
                 print()
                 print("Answer: ",Answer)
+                
                 
             self.ids.list_of_steps.add_widget(Label(text= "The Limit of :" ,font_size = 50, size_hint_y= None, height=100))
             self.ids.list_of_steps.add_widget(Label(text= "Lim (x -> " + str(limit) + ") " + direction + " : " + str(func).replace("**","^") ,font_size = 50, size_hint_y= None, height=100))
             self.ids.list_of_steps.add_widget(Label(text= "=" ,font_size = 50, size_hint_y= None, height=100))
-            self.ids.list_of_steps.add_widget(Label(text= "Lim (x -> " + str(limit) + ") " + direction + " : "  + str(Answer).replace("**","^") ,font_size = 50, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= str(Answer).replace("**","^") ,font_size = 50, size_hint_y= None, height=100))
             self.layouts.append(layout)
             
         except Exception:
