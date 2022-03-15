@@ -6700,7 +6700,6 @@ class Derivatives(Screen):
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
             self.layouts.append(layout)
             
-            
 class Integration(Screen):
     sm = ScreenManager()
 
