@@ -6592,12 +6592,20 @@ class Derivatives(Screen):
             if value == "":
                 value = "Nothing"
             
-            x = sym.Symbol(respect)
-            y = sym.Symbol(respect)
-            z = sym.Symbol(respect)
+            if respect == "x":
+                respect = Symbol(respect)
+                print("Respect officially:",respect)
+            elif respect == "y":
+                respect = Symbol(respect)
+                print("Respect officially:",respect)
+            elif respect == "z":
+                respect = Symbol(respect)
+                print("Respect officially:",respect)
+            else:
+                print("Invalid Respect Input" )
             
             if int(prime) > 0 and str(respect) != "":
-                self.ids.list_of_steps.add_widget(Label(text= "f(" + respect + ") = " + str(func).replace("**","^").replace("*x","x").replace("*y","y").replace("*z","z").replace("+"," + ").replace("-"," - ").replace("***","**") ,font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "f(" + str(respect) + ") = " + str(func).replace("**","^").replace("*x","x").replace("*y","y").replace("*z","z").replace("+"," + ").replace("-"," - ").replace("***","**") ,font_size = 50, size_hint_y= None, height=100))
                 self.ids.list_of_steps.add_widget(Label(text= "Derive " + str(prime) + " time(s) with respect to " + str(respect),font_size = 50, size_hint_y= None, height=100))
                 self.layouts.append(layout)
                 
@@ -6620,16 +6628,17 @@ class Derivatives(Screen):
                     func = func.replace("+-","-").replace("-+","-")
                     func = func.replace("-*","-1*").replace("+*","+1*").replace("/*","/")
                     func = func.replace("***","**")
-                    print("func fixed:",func)
+                    print("func filtered:",func)
                     
                     if func[0] == "*":
                         func = "1" + func
                         print("func fixed, * = [0]:",func)
                     print("func = ",func)
                     print("func data type",type(func))
-                    func = str(sym.diff(func,respect))
+
+                    func = str(diff(func,str(respect)))
                     print("Answer:",func)
-                    
+
                     print()
                     func_display_list = str(func).strip().split(" ")
                     print("func_display_list",func_display_list)
@@ -6643,7 +6652,7 @@ class Derivatives(Screen):
                         func_display_back_slice = str(func_display_list[5:]).replace("[","").replace("]","").replace("'","").replace(",","")
                         print("func_display_back_slice",func_display_back_slice)
                         self.ids.list_of_steps.add_widget(Label(text= "-----------------------------------------------------------------------------------------------" ,font_size = 50, size_hint_y= None, height=100))
-                        self.ids.list_of_steps.add_widget(Label(text= "f" + "'" * (i+1) + "(" + respect + ") = " + str(func_display_front_slice).replace("**","^"),font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= "f" + "'" * (i+1) + "(" + str(respect) + ") = " + str(func_display_front_slice).replace("**","^"),font_size = 50, size_hint_y= None, height=100))
                         self.ids.list_of_steps.add_widget(Label(text= str(func_display_back_slice).replace("**","^") ,font_size = 50, size_hint_y= None, height=100))
                         self.layouts.append(layout)
                     
@@ -6660,7 +6669,7 @@ class Derivatives(Screen):
                         print("func_display_back_slice",func_display_back_slice)
                         
                         self.ids.list_of_steps.add_widget(Label(text= "-----------------------------------------------------------------------------------------------" ,font_size = 50, size_hint_y= None, height=100))
-                        self.ids.list_of_steps.add_widget(Label(text= "f" + "'" * (i+1) + "(" + respect + ") = " + str(func_display_front_slice).replace("**","^") ,font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= "f" + "'" * (i+1) + "(" + str(respect) + ") = " + str(func_display_front_slice).replace("**","^") ,font_size = 50, size_hint_y= None, height=100))
                         self.ids.list_of_steps.add_widget(Label(text= str(func_display_mid_slice).replace("**","^"),font_size = 50, size_hint_y= None, height=100))
                         self.ids.list_of_steps.add_widget(Label(text= str(func_display_back_slice).replace("**","^") ,font_size = 50, size_hint_y= None, height=100))
                         self.layouts.append(layout)
@@ -6670,15 +6679,17 @@ class Derivatives(Screen):
                         print("~~~~~~~~~~~~~~~~~~~~~~~~~~")
                         print("func_display_list",func_display_list)
                         self.ids.list_of_steps.add_widget(Label(text= "-----------------------------------------------------------------------------------------------" ,font_size = 50, size_hint_y= None, height=100))
-                        self.ids.list_of_steps.add_widget(Label(text= "f" + "'" * (i+1) + "(" + respect + ") = " + str(func).replace("**","^"),font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= "f" + "'" * (i+1) + "(" + str(respect) + ") = " + str(func).replace("**","^"),font_size = 50, size_hint_y= None, height=100))
                         self.layouts.append(layout)
+                        
                     print("Completed",i+1,"derivative")
                     print("_________________________________________")
                     i = i + 1
+                    
             if value != "Nothing":
                 print("func = ",func)
                 
-                func = str(func).replace(respect,value).replace("sqrt","math.sqrt").replace("pi","math.pi").replace("^","**").replace("sin","math.sin").replace("cos","math.cos").replace("tan","math.tan").replace("csc","math.csc").replace("sec","math.sec").replace("cot","math.cot").replace("log","math.log").replace("e","math.e").replace("smath.ec","math.sec").replace("math.smath.secc","math.sec")
+                func = str(func).replace(str(respect),str(value)).replace("sqrt","math.sqrt").replace("pi","math.pi").replace("^","**").replace("sin","math.sin").replace("cos","math.cos").replace("tan","math.tan").replace("csc","math.csc").replace("sec","math.sec").replace("cot","math.cot").replace("log","math.log").replace("e","math.e").replace("smath.ec","math.sec").replace("math.smath.secc","math.sec")
                 print("func replaced x = ",func)
                 
                 func_evaled = eval(str(func))
@@ -6692,14 +6703,13 @@ class Derivatives(Screen):
                 if int(prime) == 0:
                     self.ids.list_of_steps.add_widget(Label(text= "Prime must be greater than 0!" ,font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
-                elif respect == "":
+                elif str(respect) == "":
                     self.ids.list_of_steps.add_widget(Label(text= "Respect must be entered" ,font_size = 50, size_hint_y= None, height=100))
                     self.layouts.append(layout)
             
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
             self.layouts.append(layout)
-            
 class Integration(Screen):
     sm = ScreenManager()
 
