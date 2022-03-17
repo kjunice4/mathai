@@ -6242,7 +6242,7 @@ Builder.load_string("""
             TextInput:
                 id: value
                 text: value.text
-                hint_text: "x = #"
+                hint_text: "Respect = Value"
                 multiline: False
                 font_size: 75
                 size_hint_y: None
@@ -6710,6 +6710,7 @@ class Derivatives(Screen):
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
             self.layouts.append(layout)
+            
 class Integration(Screen):
     sm = ScreenManager()
 
@@ -7011,10 +7012,10 @@ class Integration(Screen):
                     self.ids.list_of_steps.add_widget(Label(text= "∫f" + "(" + b + ") - " + "∫f" + "(" + a + ") =",font_size = 50, size_hint_y= None, height=100))
                     self.ids.list_of_steps.add_widget(Label(text= "{:,.2f}".format(float(str(func_b_evaled))) + " - " + "{:,.2f}".format(float(str(func_a_evaled))) + " =",font_size = 50, size_hint_y= None, height=100))
                     
-                    integral_evaled = "{:,.2f}".format(float(str(eval(str("{:,.2f}".format(float(str(func_b_evaled))) + " - " + "{:,.2f}".format(float(str(func_a_evaled))))))))
+                    integral_evaled = str(float(func_b_evaled) - float(func_a_evaled))
                     print("integral_evaled",integral_evaled)
  
-                    self.ids.list_of_steps.add_widget(Label(text= str(integral_evaled),font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "{:,.2f}".format(float(integral_evaled)),font_size = 50, size_hint_y= None, height=100))
 
                 
                 else:
