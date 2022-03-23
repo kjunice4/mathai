@@ -3667,15 +3667,31 @@ Builder.load_string("""
                         c.text = ""
                         list_of_steps.clear_widgets()    
             
-            Label:
-                height: 300
-                font_size: 75
+            BoxLayout:
+                cols: 2
+                padding:10
+                spacing:10
+                size_hint: 1, None
+                width:300
                 size_hint_y: None
-                padding: 5,5
-                text:
-                    '''      -b \u00B1 \u221A(b\u00B2 - 4ac)
-                    x = -----------------------
-                    '''      '''                2a'''
+                height: self.minimum_height 
+            
+                Label:
+                    height: 250
+                    font_size: 50
+                    size_hint_y: None
+                    padding: 5,5
+                    text: "ax\u00B2 + bx + c = 0"
+                
+                Label:
+                    height: 250
+                    font_size: 50
+                    size_hint_y: None
+                    padding: 5,5
+                    text:
+                        '''      -b \u00B1 \u221A(b\u00B2 - 4ac)
+                        x = -----------------------
+                        '''      '''                2a'''    
                     
             TextInput:
                 id: a
