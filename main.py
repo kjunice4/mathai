@@ -145,6 +145,17 @@ Builder.load_string("""
                 text: "Basic"
             
             Button:
+                text: "Basic Calculator"   
+                font_size: 75
+                background_color: 1, 0 , 1 , 1
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                on_release:
+                    app.root.current = "Basic"
+                    root.manager.transition.direction = "left" 
+            
+            Button:
                 text: "Fractions Calculator"   
                 font_size: 75
                 size_hint_y: None
@@ -400,6 +411,142 @@ Builder.load_string("""
                 
             
 """)
+
+
+#Basic
+Builder.load_string("""
+<Basic>
+    id:Basic
+    name:"Basic"
+
+    ScrollView:
+        name: "Scroll"
+        do_scroll_x: False
+        do_scroll_y: True
+        
+        GridLayout:
+            cols: 1
+            padding:10
+            spacing:10
+            size_hint: 1, None
+            width:200
+            height: self.minimum_height
+            
+            Label:
+                font_size: 75
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                text: "Basic Calculator"
+            
+            BoxLayout:
+                cols: 2
+                padding:10
+                spacing:10
+                size_hint: 1, None
+                width:300
+                size_hint_y: None
+                height: self.minimum_height 
+
+                Button:
+                    text: "Menu"   
+                    font_size: 75
+                    size_hint_y: None
+                    height: 200
+                    padding: 10, 10
+                    background_color: 0, 0 , 1 , 1
+                    on_release:
+                        app.root.current = "Menu"
+                        root.manager.transition.direction = "right" 
+                        
+                Button:
+                    id: steps
+                    text: "Clear All"   
+                    font_size: 75
+                    size_hint_y: None
+                    background_color: 1, 0 , 0 , 1
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        Base_entry.text = ""
+                        list_of_steps.clear_widgets()       
+                
+            BoxLayout:
+                cols: 2
+                id: steps
+                size_hint_y: None
+                height: self.minimum_height 
+                padding: 5,5         
+        
+                TextInput:
+                    id: Base_entry
+                    text: Base_entry.text
+                    hint_text: "Entry:"
+                    multiline: False
+                    font_size: 125
+                    size_hint_y: None
+                    height: 200
+                    padding: 10
+            
+            Button:
+                id: steps
+                text: "Calculate"   
+                font_size: 75
+                size_hint_y: None
+                background_color: 0, 1 , 0 , 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    list_of_steps.clear_widgets() 
+                    Basic.steps(Base_entry.text)    
+                    
+            GridLayout:
+                id: list_of_steps
+                cols: 1
+                size_hint: 1, None
+                height: self.minimum_height   
+
+""")
+
+class Basic(Screen):
+    sm = ScreenManager()
+
+    def __init__(self, **kwargs):
+        super(Basic, self).__init__(**kwargs)
+        Window.bind(on_keyboard=self._key_handler)
+
+    def _key_handler(self, instance, key, *args):
+        if key == 27:
+            self.set_previous_screen()
+            return True
+
+    def set_previous_screen(self):
+        if sm.current != "Homepage":
+            sm.transition.direction = 'right'
+            sm.current = "Menu"
+            
+    layouts = []
+    def steps(self,entry):
+        print()
+        layout = GridLayout(cols=1,size_hint_y= None)
+        self.ids.list_of_steps.add_widget(layout)
+        self.layouts.append(layout)
+        
+        try:
+            print("entry",entry)
+            self.ids.list_of_steps.add_widget(Label(text="Expression entered : " + entry, font_size = 50, size_hint_y= None, height=100))
+            
+            Answer = str(eval(str(entry).replace("^","**")))
+            Answer = "{:,}".format(float(Answer.replace(",","")))
+            print("Answer",Answer)
+            
+            self.ids.list_of_steps.add_widget(Label(text="Answer: " + '[color=33CAFF]' + Answer + '[/color]', markup=True, font_size = 50, size_hint_y= None, height=100))
+        
+        except Exception:
+            self.ids.list_of_steps.add_widget(Label(text= "Basic Calculator cannot compute" ,font_size = 50, size_hint_y= None, height=100))
+            self.layouts.append(layout)
+            
+
 
 #EXPONENTS STEPS
 Builder.load_string("""
@@ -3772,7 +3919,7 @@ class Quadratic_Formula_Solver(Screen):
         if sm.current != "Homepage":
             print("Its working List")
             sm.transition.direction = 'right'
-            sm.current = "Menu" 
+            sm.current = "Menu"
             
     layouts = []
     def steps(self,entry):
@@ -3801,7 +3948,7 @@ class Quadratic_Formula_Solver(Screen):
                 
                 
                 #POSITIVE
-                self.ids.list_of_steps.add_widget(Label(text= "POSITIVE" ,font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "x1" ,font_size = 50, size_hint_y= None, height=100))
                 self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " + \u221A(" + b + "\u00B2 - 4" + "(" + a + ")(" + c + "))" + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = 50, size_hint_y= None, height=300))
                 
                 ac = " - " + str(4*float(a)*float(c))
@@ -3823,7 +3970,7 @@ class Quadratic_Formula_Solver(Screen):
                 
                 answera = str(float(numer) / float(denom))
                 print("answera",answera)
-                self.ids.list_of_steps.add_widget(Label(text="x = " + answera ,font_size = 50, size_hint_y= None, height=150))
+                self.ids.list_of_steps.add_widget(Label(text="x1 = " + answera ,font_size = 50, size_hint_y= None, height=150))
                 self.layouts.append(layout)
                 self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = 50, size_hint_y= None, height=150))
                 
@@ -3834,7 +3981,7 @@ class Quadratic_Formula_Solver(Screen):
                 c = str(entry_list[2])
                 
                 #NEGATIVE
-                self.ids.list_of_steps.add_widget(Label(text= "NEGATIVE" ,font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "x2" ,font_size = 50, size_hint_y= None, height=100))
                 self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " - \u221A(" + b + "\u00B2 - 4" + "(" + a + ")(" + c + "))" + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = 50, size_hint_y= None, height=300))
                 
                 ac = " - " + str(4*float(a)*float(c))
@@ -3856,11 +4003,11 @@ class Quadratic_Formula_Solver(Screen):
                 
                 answerb = str(float(numer) / float(denom))
                 print("answerb",answerb)
-                self.ids.list_of_steps.add_widget(Label(text="x = " + answerb ,font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text="x1 = " + answerb ,font_size = 50, size_hint_y= None, height=100))
                 self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = 50, size_hint_y= None, height=100))
                 self.ids.list_of_steps.add_widget(Label(text="FINAL ANSWER ",font_size = 50, size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text="x = " + answera,font_size = 50, size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text="x = " + answerb,font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text="x1 = " + answera,font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text="x2 = " + answerb,font_size = 50, size_hint_y= None, height=100))
                 self.layouts.append(layout)
                 
             
@@ -3872,6 +4019,7 @@ class Quadratic_Formula_Solver(Screen):
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
             self.layouts.append(layout)
+       	 
 
 Builder.load_string("""
 <Percentages_converter>
@@ -7404,6 +7552,7 @@ class updates(Screen):
 sm = ScreenManager()
 sm.add_widget(Homepage(name="Homepage"))
 sm.add_widget(Menu(name="Menu"))     
+sm.add_widget(Basic(name="Basic"))     
 sm.add_widget(Exponents_steps(name="Exponents_steps")) #Line 186, individual app and apart of bundle
 sm.add_widget(Percentage_Calculator(name="Percentage_Calculator"))  #Line 379, individual app and apart of bundle
 sm.add_widget(PEMDAS(name="PEMDAS")) #Line 573 ,individual app and apart of bundle
