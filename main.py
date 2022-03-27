@@ -4419,6 +4419,7 @@ class Decimals_converter(Screen):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
             sm.current = "Menu"
+            
     layouts = []
     def convert_dec_to_frac(self,entry):
         print("entry ",entry)
@@ -6208,6 +6209,7 @@ class Tip_Calculator(Screen):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
             sm.current = "Menu"
+            
     layouts = []
     def steps(self,entry):
         layout = GridLayout(cols=1,size_hint_y= None)
@@ -6718,6 +6720,7 @@ class Derivatives(Screen):
 
     def set_previous_screen(self):
         if sm.current != "Homepage":
+            print("back to menu")
             sm.transition.direction = 'right'
             sm.current = "Menu"   
             
@@ -7400,19 +7403,19 @@ class Domain_and_Range(Screen):
 
     def __init__(self, **kwargs):
         super(Domain_and_Range, self).__init__(**kwargs)
+        print("KEYWORD 27")
         Window.bind(on_keyboard=self._key_handler)
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
-            print("Its working ESC = 27 LENGTH")
             self.set_previous_screen()
+            sm.current = "Menu"
             return True
 
     def set_previous_screen(self):
-        print("Length is almost working")        
         if sm.current != "Homepage":
-            print("Its working List")
             sm.transition.direction = 'right'
+            sm.current = "Menu"
             
     layouts = []
     def steps(self,entry):
@@ -7535,6 +7538,7 @@ class Domain_and_Range(Screen):
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 60, size_hint_y= None, height=100))
             self.layouts.append(layout)
+            
 class Homepage(Screen):
     pass            
 
