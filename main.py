@@ -7477,7 +7477,7 @@ class Domain_and_Range(Screen):
             App.get_running_app().stop()
             Window.close()
             
-        if sm.current != "Homepage" or sm.current != "Menu":
+        elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
             sm.current = "Menu"
             print("going from calculator to main menu")
