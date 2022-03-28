@@ -7630,11 +7630,11 @@ class Domain_and_Range(Screen):
         print("Current Page:",sm.current)
         if sm.current == "Homepage":
             print("minimizing app from Homepage")
-            App.get_running_app().root_window.minimize()
+            App.get_running_app().minimize()
             
         elif sm.current == "Menu":
             print("minimizing app from Menu")
-            App.get_running_app().root_window.minimize()
+            App.get_running_app().minimize()
             
         elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
@@ -7802,3 +7802,4 @@ class Bundled(App):
 
 if __name__ == '__main__':
     Bundled().run()
+    
