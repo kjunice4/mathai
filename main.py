@@ -7625,18 +7625,10 @@ class Domain_and_Range(Screen):
             print("27 key hit, go back button")
             self.set_previous_screen()
             return True
-    
+        
     def set_previous_screen(self):
         print("Current Page:",sm.current)
-        if sm.current == "Homepage":
-            print("minimizing app from Homepage")
-            App.get_running_app().minimize()
-            
-        elif sm.current == "Menu":
-            print("minimizing app from Menu")
-            App.get_running_app().minimize()
-            
-        elif sm.current != "Homepage" or sm.current != "Menu":
+        if sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
             sm.current = "Menu"
             print("going from calculator to main menu")
