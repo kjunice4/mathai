@@ -7622,6 +7622,7 @@ class Domain_and_Range(Screen):
 
     def _key_handler(self, instance, key, *args):
         print("key:",key)
+        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
         if key == 27 or key == 309:
             print("27 key hit, go back button")
             self.set_previous_screen()
