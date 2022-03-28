@@ -7253,9 +7253,18 @@ class Limits(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
+        if sm.current == "Homepage":
+            print("closing app from Homepage")
+            App.get_running_app().stop()
+            Window.close()
+            
+        if sm.current == "Menu":
+            print("closing app from Menu")
+            App.get_running_app().stop()
+            Window.close()
+            
+        if sm.current == "Limits":
             sm.transition.direction = 'right'
-            print("Transition Right")
             sm.current = "Menu"
             print("going from Limits to main menu")
             
@@ -7468,10 +7477,10 @@ class Domain_and_Range(Screen):
             App.get_running_app().stop()
             Window.close()
             
-        if sm.current != "Homepage":
+        if sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
             sm.current = "Menu"
-            print("going from calc to main menu")
+            print("going from calculator to main menu")
             
     layouts = []
     def steps(self,entry):
