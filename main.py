@@ -7469,12 +7469,12 @@ class Domain_and_Range(Screen):
     def set_previous_screen(self):
         if sm.current == "Homepage":
             print("closing app from Homepage")
-            App.get_running_app().stop()
+            App.get_running_app().on_pause()
             Window.close()
             
         if sm.current == "Menu":
             print("closing app from Menu")
-            App.get_running_app().stop()
+            App.get_running_app().on_pause()
             Window.close()
             
         elif sm.current != "Homepage" or sm.current != "Menu":
