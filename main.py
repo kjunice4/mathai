@@ -522,12 +522,22 @@ class Basic(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current == "Basic":
-            sm.transition.direction = 'right'
-            print("Transition Right")
-            sm.current = "Menu"
-            print("going from Basic to main menu")
+        
+        if sm.current == "Homepage":
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
             
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current != "Homepage" or sm.current != "Menu":
+            sm.transition.direction = 'right'
+            sm.current = "Menu"
+            print("going from calculator to main menu")
+
     layouts = []
     def steps(self,entry):
         print()
@@ -687,11 +697,22 @@ class Exponents_steps(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
+        
+        if sm.current == "Homepage":
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
-            print("Transition Right")
             sm.current = "Menu"
-            print("going from Exponents_steps to main menu")
+            print("going from calculator to main menu")
+
             
     layouts = []
     def steps(self,entry):
@@ -881,11 +902,22 @@ class Percentage_Calculator(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
+        
+        if sm.current == "Homepage":
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
-            print("Transition Right")
             sm.current = "Menu"
-            print("going from Percentage_Calculator to main menu")
+            print("going from calculator to main menu")
+
             
             
     layouts = []
@@ -1047,11 +1079,22 @@ class PEMDAS(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
+        
+        if sm.current == "Homepage":
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
-            print("Transition Right")
             sm.current = "Menu"
-            print("going from PEMDAS to main menu")
+            print("going from calculator to main menu")
+
             
     layouts = []
     def steps(self,entry):
@@ -1751,12 +1794,22 @@ class Fractions(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
-            sm.transition.direction = 'right'
-            print("Transition Right")
-            sm.current = "Menu"
-            print("going from Fractions to main menu")
+        
+        if sm.current == "Homepage":
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
             
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current != "Homepage" or sm.current != "Menu":
+            sm.transition.direction = 'right'
+            sm.current = "Menu"
+            print("going from calculator to main menu")
+
     layouts = []
     def add(self,entry):
         layout = GridLayout(cols=1,size_hint_y= None)
@@ -3599,11 +3652,22 @@ class Pythagorean(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
+        
+        if sm.current == "Homepage":
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
-            print("Transition Right")
             sm.current = "Menu"
-            print("going from Pythagorean to main menu")
+            print("going from calculator to main menu")
+
             
     layouts = []
     def steps(self,entry):
@@ -3927,11 +3991,22 @@ class Quadratic_Formula_Solver(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
+        
+        if sm.current == "Homepage":
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
-            print("Transition Right")
             sm.current = "Menu"
-            print("going from Quadratic_Formula_Solver to main menu")
+            print("going from calculator to main menu")
+
             
     layouts = []
     def steps(self,entry):
@@ -4434,12 +4509,22 @@ class Decimals_converter(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
-            sm.transition.direction = 'right'
-            print("Transition Right")
-            sm.current = "Menu"
-            print("going from Decimals_converter to main menu")
+        
+        if sm.current == "Homepage":
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
             
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current != "Homepage" or sm.current != "Menu":
+            sm.transition.direction = 'right'
+            sm.current = "Menu"
+            print("going from calculator to main menu")
+
     layouts = []
     def convert_dec_to_frac(self,entry):
         print("entry ",entry)
@@ -4587,11 +4672,22 @@ class Fractions_converter(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
+        
+        if sm.current == "Homepage":
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
-            print("Transition Right")
             sm.current = "Menu"
-            print("going from Fractions_converter to main menu")
+            print("going from calculator to main menu")
+
             
     layouts = []
     def convert_frac_to_perc(self,entry):
@@ -4710,11 +4806,22 @@ class Percentages_converter(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
+        
+        if sm.current == "Homepage":
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
-            print("Transition Right")
             sm.current = "Menu"
-            print("going from Percentages_converter to main menu")
+            print("going from calculator to main menu")
+
     
     layouts = []
     def convert_perc_to_frac(self,entry):
@@ -5059,11 +5166,22 @@ class Statistical_Calculator(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
+        
+        if sm.current == "Homepage":
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
-            print("Transition Right")
             sm.current = "Menu"
-            print("going from Statistical_Calculator to main menu")
+            print("going from calculator to main menu")
+
             
     layouts = []
     def mmm(self,entry):
@@ -5343,11 +5461,22 @@ class FOIL(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
+        
+        if sm.current == "Homepage":
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
-            print("Transition Right")
             sm.current = "Menu"
-            print("going from FOIL to main menu")
+            print("going from calculator to main menu")
+
             
             
     layouts = []
@@ -6239,11 +6368,22 @@ class Tip_Calculator(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
+        
+        if sm.current == "Homepage":
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
-            print("Transition Right")
             sm.current = "Menu"
-            print("going from Tip to main menu")
+            print("going from calculator to main menu")
+
             
             
     layouts = []
@@ -6756,12 +6896,22 @@ class Derivatives(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
-            sm.transition.direction = 'right'
-            print("Transition Right")
-            sm.current = "Menu"
-            print("going from derivatives to main menu")
+        
+        if sm.current == "Homepage":
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
             
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current != "Homepage" or sm.current != "Menu":
+            sm.transition.direction = 'right'
+            sm.current = "Menu"
+            print("going from calculator to main menu")
+
     layouts = []
     def derive(self,entry):
         layout = GridLayout(cols=1,size_hint_y= None)
@@ -6925,12 +7075,21 @@ class Integration(Screen):
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
-            sm.transition.direction = 'right'
-            print("Transition Right")
-            sm.current = "Menu"
-            print("going from Integration to main menu")
+        
+        if sm.current == "Homepage":
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
             
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
+            
+        elif sm.current != "Homepage" or sm.current != "Menu":
+            sm.transition.direction = 'right'
+            sm.current = "Menu"
+            print("going from calculator to main menu")
 
     layouts = []
     def Integrate(self,entry):
@@ -7253,20 +7412,21 @@ class Limits(Screen):
             return True
 
     def set_previous_screen(self):
+        
         if sm.current == "Homepage":
-            print("closing app from Homepage")
-            App.get_running_app().stop()
-            Window.close()
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
             
-        if sm.current == "Menu":
-            print("closing app from Menu")
-            App.get_running_app().stop()
-            Window.close()
+        elif sm.current == "Menu":
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
+            Window.on_minimize()
             
-        if sm.current == "Limits":
+        elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
             sm.current = "Menu"
-            print("going from Limits to main menu")
+            print("going from calculator to main menu")
             
 
     layouts = []
@@ -7466,16 +7626,8 @@ class Domain_and_Range(Screen):
             self.set_previous_screen()
             return True
     
-    def on_pause(self):
-      # Here you can save data if needed
-      print("on_pause pressed")
-      return True
-  
-    def on_resume(self):
-      # Here you can check if any data needs replacing (usually nothing)
-      pass
-    
     def set_previous_screen(self):
+        
         if sm.current == "Homepage":
             print("minimizing app from Homepage")
             App.get_running_app().on_pause()
