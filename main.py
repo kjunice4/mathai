@@ -517,13 +517,16 @@ class Basic(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
+            print("27 key hit, go back button")
             self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
-        if sm.current != "Homepage":
+        if sm.current == "Basic":
             sm.transition.direction = 'right'
+            print("Transition Right")
             sm.current = "Menu"
+            print("going from Basic to main menu")
             
     layouts = []
     def steps(self,entry):
@@ -679,13 +682,16 @@ class Exponents_steps(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
+            print("27 key hit, go back button")
             self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
+            print("Transition Right")
             sm.current = "Menu"
+            print("going from Exponents_steps to main menu")
             
     layouts = []
     def steps(self,entry):
@@ -870,13 +876,17 @@ class Percentage_Calculator(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
+            print("27 key hit, go back button")
             self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
-            sm.current = "Menu"   
+            print("Transition Right")
+            sm.current = "Menu"
+            print("going from Percentage_Calculator to main menu")
+            
             
     layouts = []
     def increase(self,entry):
@@ -1032,13 +1042,16 @@ class PEMDAS(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
+            print("27 key hit, go back button")
             self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
+            print("Transition Right")
             sm.current = "Menu"
+            print("going from PEMDAS to main menu")
             
     layouts = []
     def steps(self,entry):
@@ -1733,13 +1746,16 @@ class Fractions(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
+            print("27 key hit, go back button")
             self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
-            sm.current = "Menu" 
+            print("Transition Right")
+            sm.current = "Menu"
+            print("going from Fractions to main menu")
             
     layouts = []
     def add(self,entry):
@@ -3578,16 +3594,16 @@ class Pythagorean(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
-            print("Its working ESC = 27 LENGTH")
+            print("27 key hit, go back button")
             self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
-        print("Length is almost working")        
         if sm.current != "Homepage":
-            print("Its working List")
             sm.transition.direction = 'right'
-            sm.current = "Menu" 
+            print("Transition Right")
+            sm.current = "Menu"
+            print("going from Pythagorean to main menu")
             
     layouts = []
     def steps(self,entry):
@@ -3906,15 +3922,16 @@ class Quadratic_Formula_Solver(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
-            print("Its working ESC = 27 LENGTH")
+            print("27 key hit, go back button")
+            self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
-        print("Length is almost working")        
         if sm.current != "Homepage":
-            print("Its working List")
             sm.transition.direction = 'right'
+            print("Transition Right")
             sm.current = "Menu"
+            print("going from Quadratic_Formula_Solver to main menu")
             
     layouts = []
     def steps(self,entry):
@@ -4412,13 +4429,16 @@ class Decimals_converter(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
+            print("27 key hit, go back button")
             self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
+            print("Transition Right")
             sm.current = "Menu"
+            print("going from Decimals_converter to main menu")
             
     layouts = []
     def convert_dec_to_frac(self,entry):
@@ -4562,13 +4582,17 @@ class Fractions_converter(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
+            print("27 key hit, go back button")
             self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
-            sm.current = "Menu"        
+            print("Transition Right")
+            sm.current = "Menu"
+            print("going from Fractions_converter to main menu")
+            
     layouts = []
     def convert_frac_to_perc(self,entry):
         print("entry ",entry)
@@ -4681,13 +4705,16 @@ class Percentages_converter(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
+            print("27 key hit, go back button")
             self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
-            sm.current = "Menu"    
+            print("Transition Right")
+            sm.current = "Menu"
+            print("going from Percentages_converter to main menu")
     
     layouts = []
     def convert_perc_to_frac(self,entry):
@@ -5027,12 +5054,16 @@ class Statistical_Calculator(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
+            print("27 key hit, go back button")
+            self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
-            sm.current = "Menu"   
+            print("Transition Right")
+            sm.current = "Menu"
+            print("going from Statistical_Calculator to main menu")
             
     layouts = []
     def mmm(self,entry):
@@ -5307,16 +5338,17 @@ class FOIL(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
-            print("Its working ESC = 27 LENGTH")
+            print("27 key hit, go back button")
             self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
-        print("Length is almost working")        
         if sm.current != "Homepage":
-            print("Its working List")
             sm.transition.direction = 'right'
-            sm.current = "Menu" 
+            print("Transition Right")
+            sm.current = "Menu"
+            print("going from FOIL to main menu")
+            
             
     layouts = []
     def steps(self,entry):
@@ -6202,13 +6234,17 @@ class Tip_Calculator(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
+            print("27 key hit, go back button")
             self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
+            print("Transition Right")
             sm.current = "Menu"
+            print("going from Tip to main menu")
+            
             
     layouts = []
     def steps(self,entry):
@@ -6715,14 +6751,16 @@ class Derivatives(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
+            print("27 key hit, go back button")
             self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
         if sm.current != "Homepage":
-            print("back to menu")
             sm.transition.direction = 'right'
-            sm.current = "Menu"   
+            print("Transition Right")
+            sm.current = "Menu"
+            print("going from derivatives to main menu")
             
     layouts = []
     def derive(self,entry):
@@ -6882,13 +6920,17 @@ class Integration(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
+            print("27 key hit, go back button")
             self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
-            sm.current = "Menu"    
+            print("Transition Right")
+            sm.current = "Menu"
+            print("going from Integration to main menu")
+            
 
     layouts = []
     def Integrate(self,entry):
@@ -7206,13 +7248,17 @@ class Limits(Screen):
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
+            print("27 key hit, go back button")
             self.set_previous_screen()
             return True
 
     def set_previous_screen(self):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
-            sm.current = "Menu"    
+            print("Transition Right")
+            sm.current = "Menu"
+            print("going from Limits to main menu")
+            
 
     layouts = []
     def Limit(self,entry):
@@ -7403,19 +7449,21 @@ class Domain_and_Range(Screen):
 
     def __init__(self, **kwargs):
         super(Domain_and_Range, self).__init__(**kwargs)
-        print("KEYWORD 27")
         Window.bind(on_keyboard=self._key_handler)
 
     def _key_handler(self, instance, key, *args):
         if key == 27:
+            print("27 key hit, go back button")
             self.set_previous_screen()
-            sm.current = "Menu"
             return True
 
     def set_previous_screen(self):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
+            print("Transition Right")
             sm.current = "Menu"
+            print("going from Domain and Range to main menu")
+            
             
     layouts = []
     def steps(self,entry):
@@ -7567,7 +7615,7 @@ sm.add_widget(Tip_Calculator(name="Tip_Calculator"))    #Line 5544, individual a
 sm.add_widget(Derivatives(name="Derivatives"))     #Line 5772, individual app and apart of bundle 
 sm.add_widget(Integration(name="Integration"))
 sm.add_widget(Limits(name="Limits"))
-sm.add_widget(Domain_and_Range(name="Domain_and_Range"))
+sm.add_widget(Domain_and_Range(name="Domain_and_Range")) #7401
 sm.add_widget(updates(name="updates"))
 sm.current = "Homepage"   
 
