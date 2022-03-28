@@ -7470,10 +7470,12 @@ class Domain_and_Range(Screen):
         if sm.current == "Homepage":
             print("minimizing app from Homepage")
             App.get_running_app().on_pause()
+            Window.on_minimize()
             
-        if sm.current == "Menu":
+        elif sm.current == "Menu":
             print("minimizing app from Menu")
             App.get_running_app().on_pause()
+            Window.on_minimize()
             
         elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
