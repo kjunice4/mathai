@@ -7468,12 +7468,12 @@ class Domain_and_Range(Screen):
 
     def set_previous_screen(self):
         if sm.current == "Homepage":
-            print("closing app from Homepage")
-            App.on_pause()
+            print("minimizing app from Homepage")
+            App.get_running_app().on_pause()
             
         if sm.current == "Menu":
-            print("closing app from Menu")
-            App.on_pause()
+            print("minimizing app from Menu")
+            App.get_running_app().on_pause()
             
         elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
