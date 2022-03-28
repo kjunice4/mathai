@@ -7465,7 +7465,16 @@ class Domain_and_Range(Screen):
             print("27 key hit, go back button")
             self.set_previous_screen()
             return True
-
+    
+    def on_pause(self):
+      # Here you can save data if needed
+      print("on_pause pressed")
+      return True
+  
+    def on_resume(self):
+      # Here you can check if any data needs replacing (usually nothing)
+      pass
+    
     def set_previous_screen(self):
         if sm.current == "Homepage":
             print("minimizing app from Homepage")
