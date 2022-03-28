@@ -7400,7 +7400,7 @@ class Integration(Screen):
 
 class Limits(Screen):
     sm = ScreenManager()
-
+    
     def __init__(self, **kwargs):
         super(Limits, self).__init__(**kwargs)
         Window.bind(on_keyboard=self._key_handler)
@@ -7627,16 +7627,14 @@ class Domain_and_Range(Screen):
             return True
     
     def set_previous_screen(self):
-        
+        print("Current Page:",sm.current)
         if sm.current == "Homepage":
             print("minimizing app from Homepage")
-            App.get_running_app().on_pause()
-            Window.on_minimize()
+            App.get_running_app().root_window.minimize()
             
         elif sm.current == "Menu":
             print("minimizing app from Menu")
-            App.get_running_app().on_pause()
-            Window.on_minimize()
+            App.get_running_app().root_window.minimize()
             
         elif sm.current != "Homepage" or sm.current != "Menu":
             sm.transition.direction = 'right'
@@ -7796,6 +7794,7 @@ sm.add_widget(Limits(name="Limits"))
 sm.add_widget(Domain_and_Range(name="Domain_and_Range")) #7401
 sm.add_widget(updates(name="updates"))
 sm.current = "Homepage"   
+print("Current Page:",sm.current)
 
 class Bundled(App):
     def build(app):
