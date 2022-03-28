@@ -7458,12 +7458,20 @@ class Domain_and_Range(Screen):
             return True
 
     def set_previous_screen(self):
+        if sm.current == "Homepage":
+            print("closing app from Homepage")
+            App.get_running_app().stop()
+            Window.close()
+            
+        if sm.current == "Menu":
+            print("closing app from Menu")
+            App.get_running_app().stop()
+            Window.close()
+            
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
-            print("Transition Right")
             sm.current = "Menu"
-            print("going from Domain and Range to main menu")
-            
+            print("going from calc to main menu")
             
     layouts = []
     def steps(self,entry):
