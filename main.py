@@ -7621,7 +7621,8 @@ class Domain_and_Range(Screen):
         Window.bind(on_keyboard=self._key_handler)
 
     def _key_handler(self, instance, key, *args):
-        if key == 27:
+        print("key:",key)
+        if key == 27 or key == 309:
             print("27 key hit, go back button")
             self.set_previous_screen()
             return True
