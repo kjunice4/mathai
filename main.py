@@ -7620,17 +7620,17 @@ class Domain_and_Range(Screen):
         super(Domain_and_Range, self).__init__(**kwargs)
         Window.bind(on_keyboard=self._key_handler)
 
-    def _key_handler(self, instance, key, *args):
+    def _key_handler(self, instance, key, *args, **kwargs):
         print("key:",key)
         self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27 or key == 309:
+        if key == 27 or key == None:
             print("27 key hit, go back button")
             self.set_previous_screen()
             return True
         
     def set_previous_screen(self):
         print("Current Page:",sm.current)
-        if sm.current != "Homepage" or sm.current != "Menu":
+        if sm.current != "Homepage" and sm.current != "Menu":
             sm.transition.direction = 'right'
             sm.current = "Menu"
             print("going from calculator to main menu")
