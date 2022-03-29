@@ -513,19 +513,6 @@ class Basic(Screen):
 
     def __init__(self, **kwargs):
         super(Basic, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
             
     layouts = []
     def steps(self,entry):
@@ -677,20 +664,7 @@ class Exponents_steps(Screen):
 
     def __init__(self, **kwargs):
         super(Exponents_steps, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
 
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
-                
     layouts = []
     def steps(self,entry):
         print()
@@ -870,19 +844,6 @@ class Percentage_Calculator(Screen):
 
     def __init__(self, **kwargs):
         super(Percentage_Calculator, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
             
     layouts = []
     def increase(self,entry):
@@ -1034,19 +995,6 @@ class PEMDAS(Screen):
 
     def __init__(self, **kwargs):
         super(PEMDAS, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
                 
     layouts = []
     def steps(self,entry):
@@ -1737,19 +1685,6 @@ class Fractions(Screen):
 
     def __init__(self, **kwargs):
         super(Fractions, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-        
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
 
     layouts = []
     def add(self,entry):
@@ -3584,19 +3519,6 @@ class Pythagorean(Screen):
 
     def __init__(self, **kwargs):
         super(Pythagorean, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
             
     layouts = []
     def steps(self,entry):
@@ -3911,20 +3833,7 @@ class Quadratic_Formula_Solver(Screen):
 
     def __init__(self, **kwargs):
         super(Quadratic_Formula_Solver, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
 
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
-            
     layouts = []
     def steps(self,entry):
         print("entry ",entry)
@@ -4417,19 +4326,6 @@ Builder.load_string("""
 class Decimals_converter(Screen):
     def __init__(self, **kwargs):
         super(Decimals_converter, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
             
     layouts = []
     def convert_dec_to_frac(self,entry):
@@ -4569,20 +4465,7 @@ class Decimals_converter(Screen):
 class Fractions_converter(Screen):
     def __init__(self, **kwargs):
         super(Fractions_converter, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
-            
+        
     layouts = []
     def convert_frac_to_perc(self,entry):
         print("entry ",entry)
@@ -4691,19 +4574,6 @@ class Percentages_converter(Screen):
 
     def __init__(self, **kwargs):
         super(Percentages_converter, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
     
     layouts = []
     def convert_perc_to_frac(self,entry):
@@ -5039,19 +4909,6 @@ class Statistical_Calculator(Screen):
 
     def __init__(self, **kwargs):
         super(Statistical_Calculator, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
             
     layouts = []
     def mmm(self,entry):
@@ -5322,19 +5179,6 @@ class FOIL(Screen):
 
     def __init__(self, **kwargs):
         super(FOIL, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
             
     layouts = []
     def steps(self,entry):
@@ -6216,19 +6060,6 @@ class Tip_Calculator(Screen):
 
     def __init__(self, **kwargs):
         super(Tip_Calculator, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
             
     layouts = []
     def steps(self,entry):
@@ -6731,20 +6562,7 @@ class Derivatives(Screen):
 
     def __init__(self, **kwargs):
         super(Derivatives, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
-                
+        
     layouts = []
     def derive(self,entry):
         layout = GridLayout(cols=1,size_hint_y= None)
@@ -6899,19 +6717,6 @@ class Integration(Screen):
 
     def __init__(self, **kwargs):
         super(Integration, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
                 
     layouts = []
     def Integrate(self,entry):
@@ -7225,20 +7030,7 @@ class Limits(Screen):
     
     def __init__(self, **kwargs):
         super(Limits, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                pass
-            elif sm.current == "Menu":
-                pass
-            else:
-                sm.current = "Menu"
-
+            
     layouts = []
     def Limit(self,entry):
         layout = GridLayout(cols=1,size_hint_y= None)
@@ -7429,20 +7221,18 @@ class Domain_and_Range(Screen):
     def __init__(self, **kwargs):
         super(Domain_and_Range, self).__init__(**kwargs)
         Window.bind(on_keyboard=self._key_handler)
-
+    
     def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key = " + str(key) ,font_size = 60, size_hint_y= None, height=100))
+        print("Key:",key)
+        self.ids.list_of_steps.add_widget(Label(text= "Key: " + str(key) ,font_size = 60, size_hint_y= None, height=100))
         if key == 27:
-            print("27 key hit, go back button")
-            if sm.current == "Homepage":
-                sm.current = "Homepage"
-                
-            elif sm.current == "Menu":
-                sm.current = "Menu"
-            
-            else:
-                sm.current = "Menu"
+            self.set_previous_screen()
+            return True
+    
+    def set_previous_screen(self):
+        if sm.current != "Homepage":
+            sm.transition.direction = 'right'
+            sm.current = "Menu"
             
     layouts = []
     def steps(self,entry):
