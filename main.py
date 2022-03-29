@@ -7227,14 +7227,14 @@ class Domain_and_Range(Screen):
         self.ids.list_of_steps.add_widget(Label(text= "Key: " + str(key) + ", type = " + str(type(key)),font_size = 60, size_hint_y= None, height=100))
         if key == 27:
             self.set_previous_screen()
-            Window.bind(on_keyboard=self._key_handler)
+            self.ids.list_of_steps.add_widget(Label(text= "Key: " + str(key) + ", type = " + str(type(key)),font_size = 60, size_hint_y= None, height=100))
             return True
     
     def set_previous_screen(self, *args, **kwargs):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
             sm.current = "Menu"
-            Window.bind(on_keyboard=self._key_handler)
+            return True
             
     layouts = []
     def steps(self,entry):
