@@ -7225,15 +7225,16 @@ class Domain_and_Range(Screen):
     def _key_handler(self, instance, key, *args, **kwargs):
         print("Key:",type(key))
         self.ids.list_of_steps.add_widget(Label(text= "Key: " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        
         if key == 27:
             self.set_previous_screen()
+            Window.bind(on_keyboard=self._key_handler)
             return True
     
-    def set_previous_screen(self):
+    def set_previous_screen(self, *args, **kwargs):
         if sm.current != "Homepage":
             sm.transition.direction = 'right'
             sm.current = "Menu"
+            Window.bind(on_keyboard=self._key_handler)
             
     layouts = []
     def steps(self,entry):
