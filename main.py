@@ -7223,8 +7223,8 @@ class Domain_and_Range(Screen):
         Window.bind(on_keyboard=self._key_handler)
     
     def _key_handler(self, instance, key, *args, **kwargs):
-        print("Key:",type(key))
-        self.ids.list_of_steps.add_widget(Label(text= "Key: " + str(key) ,font_size = 60, size_hint_y= None, height=100))
+        print("Key:",key ,type(key))
+        self.ids.list_of_steps.add_widget(Label(text= "Key: " + str(key) + ", type = " + str(type(key)),font_size = 60, size_hint_y= None, height=100))
         if key == 27:
             self.set_previous_screen()
             Window.bind(on_keyboard=self._key_handler)
