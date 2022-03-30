@@ -7233,6 +7233,8 @@ class Domain_and_Range(Screen):
             elif sm.current == "Menu":
                 sm.current = "Menu"
                 return True
+        else:
+            return True
     
     layouts = []
     def steps(self,entry):
@@ -7351,10 +7353,12 @@ class Domain_and_Range(Screen):
             else:
                 self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 60, size_hint_y= None, height=100))
                 self.layouts.append(layout)
-                
+       
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 60, size_hint_y= None, height=100))
             self.layouts.append(layout)
+            
+        return True
             
 class Homepage(Screen):
     pass            
