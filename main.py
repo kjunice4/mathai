@@ -7222,18 +7222,17 @@ class Domain_and_Range(Screen):
         super(Domain_and_Range, self).__init__(**kwargs)
         Window.bind(on_keyboard=self._key_handler)
     
-    def _key_handler(self, instance, key, *args, **kwargs):
-        print("Key:",key ,type(key))
-        if key == 27:
-            if sm.current != "Homepage" and sm.current != "Menu": 
-                sm.current = "Menu"
-                return True
-            elif sm.current == "Homepage":
-                return False
+    def _key_handler(self, instance, key, *args):
+        print("Key: ",key)
+        print("Current",sm.current)
+        if int(key) == 27:
+            if sm.current == "Homepage":
+                pass
             elif sm.current == "Menu":
+                pass
+            else:
+                sm.transition.direction = 'right'
                 sm.current = "Menu"
-                return True
-        else:
             return True
     
     layouts = []
