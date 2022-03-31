@@ -7222,24 +7222,31 @@ class Domain_and_Range(Screen):
         super(Domain_and_Range, self).__init__(**kwargs)
         Window.bind(on_keyboard=self._key_handler)
     
+    def on_pause(self):
+        return True
+    
     def _key_handler(self, instance, key, *args):
         print("Key: ",key)
         print("Current",sm.current)
-        if int(key) == 27:
+        if key == 27:
             if sm.current == "Homepage":
-                pass
+                self.on_pause()
+                print("Pausing app from Homepage")
+                return True
             elif sm.current == "Menu":
-                pass
+                self.on_pause()
+                print("Pausing app from Menu")
+                return True
             else:
-                sm.transition.direction = 'right'
+                sm.transition.direction = "right"
                 sm.current = "Menu"
-            return True
-    
+                return True
+                
     layouts = []
     def steps(self,entry):
         print()
         print("~~~~~~~~~~~~~~~~")
-        print("entry ",entry)
+        print("entry:",entry)
         entry.replace(" ","")
         layout = GridLayout(cols=1,size_hint_y= None)
         self.ids.list_of_steps.add_widget(layout)
