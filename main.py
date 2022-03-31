@@ -7217,33 +7217,16 @@ Builder.load_string("""
 
 class Domain_and_Range(Screen):
     sm = ScreenManager()
-
+    
     def __init__(self, **kwargs):
         super(Domain_and_Range, self).__init__(**kwargs)
-        self._keyboard = Window.request_keyboard(self._keyboard_closed, self)
-        self._keyboard.bind(on_key_down=self._on_keyboard_down)
-
-    def _keyboard_closed(self):
-        return False
-        
-    def on_pause(self):
-        return True
+        """Window.bind(on_keyboard=self._key_handler)
     
-    def _on_keyboard_down(self, keyboard, keycode, text, modifiers, *args):
-        print("keycode: ",keycode)
-        self.ids.list_of_steps.add_widget(Label(text= "keycode: " + str(keycode) ,font_size = 60, size_hint_y= None, height=100))
-        print("Current: ",sm.current)
-        if keycode[0] == 27 and keycode[1] == 'escape':
-            if sm.current != "Homepage" and sm.current != "Menu":
-                sm.transition.direction = 'right'
-                sm.current = 'Menu'
-                return True
-            elif sm.current == 'Menu':
-                sm.current = 'Menu'
-                self.on_pause()
-                return True
-            
-            
+    def _key_handler(self, instance, key, *args):
+        print("key:",key)
+        if key == 27:
+            sm.current = sm.current
+            return True"""
                 
     layouts = []
     def steps(self,entry):
@@ -7363,35 +7346,9 @@ class Domain_and_Range(Screen):
                 self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 60, size_hint_y= None, height=100))
                 self.layouts.append(layout)
                 
-            def _key_handler(self, instance, key, *args):
-                print("Key: ",key)
-                print("Current",sm.current)
-                if int(key) == 27:
-                    if sm.current == "Homepage":
-                        pass
-                    elif sm.current == "Menu":
-                        pass
-                    else:
-                        sm.transition.direction = 'right'
-                        sm.current = "Menu"
-                    return True
-       
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 60, size_hint_y= None, height=100))
             self.layouts.append(layout)
-            
-            def _key_handler(self, instance, key, *args):
-                print("Key: ",key)
-                print("Current",sm.current)
-                if int(key) == 27:
-                    if sm.current == "Homepage":
-                        pass
-                    elif sm.current == "Menu":
-                        pass
-                    else:
-                        sm.transition.direction = 'right'
-                        sm.current = "Menu"
-                    return True
             
 class Homepage(Screen):
     pass            
@@ -7427,6 +7384,17 @@ sm.current = "Homepage"
 print("Current Page:",sm.current)
 
 class Bundled(App):
+    
+    def __init__(self, **kwargs):
+        super(Bundled, self).__init__(**kwargs)
+        Window.bind(on_keyboard=self._key_handler)
+    
+    def _key_handler(self, instance, key, *args):
+        print("key:",key)
+        if key == 27:
+            sm.current = "Menu"
+            return True
+    
     def build(app):
         return sm
 
