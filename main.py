@@ -7225,14 +7225,14 @@ class Domain_and_Range(Screen):
     def on_pause(self):
         return True
     
-    def _key_handler(self, instance, key, *args):
+    def _key_handler(self, window, key, *args):
         print("Key: ",key)
         print("Current",sm.current)
         if key == 27:
             if sm.current == "Homepage":
                 self.on_pause()
                 print("Pausing app from Homepage")
-                return True
+                return False
             elif sm.current == "Menu":
                 self.on_pause()
                 print("Pausing app from Menu")
