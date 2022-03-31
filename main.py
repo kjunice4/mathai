@@ -7220,15 +7220,19 @@ class Domain_and_Range(Screen):
 
     def __init__(self, **kwargs):
         super(Domain_and_Range, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
+        if Window == True:
+            Window.bind(on_keyboard=self._key_handler)
+        else:
+            Window.bind(on_keyboard=self._key_handler)
     
     def on_pause(self):
         return True
     
     def _key_handler(self, window, key, *args):
         print("Key: ",key)
+        self.ids.list_of_steps.add_widget(Label(text= "Key: " + str(key) ,font_size = 60, size_hint_y= None, height=100))
         print("Current",sm.current)
-        if key == 27:
+        if key == 27 or key == 4:
             if sm.current == "Homepage":
                 self.on_pause()
                 print("Pausing app from Homepage")
@@ -7241,6 +7245,12 @@ class Domain_and_Range(Screen):
                 sm.transition.direction = "right"
                 sm.current = "Menu"
                 return True
+        elif key == "Void":
+            self.ids.list_of_steps.add_widget(Label(text= "Void Key" ,font_size = 60, size_hint_y= None, height=100))
+        
+        else:
+            self.ids.list_of_steps.add_widget(Label(text= "Key: " + str(key) ,font_size = 60, size_hint_y= None, height=100))
+
                 
     layouts = []
     def steps(self,entry):
