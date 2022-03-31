@@ -7219,30 +7219,31 @@ class Domain_and_Range(Screen):
     sm = ScreenManager()
 
     def __init__(self, **kwargs):
-        super(Screen, self).__init__(**kwargs)
+        super(Domain_and_Range, self).__init__(**kwargs)
         self._keyboard = Window.request_keyboard(self._keyboard_closed, self)
         self._keyboard.bind(on_key_down=self._on_keyboard_down)
 
     def _keyboard_closed(self):
-        self._keyboard.unbind(on_key_down=self._on_keyboard_down)
-        self._keyboard = None
-
-    def _on_keyboard_down(self, keyboard, keycode, text, modifiers):
-        print(keycode[1])
-        print("keycode",keycode)
-        if keycode[1] == 'escape':
-            if App.get_running_app().root.current == 'Homepage':
-                App.get_running_app().stop()
-                Window.close()
-            elif App.get_running_app().root.current == 'Menu':
-                App.get_running_app().stop()
-                Window.close()
-                
-            else:
-                sm.transition.direction = "right"
-                App.get_running_app().root.current = 'Menu'
+        return False
+        
+    def on_pause(self):
+        return True
+    
+    def _on_keyboard_down(self, keyboard, keycode, text, modifiers, *args):
+        print("keycode: ",keycode)
+        self.ids.list_of_steps.add_widget(Label(text= "keycode: " + str(keycode) ,font_size = 60, size_hint_y= None, height=100))
+        print("Current: ",sm.current)
+        if keycode[0] == 27 and keycode[1] == 'escape':
+            if sm.current != "Homepage" and sm.current != "Menu":
+                sm.transition.direction = 'right'
+                sm.current = 'Menu'
                 return True
-
+            elif sm.current == 'Menu':
+                sm.current = 'Menu'
+                self.on_pause()
+                return True
+            
+            
                 
     layouts = []
     def steps(self,entry):
