@@ -7219,37 +7219,29 @@ class Domain_and_Range(Screen):
     sm = ScreenManager()
 
     def __init__(self, **kwargs):
-        super(Domain_and_Range, self).__init__(**kwargs)
-        if Window == True:
-            Window.bind(on_keyboard=self._key_handler)
-        else:
-            Window.bind(on_keyboard=self._key_handler)
-    
-    def on_pause(self):
-        return True
-    
-    def _key_handler(self, window, key, *args):
-        print("Key: ",key)
-        self.ids.list_of_steps.add_widget(Label(text= "Key: " + str(key) ,font_size = 60, size_hint_y= None, height=100))
-        print("Current",sm.current)
-        if key == 27 or key == 4:
-            if sm.current == "Homepage":
-                self.on_pause()
-                print("Pausing app from Homepage")
-                return False
-            elif sm.current == "Menu":
-                self.on_pause()
-                print("Pausing app from Menu")
-                return True
+        super(Screen, self).__init__(**kwargs)
+        self._keyboard = Window.request_keyboard(self._keyboard_closed, self)
+        self._keyboard.bind(on_key_down=self._on_keyboard_down)
+
+    def _keyboard_closed(self):
+        self._keyboard.unbind(on_key_down=self._on_keyboard_down)
+        self._keyboard = None
+
+    def _on_keyboard_down(self, keyboard, keycode, text, modifiers):
+        print(keycode[1])
+        print("keycode",keycode)
+        if keycode[1] == 'escape':
+            if App.get_running_app().root.current == 'Homepage':
+                App.get_running_app().stop()
+                Window.close()
+            elif App.get_running_app().root.current == 'Menu':
+                App.get_running_app().stop()
+                Window.close()
+                
             else:
                 sm.transition.direction = "right"
-                sm.current = "Menu"
+                App.get_running_app().root.current = 'Menu'
                 return True
-        elif key == "Void":
-            self.ids.list_of_steps.add_widget(Label(text= "Void Key" ,font_size = 60, size_hint_y= None, height=100))
-        
-        else:
-            self.ids.list_of_steps.add_widget(Label(text= "Key: " + str(key) ,font_size = 60, size_hint_y= None, height=100))
 
                 
     layouts = []
