@@ -7220,13 +7220,6 @@ class Domain_and_Range(Screen):
     
     def __init__(self, **kwargs):
         super(Domain_and_Range, self).__init__(**kwargs)
-        """Window.bind(on_keyboard=self._key_handler)
-    
-    def _key_handler(self, instance, key, *args):
-        print("key:",key)
-        if key == 27:
-            sm.current = sm.current
-            return True"""
                 
     layouts = []
     def steps(self,entry):
@@ -7392,7 +7385,7 @@ class Bundled(App):
     def _key_handler(self, instance, key, *args):
         print("key:",key)
         if key == 27:
-            sm.current = "Menu"
+            sm.current = sm.current
             return True
     
     def build(app):
