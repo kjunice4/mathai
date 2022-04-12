@@ -6878,7 +6878,7 @@ class Integration(Screen):
                         print("Cleaning ",new_func_list[i])
                         new_func_list[i] = new_func_list[i].replace("^","**").replace("x","*x").replace("y","*y").replace("z","*z")
                         new_func_list[i] = new_func_list[i].replace("sin","*sin").replace("cos","*cos").replace("tan","*tan").replace("sec","*sec").replace("csc","*csc").replace("cot","*cot")
-                        new_func_list[i] = new_func_list[i].replace("e**","*e**").replace("(*e**","(e**").replace("-*","-").replace("+*","+").replace("(*x","(x").replace("(*y","(y").replace("(*z","(z")
+                        new_func_list[i] = new_func_list[i].replace("e**","*e**").replace("(*e**","(e**").replace("-*","-").replace("+*","+").replace("(*x","(x").replace("(*y","(y").replace("(*z","(z").replace("(*","(")
                         print("new_func_list[i]: ",new_func_list[i])
                         
                         if new_func_list[i][0] == "*":
