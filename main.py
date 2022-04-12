@@ -6628,7 +6628,7 @@ class Derivatives(Screen):
                     func = func.replace("e**","*e**").replace("(*e**","(e**")
                     func = func.replace("+-","-").replace("-+","-")
                     func = func.replace("-*","-1*").replace("+*","+1*").replace("/*","/")
-                    func = func.replace("***","**")
+                    func = func.replace("***","**").replace("(*","(")
                     print("func filtered:",func)
                     
                     if func[0] == "*":
