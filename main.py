@@ -41,11 +41,21 @@ Builder.load_string("""
             font_size: '20sp'
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
-            height: 200
-            text: "KSquared Mathematics: All Calculators"
+            height: 100
+            text: "KSquared Mathematics"
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left" 
+                
+        Button:
+            font_size: '20sp'
+            background_color: 0, 0 , 0 , 1
+            size_hint_y: None
+            height: 100
+            text: "All Calculators"
+            on_release:
+                app.root.current = "Menu"
+                root.manager.transition.direction = "left"
                 
 """)
 
@@ -7383,4 +7393,3 @@ class Bundled(App):
 if __name__ == '__main__':
     Bundled().run()
     
-
