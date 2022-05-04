@@ -6481,7 +6481,7 @@ Builder.load_string("""
                 text: entry.text
                 hint_text: "lim:"
                 multiline: False
-                font_size: '35sp'
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10              
@@ -6491,7 +6491,7 @@ Builder.load_string("""
                 text: range.text
                 hint_text: "x -> n:"
                 multiline: False
-                font_size: '35sp'
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -6501,7 +6501,7 @@ Builder.load_string("""
                 text: direction.text
                 hint_text: "direction: + or -"
                 multiline: False
-                font_size: '35sp'
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
