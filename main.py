@@ -4833,7 +4833,7 @@ Builder.load_string("""
                     text: dev.text
                     hint_text: "1,2 or 3 Deviations"
                     multiline: False
-                    font_size: '20sp'
+                    font_size: '15sp'
                     size_hint_y: None
                     height: 200
                     padding: 10
@@ -4842,7 +4842,7 @@ Builder.load_string("""
                 Button:
                     id: sd
                     text: "Standard Deviation"   
-                    font_size: '20sp'
+                    font_size: '15sp'
                     size_hint_y: None
                     background_color: 0, 0 , 1 , 1
                     height: 200
@@ -4877,7 +4877,7 @@ Builder.load_string("""
                     text: perc.text
                     hint_text: "nth Percentile"
                     multiline: False
-                    font_size: '20sp'
+                    font_size: '15sp'
                     size_hint_y: None
                     height: 200
                     padding: 10
@@ -4886,7 +4886,7 @@ Builder.load_string("""
                 Button:
                     id: percentile
                     text: "Percentile"   
-                    font_size: '20sp'
+                    font_size: '15sp'
                     size_hint_y: None
                     background_color: 0, 0 , 1 , 1
                     height: 200
@@ -6223,7 +6223,7 @@ Builder.load_string("""
                 text: entry.text
                 hint_text: "f(x)="
                 multiline: False
-                font_size: '35sp'
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10              
@@ -6233,7 +6233,7 @@ Builder.load_string("""
                 text: prime.text
                 hint_text: "# of times to derive"
                 multiline: False
-                font_size: '35sp'
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10            
@@ -6244,7 +6244,7 @@ Builder.load_string("""
                 text: respect.text
                 hint_text: "With respect to: x, y or z"
                 multiline: False
-                font_size: '35sp'
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10  
@@ -6255,7 +6255,7 @@ Builder.load_string("""
                 text: value.text
                 hint_text: "Respect = Value"
                 multiline: False
-                font_size: '35sp'
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10  
@@ -6356,7 +6356,7 @@ Builder.load_string("""
                 text: entry.text
                 hint_text: "f(x)="
                 multiline: False
-                font_size: '35sp'
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10              
@@ -6366,7 +6366,7 @@ Builder.load_string("""
                 text: prime.text
                 hint_text: "# of times to integrate"
                 multiline: False
-                font_size: '35sp'
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10              
@@ -6377,7 +6377,7 @@ Builder.load_string("""
                 text: respect.text
                 hint_text: "With respect to: x, y or z"
                 multiline: False
-                font_size: '35sp'
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10  
@@ -6388,7 +6388,7 @@ Builder.load_string("""
                 text: value.text
                 hint_text: "Definite Integral: a,b"
                 multiline: False
-                font_size: '35sp'
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10  
