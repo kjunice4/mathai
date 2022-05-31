@@ -11,37 +11,6 @@ import sympy as sym
 from colorama import Back, Style 
 from sympy import Limit, Symbol, S, diff, integrate
 import math
-from android.billing import BillingService
-from kivy.clock import Clock
-
-class MyBillingService(object):
-    def __init__(self):
-        super(MyBillingService, self).__init__()
-        # Start the billing service, and attach our callback
-        self.service = BillingService('billing_callback')
-        # Start a clock to check billing service message every second
-        Clock.schedule_interval(self.service.check, 1)
-    def billing_callback(self, action, *largs):
-        '''Callback that will receive all the events from the Billing service'''
-        if action == BillingService.BILLING_ACTION_ITEMSCHANGED:
-            items = largs[0]
-            if 'org.ksquared.bundled_app' in items:
-                print("Congratulations, you have a premium acess")
-            else:
-                print("Unfortunately, you don't have premium access")
-    def buy(self, sku):
-        # Method to buy something.
-        self.service.buy(sku)
-    def get_purchased_items(self):
-        # Return all the items purchased
-        return self.service.get_purchased_items()
-# Note: start the service at the start, and never twice!
-bs = MyBillingService()
-bs.buy('org.ksquared.bundled_app')
-# Later, when you get the notification that items have been changed, you
-# can still check all the items you bought:
-print(bs.get_purchased_items())
-
 
 #Opening Page
 Builder.load_string("""
