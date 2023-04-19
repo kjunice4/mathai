@@ -10,7 +10,6 @@ import numpy as np
 import sympy as sym
 from colorama import Back, Style 
 from sympy import Limit, Symbol, S, diff, integrate
-import math
 
 #Opening Page
 Builder.load_string("""
@@ -406,7 +405,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "No new updates as of 1/26/2022"
+                text: "New apps in production. Visit website for more!"
                 
             
 """)
@@ -7392,4 +7391,3 @@ class Bundled(App):
 
 if __name__ == '__main__':
     Bundled().run()
-    
