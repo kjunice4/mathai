@@ -336,10 +336,10 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "Visit KSquared-Mathematics"
+                text: "Visit Junice Industries"
                 on_release:
                     import webbrowser
-                    webbrowser.open('https://www.ksquaredmathematics.com/subscribe')
+                    webbrowser.open('https://www.juniceindustries.com')
                     
             Label:
                 font_size: '20sp'
@@ -349,7 +349,7 @@ Builder.load_string("""
                 text: "Share KSquared-Mathematics"
                     
             Image:
-                source: 'KSquared_QR.png'
+                source: 'JuniceIndustriesQRcode.png'
                 size_hint_y: None
                 height: 800
                 width: 800
