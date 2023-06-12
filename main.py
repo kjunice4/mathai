@@ -1,7 +1,7 @@
 #Bundled App
 import kivy
 from kivy.app import App
-from kivy.lang import Builder 
+from kivy.lang import Builder
 from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -51,7 +51,7 @@ Builder.load_string("""
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
             height: 100
-            text: "All Calculators"
+            text: "A Junice Industries Product"
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left"
@@ -379,7 +379,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "What's new at KSquared-Mathematics?"
+                text: "What's new at Junice Industries?"
             
             Button:
                 id: steps
@@ -405,7 +405,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "New apps in production. Visit website for more!"
+                text: "Rebranding family business as Junice Industries!"
                 
             
 """)
