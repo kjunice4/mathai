@@ -1,5 +1,6 @@
 #Bundled App
 import kivy
+import math
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.label import Label
@@ -310,6 +311,17 @@ Builder.load_string("""
                 padding: 10, 10
                 on_release:
                     app.root.current = "Area_of_Triangle"
+                    root.manager.transition.direction = "left"
+            
+            Button:
+                text: "Area of Circle Calculator"   
+                font_size: '20sp'
+                background_color: 1, 0 , 1 , 1
+                size_hint_y: None
+                height: 100
+                padding: 10, 10
+                on_release:
+                    app.root.current = "Area_of_Circle"
                     root.manager.transition.direction = "left"
             
             Label:
@@ -7506,7 +7518,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 100
                     padding: 10
-                    input_filter: lambda text, from_undo: text[:3 - len(Length.text)]           
+                    input_filter: lambda text, from_undo: text[:6 - len(Length.text)]           
             
             Button:
                 id: steps
@@ -7546,6 +7558,7 @@ class Area_of_Square(Screen):
             self.ids.list_of_steps.add_widget(Label(text= "Length of side = " + entry ,font_size = '20sp', size_hint_y= None, height=100))
             area_of_square = str(int(entry) * int(entry))
             print("Area of Square = ",area_of_square)
+            self.ids.list_of_steps.add_widget(Label(text= "Area of Square = " + '[color=33CAFF]' + str(entry) + '[/color]' + "^2" , markup=True,font_size = '20sp', size_hint_y= None, height=100))
             self.ids.list_of_steps.add_widget(Label(text= "Area of Square = " + str(area_of_square) ,font_size = '20sp', size_hint_y= None, height=100))
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '20sp', size_hint_y= None, height=100))
@@ -7686,10 +7699,147 @@ class Area_of_Triangle(Screen):
             
             self.ids.list_of_steps.add_widget(Label(text= "Length of Base = " + base ,font_size = '20sp', size_hint_y= None, height=100))
             self.ids.list_of_steps.add_widget(Label(text= "Length of Height = " + height ,font_size = '20sp', size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '20sp', size_hint_y= None, height=100))
             
-            area_of_triangle = (int(base)*int(height))*0.5
+            input_line = "Area of Triangle = 1/2 * "  + "(" + '[color=33CAFF]' + str(base) + '[/color]' + ") * (" + '[color=33CAFF]' + str(height) + '[/color]' + ")" 
+            
+            self.ids.list_of_steps.add_widget(Label(text= str(input_line) ,font_size = '20sp', markup=True, size_hint_y= None, height=100))
+            
+            evaled = float(base) * float(height)
+            print("evaled = ",evaled)
+            
+            self.ids.list_of_steps.add_widget(Label(text= "Area of Triangle = 1/2 * " + '[color=33CAFF]' + str(evaled) + '[color=33CAFF]' ,markup=True, font_size = '20sp', size_hint_y= None, height=100))
+
+            area_of_triangle = float(evaled) * 0.5
             print("Area of Triangle = ",area_of_triangle)
+            
             self.ids.list_of_steps.add_widget(Label(text= "Area of Triangle = " + str(area_of_triangle) ,font_size = '20sp', size_hint_y= None, height=100))
+        except Exception:
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '20sp', size_hint_y= None, height=100))
+            self.layouts.append(layout)  
+
+#Area_of_Circle
+Builder.load_string("""
+<Area_of_Circle>
+    id:Area_of_Circle
+    name:"Area_of_Circle"
+
+    ScrollView:
+        name: "Scroll"
+        do_scroll_x: False
+        do_scroll_y: True
+        
+        GridLayout:
+            cols: 1
+            padding:10
+            spacing:10
+            size_hint: 1, None
+            width:100
+            height: self.minimum_height
+            
+            Label:
+                font_size: '20sp'
+                size_hint_y: None
+                height: 100
+                padding: 10, 10
+                text: "Area of Cricle"
+            
+            BoxLayout:
+                cols: 2
+                padding:10
+                spacing:10
+                size_hint: 1, None
+                width:300
+                size_hint_y: None
+                height: self.minimum_height 
+
+                Button:
+                    text: "Menu"   
+                    font_size: '20sp'
+                    size_hint_y: None
+                    height: 100
+                    padding: 10, 10
+                    background_color: 0, 0 , 1 , 1
+                    on_release:
+                        app.root.current = "Menu"
+                        root.manager.transition.direction = "right" 
+                        
+                Button:
+                    id: steps
+                    text: "Clear All"   
+                    font_size: '20sp'
+                    size_hint_y: None
+                    background_color: 1, 0 , 0 , 1
+                    height: 100
+                    padding: 10, 10
+                    on_release:
+                        list_of_steps.clear_widgets()       
+                        
+            Label:
+                font_size: '20sp'
+                size_hint_y: None
+                height: 100
+                padding: 10, 10
+                text: "Area = π * r^2"
+                
+        
+            TextInput:
+                id: radius
+                text: radius.text
+                hint_text: "Length of Radius (r):"
+                multiline: False
+                font_size: '35sp'
+                size_hint_y: None
+                height: 100
+                padding: 10
+                input_filter: lambda text, from_undo: text[:6 - len(radius.text)]
+                
+            Button:
+                id: steps
+                text: "Calculate"   
+                font_size: '20sp'
+                size_hint_y: None
+                background_color: 0, 1 , 0 , 1
+                height: 100
+                padding: 10, 10
+                on_release:
+                    list_of_steps.clear_widgets() 
+                    Area_of_Circle.steps(radius.text)    
+                       
+            GridLayout:
+                id: list_of_steps
+                cols: 1
+                size_hint: 1, None
+                height: self.minimum_height   
+
+""")
+
+class Area_of_Circle(Screen):
+    sm = ScreenManager()
+
+    def __init__(self, **kwargs):
+        super(Area_of_Circle, self).__init__(**kwargs)
+            
+    layouts = []
+    def steps(self,radius):
+        print()
+        layout = GridLayout(cols=1,size_hint_y= None)
+        self.ids.list_of_steps.add_widget(layout)
+        self.layouts.append(layout)
+        
+        try:
+            print("Length of Radius = ",radius)
+            if float(radius) <= 0:
+                print('Invalid entry, cannot be 0 or negative input')
+                self.ids.list_of_steps.add_widget(Label(text= "Invalid entry, cannot be 0 or negative input" ,font_size = '20sp', size_hint_y= None, height=100))
+            
+            else:
+                self.ids.list_of_steps.add_widget(Label(text= "Length of Radius = " + radius ,font_size = '20sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Area of Circle = π * (" + '[color=33CAFF]' + radius + '[/color]' + ")^2" , markup=True, font_size = '20sp', size_hint_y= None, height=100))
+                Area_of_Circle = float(math.pi) * (float(radius)**2)
+                print("Area of Circle = ",Area_of_Circle) #Area = π * r^2
+                self.ids.list_of_steps.add_widget(Label(text= "Area of Circle = " + str(Area_of_Circle) ,font_size = '20sp', size_hint_y= None, height=100))
+            
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '20sp', size_hint_y= None, height=100))
             self.layouts.append(layout)  
@@ -7704,28 +7854,47 @@ class HowToPage(Screen):
     pass
 
 sm = ScreenManager()
+
+#App Skeleton
 sm.add_widget(Homepage(name="Homepage"))
 sm.add_widget(Menu(name="Menu"))     
+sm.add_widget(HowToPage(name="HowToPage"))
+
+#Basic
 sm.add_widget(Basic(name="Basic"))     
-sm.add_widget(Exponents_steps(name="Exponents_steps")) #Line 186, individual app and apart of bundle
-sm.add_widget(Percentage_Calculator(name="Percentage_Calculator"))  #Line 379, individual app and apart of bundle
-sm.add_widget(PEMDAS(name="PEMDAS")) #Line 573 ,individual app and apart of bundle
-sm.add_widget(Fractions(name="Fractions")) #1101 ,individual app and apart of bundle
-sm.add_widget(Pythagorean(name="Pythagorean"))    #Line 2996, individual app and apart of bundle
+sm.add_widget(Percentage_Calculator(name="Percentage_Calculator")) 
+sm.add_widget(Fractions(name="Fractions"))
+
+#Converters
+sm.add_widget(Fractions_converter(name="Fractions_converter")) 
+sm.add_widget(Decimals_converter(name="Decimals_converter"))   
+sm.add_widget(Percentages_converter(name="Percentages_converter"))
+
+#Algebra
+sm.add_widget(Exponents_steps(name="Exponents_steps")) 
+sm.add_widget(Domain_and_Range(name="Domain_and_Range")) 
+sm.add_widget(PEMDAS(name="PEMDAS")) 
+sm.add_widget(FOIL(name="FOIL"))
+sm.add_widget(Quadratic_Formula_Solver(name="Quadratic_Formula_Solver"))
+
+#Geometry
+sm.add_widget(Pythagorean(name="Pythagorean"))    
 sm.add_widget(Area_of_Square(name="Area_of_Square")) 
 sm.add_widget(Area_of_Triangle(name="Area_of_Triangle"))
-sm.add_widget(Quadratic_Formula_Solver(name="Quadratic_Formula_Solver")) #Line 3183, individual app and apart of bundle
-sm.add_widget(Fractions_converter(name="Fractions_converter")) #individual app and apart of bundle
-sm.add_widget(Decimals_converter(name="Decimals_converter"))     #individual app and apart of bundle
-sm.add_widget(Percentages_converter(name="Percentages_converter"))#individual app and apart of bundle
-sm.add_widget(Statistical_Calculator(name="Statistical_Calculator")) #Line 4315
-sm.add_widget(FOIL(name="FOIL")) #4677, individual app and apart of bundle 
-sm.add_widget(Tip_Calculator(name="Tip_Calculator"))    #Line 5544, individual app and apart of bundle 
-sm.add_widget(Derivatives(name="Derivatives"))     #Line 5772, individual app and apart of bundle 
+sm.add_widget(Area_of_Circle(name="Area_of_Circle"))  
+
+#Calculus
+sm.add_widget(Derivatives(name="Derivatives"))
 sm.add_widget(Integration(name="Integration"))
 sm.add_widget(Limits(name="Limits"))
-sm.add_widget(Domain_and_Range(name="Domain_and_Range")) #7401
-sm.add_widget(HowToPage(name="HowToPage"))
+
+#Statistics
+sm.add_widget(Statistical_Calculator(name="Statistical_Calculator")) 
+
+#Other Tools
+sm.add_widget(Tip_Calculator(name="Tip_Calculator"))    
+
+#Current
 sm.current = "Homepage"   
 print("Current Page:",sm.current)
 
