@@ -390,7 +390,7 @@ Builder.load_string("""
                 text: "Share KSquared-Mathematics"
                     
             Image:
-                source: 'JuniceIndustriesQRcode.png'
+                source: 'KSquared_QR.png'
                 size_hint_y: None
                 height: 800
                 width: 800
