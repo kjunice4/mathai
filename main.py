@@ -32,23 +32,25 @@ Builder.load_string("""
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
             height: 100
-            text: "Tap anywhere to continue"
+            text: "KSquared-Mathematics"
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left" 
-        
+                
         Button:
             font_size: '20sp'
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
             height: 100
-            text: "KSquared Mathematics"
+            text: "Tap anywhere to Continue"
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left" 
                 
         Button:
             background_normal: "JuniceIndustries_Logo.png"
+            size_hint_y: None
+            height: 200
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left" 
@@ -77,7 +79,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Menu"
                 
@@ -85,7 +87,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 background_color: 5, 0, 1, 1
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "How to Use KSquared-Mathematics"
                 on_release:
@@ -95,7 +97,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Algebra"
                 
@@ -104,7 +106,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 background_color: 0, 0 , 1 , 1
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "Domain_and_Range"
@@ -115,7 +117,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "Exponents_steps"
@@ -126,7 +128,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "FOIL"
@@ -137,7 +139,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "PEMDAS"
@@ -148,7 +150,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "Quadratic_Formula_Solver"
@@ -157,7 +159,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Basic"
             
@@ -166,7 +168,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 background_color: 1, 0 , 1 , 1
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "Basic"
@@ -177,7 +179,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 1, 0, 1, 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "Fractions"
@@ -188,7 +190,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 1, 0, 1, 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "Percentage_Calculator"
@@ -197,7 +199,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 background_color: 0, 0, 1, 1
                 text: "Calculus"
@@ -207,7 +209,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 background_color: 0, 1, 1, 1
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "Derivatives"
@@ -218,7 +220,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 background_color: 0, 1, 1, 1
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "Integration"
@@ -229,7 +231,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 background_color: 0, 1, 1, 1
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "Limits"
@@ -238,7 +240,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Converters"
             
@@ -247,7 +249,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1, 0, 1
-                height: 100
+                height: 200
                 on_release:
                     app.root.current = "Decimals_converter"
                     root.manager.transition.direction = "left" 
@@ -257,7 +259,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1, 0, 1
-                height: 100
+                height: 200
                 on_release:
                     app.root.current = "Fractions_converter"
                     root.manager.transition.direction = "left"
@@ -266,7 +268,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1, 0, 1
-                height: 100
+                height: 200
                 text: "Percentages Converter"
                 on_release:
                     app.root.current = "Percentages_converter"
@@ -275,7 +277,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 background_color: 0, 0, 1, 1
                 text: "Geometry"
@@ -285,7 +287,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 1, 0, 1, 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "Pythagorean"
@@ -296,7 +298,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 1, 0, 1, 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "Area_of_Square"
@@ -307,7 +309,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 1, 0, 1, 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "Area_of_Triangle"
@@ -318,7 +320,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 background_color: 1, 0 , 1 , 1
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "Area_of_Circle"
@@ -327,7 +329,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 background_color: 0, 0, 1, 1
                 text: "Statistics"
@@ -337,7 +339,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 1, 0, 0, 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "Statistical_Calculator"
@@ -346,7 +348,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 background_color: 0, 0, 1, 1
                 text: "Other"
@@ -355,7 +357,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1.5, 0, 1
-                height: 100
+                height: 200
                 text: "Tip Calculator"
                 on_release:
                     app.root.current = "Tip_Calculator"
@@ -365,7 +367,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 background_color: 5, 0, 1, 1
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "How to Use KSquared-Mathematics"
                 on_release:
@@ -375,17 +377,17 @@ Builder.load_string("""
             Button:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Visit Junice Industries"
                 on_release:
                     import webbrowser
-                    webbrowser.open('https://www.juniceindustries.com')
+                    #webbrowser.open('https://www.juniceindustries.com')
                     
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Share KSquared-Mathematics"
                     
@@ -418,7 +420,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "How to use KSquared-Mathematics"
             
@@ -428,7 +430,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 0 , 1 , 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     app.root.current = "Menu"
@@ -437,63 +439,63 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Keys used for building functions from your phone's keyboard: "
                 
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Use ' + ' for Addition"
                 
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Use ' - ' for Subtraction"
                 
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Use ' * ' for Multiplication"
                 
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Use ' / ' for Division"
                 
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Use ' ^ ' for Exponents"
                 
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Use ' () ' for Parenethesis"
                 
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Use ' ()^0.5 ' for Squared Root"
                 
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Use ' ()^0.3 ' for Cubed Root"
                 
@@ -522,7 +524,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Basic Calculator"
             
@@ -539,7 +541,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     background_color: 0, 0 , 1 , 1
                     on_release:
@@ -552,7 +554,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         Base_entry.text = ""
@@ -572,7 +574,7 @@ Builder.load_string("""
                     multiline: False
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10
             
             Button:
@@ -581,7 +583,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets() 
@@ -646,7 +648,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Exponents Solver"
             
@@ -663,7 +665,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     background_color: 0, 0 , 1 , 1
                     on_release:
@@ -676,7 +678,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         Power_entry.text = ""
@@ -686,7 +688,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Base ^ Power"
                 
@@ -704,7 +706,7 @@ Builder.load_string("""
                     multiline: False
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10
                     input_filter: lambda text, from_undo: text[:3 - len(Base_entry.text)]           
             
@@ -722,7 +724,7 @@ Builder.load_string("""
                     multiline: False
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10              
                     input_filter: lambda text, from_undo: text[:2 - len(Power_entry.text)]           
             
@@ -732,7 +734,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets() 
@@ -826,7 +828,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Percentage Calculator"
             
@@ -844,7 +846,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 0 , 1 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         app.root.current = "Menu"
@@ -856,7 +858,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         number.text = ""
@@ -869,7 +871,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10
                 hint_text: "Number:"
                 input_filter: lambda text, from_undo: text[:8 - len(number.text)]           
@@ -880,7 +882,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10         
                 hint_text: "Percent:"
                 input_filter: lambda text, from_undo: text[:8 - len(perc.text)]           
@@ -899,7 +901,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 1 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets() 
@@ -911,7 +913,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets() 
@@ -1010,7 +1012,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "PEMDAS"
                 
@@ -1029,7 +1031,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 0 , 1 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         app.root.current = "Menu"
@@ -1041,7 +1043,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         entry.text = ""
@@ -1054,7 +1056,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10
             
             Button:
@@ -1063,7 +1065,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets() 
@@ -1618,7 +1620,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Fraction Steps Calculator"
                     
@@ -1635,7 +1637,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     background_color: 0, 0 , 1 , 1
                     on_release:
@@ -1649,7 +1651,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         a.text = ""
@@ -1659,7 +1661,7 @@ Builder.load_string("""
             Label:
                 font_size: '15sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Whole(Numerator/Denomenator)"       
                    
@@ -1677,7 +1679,7 @@ Builder.load_string("""
                     multiline: False
                     font_size: '35sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10
                     
             BoxLayout:
@@ -1694,7 +1696,7 @@ Builder.load_string("""
                     multiline: False
                     font_size: '35sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10
                     
             BoxLayout:
@@ -1710,7 +1712,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 1, 0, 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets() 
@@ -1722,7 +1724,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 0, 1, 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets() 
@@ -1741,7 +1743,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 1, 0, 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets() 
@@ -1753,7 +1755,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 0, 1, 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets() 
@@ -3503,7 +3505,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Pythagorean Calculator"
             
@@ -3520,7 +3522,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     background_color: 0, 0 , 1 , 1
                     on_release:
@@ -3533,7 +3535,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         a.text = ""
@@ -3544,14 +3546,14 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Enter 2 or 3 sides to calculate"
                     
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "a\u00B2 + b\u00B2 = c\u00B2"       
                                                         
@@ -3562,7 +3564,7 @@ Builder.load_string("""
                 hint_text: "a ="
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10
                 input_filter: lambda text, from_undo: text[:3 - len(a.text)]  
                     
@@ -3573,7 +3575,7 @@ Builder.load_string("""
                 hint_text:"b ="
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10          
                 input_filter: lambda text, from_undo: text[:3 - len(b.text)]  
                 
@@ -3584,7 +3586,7 @@ Builder.load_string("""
                 hint_text:"c ="
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10          
                 input_filter: lambda text, from_undo: text[:3 - len(c.text)]  
                 
@@ -3594,7 +3596,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets() 
@@ -3797,7 +3799,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 text: "Quadratic Formula Calculator"
                 
             BoxLayout:
@@ -3813,7 +3815,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     background_color: 0, 0 , 1, 1
                     on_release:
@@ -3826,7 +3828,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         a.text = ""
@@ -3844,14 +3846,14 @@ Builder.load_string("""
                 height: self.minimum_height 
             
                 Label:
-                    height: 100
+                    height: 200
                     font_size: '15sp'
                     size_hint_y: None
                     padding: 5,5
                     text: "ax\u00B2 + bx + c = 0"
                 
                 Label:
-                    height: 100
+                    height: 200
                     font_size: '15sp'
                     size_hint_y: None
                     padding: 5,5
@@ -3867,7 +3869,7 @@ Builder.load_string("""
                 font_size: '35sp'
                 size_hint_y: None
                 hint_text: "a ="
-                height: 100
+                height: 200
                 padding: 10
                 input_filter: lambda text, from_undo: text[:3 - len(a.text)]  
                     
@@ -3879,7 +3881,7 @@ Builder.load_string("""
                 hint_text: "b ="
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10          
                 input_filter: lambda text, from_undo: text[:3 - len(b.text)]  
                 
@@ -3891,7 +3893,7 @@ Builder.load_string("""
                 hint_text: "c ="
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10          
                 input_filter: lambda text, from_undo: text[:3 - len(c.text)]
                     
@@ -3908,7 +3910,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 1 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets() 
@@ -4050,7 +4052,7 @@ Builder.load_string("""
                 text: "Percentages Converter"   
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                     
             BoxLayout:
@@ -4065,7 +4067,7 @@ Builder.load_string("""
                 Button:
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     background_color: 0, 0 , 1 , 1
                     text: "Back"
                     on_release:
@@ -4078,7 +4080,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets()  
@@ -4098,13 +4100,13 @@ Builder.load_string("""
                     multiline: False
                     font_size: '35sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10
                     input_filter: lambda text, from_undo: text[:4 - len(input.text)] 
                     
             Label:
                 size_hint_y: None
-                height: 100
+                height: 200
                 text: "Convert To:"
                 font_size: '20sp'
                 
@@ -4119,7 +4121,7 @@ Builder.load_string("""
                     text: "Fraction"   
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     background_color: 0, 0 , 1 , 1
                     on_release:
@@ -4132,7 +4134,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 0 , 1 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets() 
@@ -4166,7 +4168,7 @@ Builder.load_string("""
                 text: "Fractions Converter"   
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                     
             BoxLayout:
@@ -4181,7 +4183,7 @@ Builder.load_string("""
                 Button:
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     background_color: 0, 0 , 1 , 1
                     text: "Back"
                     on_release:
@@ -4194,7 +4196,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets()  
@@ -4216,7 +4218,7 @@ Builder.load_string("""
                     multiline: False
                     font_size: '35sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10
                     input_filter: lambda text, from_undo: text[:8 - len(Whole.text)] 
             
@@ -4234,7 +4236,7 @@ Builder.load_string("""
                     multiline: False
                     font_size: '35sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10
                     input_filter: lambda text, from_undo: text[:8 - len(Numerator.text)] 
                     
@@ -4252,13 +4254,13 @@ Builder.load_string("""
                     multiline: False
                     font_size: '35sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10
                     input_filter: lambda text, from_undo: text[:8 - len(Denomenator.text)] 
                     
             Label:
                 size_hint_y: None
-                height: 100
+                height: 200
                 text: "Convert To:"
                 font_size: '20sp'
                 
@@ -4273,7 +4275,7 @@ Builder.load_string("""
                     text: "Percent"   
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     background_color: 0, 0 , 1 , 1
                     on_release:
@@ -4286,7 +4288,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 0 , 1 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets() 
@@ -4321,7 +4323,7 @@ Builder.load_string("""
                 text: "Decimals Converter"   
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                     
             BoxLayout:
@@ -4336,7 +4338,7 @@ Builder.load_string("""
                 Button:
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     background_color: 0, 0 , 1 , 1
                     text: "Back"
                     on_release:
@@ -4349,7 +4351,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets()  
@@ -4369,13 +4371,13 @@ Builder.load_string("""
                     multiline: False
                     font_size: '35sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10
                     input_filter: lambda text, from_undo: text[:8 - len(input.text)] 
                     
             Label:
                 size_hint_y: None
-                height: 100
+                height: 200
                 text: "Convert To:"
                 font_size: '20sp'
                 
@@ -4390,7 +4392,7 @@ Builder.load_string("""
                     text: "Fraction"   
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     background_color: 0, 0 , 1 , 1
                     on_release:
@@ -4403,7 +4405,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 0 , 1 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets() 
@@ -4853,7 +4855,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Statistical Calculator"
             
@@ -4870,7 +4872,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     background_color: 0, 0 , 1 , 1
                     padding: 10, 10
                     on_release:
@@ -4883,7 +4885,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         entry.text = ""
@@ -4898,7 +4900,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10
             
                     
@@ -4908,7 +4910,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets() 
@@ -4930,7 +4932,7 @@ Builder.load_string("""
                     multiline: False
                     font_size: '15sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10
                     input_filter: lambda text, from_undo: text[:1 - len(dev.text)] 
                     
@@ -4940,7 +4942,7 @@ Builder.load_string("""
                     font_size: '15sp'
                     size_hint_y: None
                     background_color: 0, 0 , 1 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets() 
@@ -4952,7 +4954,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets() 
@@ -4974,7 +4976,7 @@ Builder.load_string("""
                     multiline: False
                     font_size: '15sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10
                     input_filter: lambda text, from_undo: text[:3 - len(perc.text)] 
                     
@@ -4984,7 +4986,7 @@ Builder.load_string("""
                     font_size: '15sp'
                     size_hint_y: None
                     background_color: 0, 0 , 1 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets() 
@@ -5201,7 +5203,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "FOIL Method"
                     
@@ -5218,7 +5220,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     background_color: 0, 0 , 1 , 1
                     on_release:
@@ -5231,7 +5233,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         entry.text = ""
@@ -5244,7 +5246,7 @@ Builder.load_string("""
                 hint_text: "(ax + b)(cx + d)"
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10
                 
             Button:
@@ -5254,7 +5256,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets() 
@@ -6058,7 +6060,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Tip Calculator"
             
@@ -6075,7 +6077,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     background_color: 0, 0 , 1 , 1
                     on_release:
@@ -6088,7 +6090,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         Bill.text = ""
@@ -6103,7 +6105,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10
                 input_filter: lambda text, from_undo: text[:6 - len(Bill.text)]           
         
@@ -6114,7 +6116,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10              
                 input_filter: lambda text, from_undo: text[:2 - len(Percent.text)]         
                 
@@ -6125,7 +6127,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10              
                 input_filter: lambda text, from_undo: text[:3 - len(Split.text)] 
             
@@ -6135,7 +6137,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets() 
@@ -6273,7 +6275,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Derivatives Calculator"
                 
@@ -6292,7 +6294,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 0 , 1 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         app.root.current = "Menu"
@@ -6304,7 +6306,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         entry.text = ""
@@ -6320,7 +6322,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10              
             
             TextInput:
@@ -6330,7 +6332,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10            
                 input_filter: lambda text, from_undo: text[:2 - len(prime.text)]
                 
@@ -6341,7 +6343,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10  
                 input_filter: lambda text, from_undo: text[:1 - len(respect.text)]
                 
@@ -6352,7 +6354,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10  
                 
             BoxLayout:
@@ -6370,7 +6372,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 1 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets()
@@ -6406,7 +6408,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Integration Calculator"
                 
@@ -6425,7 +6427,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 0 , 1 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         app.root.current = "Menu"
@@ -6437,7 +6439,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         entry.text = ""
@@ -6453,7 +6455,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10              
             
             TextInput:
@@ -6463,7 +6465,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10              
                 input_filter: lambda text, from_undo: text[:2 - len(prime.text)]
                 
@@ -6474,7 +6476,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10  
                 input_filter: lambda text, from_undo: text[:1 - len(respect.text)]
                 
@@ -6485,7 +6487,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10  
                 
                     
@@ -6495,7 +6497,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1, 0 , 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets()
@@ -6532,7 +6534,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Limits Calculator"
                 
@@ -6551,7 +6553,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 0 , 1 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         app.root.current = "Menu"
@@ -6563,7 +6565,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         entry.text = ""
@@ -6578,7 +6580,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10              
             
             TextInput:
@@ -6588,7 +6590,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 
             TextInput:
@@ -6598,7 +6600,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 input_filter: lambda text, from_undo: text[:1 - len(direction.text)]
             
@@ -6616,7 +6618,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 1, 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release: 
                         range.text = "\u221E"
@@ -6626,7 +6628,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 1, 1, 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release: 
                         range.text = "-\u221E"
@@ -6637,7 +6639,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1, 0 , 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets()
@@ -7225,7 +7227,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Domain and Range"
                     
@@ -7242,7 +7244,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     background_color: 0, 0 , 1 , 1
                     on_release:
@@ -7255,7 +7257,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         y.text = ""
@@ -7265,7 +7267,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "f(x) = ax + b"       
                                                         
@@ -7276,7 +7278,7 @@ Builder.load_string("""
                 hint_text: "f(x) ="
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10
                     
             TextInput:
@@ -7286,7 +7288,7 @@ Builder.load_string("""
                 hint_text:"Domain = min,max,sequence"
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10  
                 
             Button:
@@ -7295,7 +7297,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets() 
@@ -7459,7 +7461,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Area of Square"
             
@@ -7476,7 +7478,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     background_color: 0, 0 , 1 , 1
                     on_release:
@@ -7489,7 +7491,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         Length.text = ""
@@ -7498,7 +7500,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Area = S^2"
                 
@@ -7516,7 +7518,7 @@ Builder.load_string("""
                     multiline: False
                     font_size: '35sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10
                     input_filter: lambda text, from_undo: text[:6 - len(Length.text)]           
             
@@ -7526,7 +7528,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets() 
@@ -7586,7 +7588,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Area of Triangle"
             
@@ -7603,7 +7605,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     background_color: 0, 0 , 1 , 1
                     on_release:
@@ -7616,7 +7618,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         Base.text = ""
@@ -7626,7 +7628,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Area = 1/2 * Base * Height"
                 
@@ -7638,7 +7640,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10
                 input_filter: lambda text, from_undo: text[:3 - len(Base.text)]
                 
@@ -7649,7 +7651,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10
                 input_filter: lambda text, from_undo: text[:3 - len(Height.text)]         
             
@@ -7659,7 +7661,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets() 
@@ -7740,7 +7742,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Area of Cricle"
             
@@ -7757,7 +7759,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     background_color: 0, 0 , 1 , 1
                     on_release:
@@ -7770,7 +7772,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
-                    height: 100
+                    height: 200
                     padding: 10, 10
                     on_release:
                         list_of_steps.clear_widgets()       
@@ -7778,7 +7780,7 @@ Builder.load_string("""
             Label:
                 font_size: '20sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10, 10
                 text: "Area = π * r^2"
                 
@@ -7790,7 +7792,7 @@ Builder.load_string("""
                 multiline: False
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10
                 input_filter: lambda text, from_undo: text[:6 - len(radius.text)]
                 
@@ -7800,7 +7802,7 @@ Builder.load_string("""
                 font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
-                height: 100
+                height: 200
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets() 
