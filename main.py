@@ -23,6 +23,7 @@ Builder.load_string("""
         
         Button:
             background_normal: "KSquared_Logo.png"
+            size_hint_y: None
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left" 
@@ -50,7 +51,6 @@ Builder.load_string("""
         Button:
             background_normal: "JuniceIndustries_Logo.png"
             size_hint_y: None
-            height: 200
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left" 
@@ -441,7 +441,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "Keys used for building functions from your phone's keyboard: "
+                text: "Keys used: "
                 
             Label:
                 font_size: '20sp'
