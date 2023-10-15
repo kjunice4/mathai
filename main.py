@@ -11,6 +11,7 @@ import numpy as np
 import sympy as sym
 from colorama import Back, Style 
 from sympy import Limit, Symbol, S, diff, integrate
+from kivmob import KivMob
 
 #Opening Page
 Builder.load_string("""
@@ -20,13 +21,6 @@ Builder.load_string("""
     
     GridLayout:
         cols: 1
-        
-        Button:
-            background_normal: "KSquared_Logo.png"
-            size_hint_y: None
-            on_release:
-                app.root.current = "Menu"
-                root.manager.transition.direction = "left" 
         
         Button:
             font_size: '20sp'
@@ -39,18 +33,23 @@ Builder.load_string("""
                 root.manager.transition.direction = "left" 
                 
         Button:
-            font_size: '20sp'
-            background_color: 0, 0 , 0 , 1
-            size_hint_y: None
-            height: 100
-            text: "Tap anywhere to Continue"
+            background_normal: "KSquared_Logo.png"
+            on_release:
+                app.root.current = "Menu"
+                root.manager.transition.direction = "left"
+                
+        Button:
+            background_normal: "JuniceIndustries_Logo.png"
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left" 
                 
         Button:
-            background_normal: "JuniceIndustries_Logo.png"
+            font_size: '20sp'
+            background_color: 0, 0 , 0 , 1
             size_hint_y: None
+            height: 100
+            text: "Tap anywhere to Continue"
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left" 
@@ -382,7 +381,7 @@ Builder.load_string("""
                 text: "Visit Junice Industries"
                 on_release:
                     import webbrowser
-                    #webbrowser.open('https://www.juniceindustries.com')
+                    webbrowser.open('https://www.juniceindustries.com') 
                     
             Label:
                 font_size: '20sp'
@@ -7850,10 +7849,20 @@ class Homepage(Screen):
     pass            
 
 class Menu(Screen):
-    pass
+    def ads(self):
+        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366')
+        self.ads.new_banner('ca-app-pub-8152689763446464/1243809262', top_pos=True)
+        self.ads.request_banner()
+        self.ads.show_banner()
+        return
 
 class HowToPage(Screen):
-    pass
+    def ads(self):
+        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366')
+        self.ads.new_banner('ca-app-pub-8152689763446464/1243809262', top_pos=True)
+        self.ads.request_banner()
+        self.ads.show_banner()
+        return
 
 sm = ScreenManager()
 
@@ -7911,6 +7920,13 @@ class Bundled(App):
         if key == 27:
             sm.current = sm.current
             return True
+        
+    def ads(self):
+        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366')
+        self.ads.new_banner('ca-app-pub-8152689763446464/1243809262', top_pos=True)
+        self.ads.request_banner()
+        self.ads.show_banner()
+        return
     
     def build(app):
         return sm
