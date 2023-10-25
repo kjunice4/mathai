@@ -23,20 +23,20 @@ Builder.load_string("""
         cols: 1
         
         Button:
-            font_size: '20sp'
-            background_color: 0, 0 , 0 , 1
-            size_hint_y: None
-            height: 100
-            text: "KSquared-Mathematics"
-            on_release:
-                app.root.current = "Menu"
-                root.manager.transition.direction = "left" 
-                
-        Button:
             background_normal: "KSquared_Logo.png"
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left"
+                
+        Button:
+            font_size: '20sp'
+            background_color: 0, 0 , 0 , 1
+            size_hint_y: None
+            height: 100
+            text: "KSquared-Mathematics from"
+            on_release:
+                app.root.current = "Menu"
+                root.manager.transition.direction = "left" 
                 
         Button:
             background_normal: "JuniceIndustries_Logo.png"
@@ -7910,7 +7910,6 @@ sm.current = "Homepage"
 print("Current Page:",sm.current)
 
 class Bundled(App):
-    
     def __init__(self, **kwargs):
         super(Bundled, self).__init__(**kwargs)
         Window.bind(on_keyboard=self._key_handler)
@@ -7922,11 +7921,11 @@ class Bundled(App):
             return True
         
     def ads(self):
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366')
-        self.ads.new_banner('ca-app-pub-8152689763446464/1243809262', top_pos=False)
+        self.ads = KivMob('ca-app-pub-3940256099942544~3347511713')
+        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
         self.ads.request_banner()
         self.ads.show_banner()
-        return
+        return 
     
     def build(app):
         return sm
