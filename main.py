@@ -7923,7 +7923,7 @@ class Bundled(App):
         
     def ads(self):
         self.ads = KivMob('ca-app-pub-8152689763446464~5176796366')
-        self.ads.new_banner('ca-app-pub-8152689763446464/1243809262', top_pos=True)
+        self.ads.new_banner('ca-app-pub-8152689763446464/1243809262', top_pos=False)
         self.ads.request_banner()
         self.ads.show_banner()
         return
