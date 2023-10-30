@@ -33,13 +33,17 @@ Builder.load_string("""
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
             height: 100
-            text: "KSquared-Mathematics from"
+            text: "KSquared-Mathematics"
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left" 
                 
         Button:
-            background_normal: "JuniceIndustries_Logo.png"
+            font_size: '20sp'
+            background_color: 0, 0 , 0 , 1
+            size_hint_y: None
+            height: 100
+            text: "A Junice Industries Product"
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left" 
