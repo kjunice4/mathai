@@ -7855,7 +7855,7 @@ class Homepage(Screen):
 class Menu(Screen):
     def ads(self):
         self.ads = KivMob('ca-app-pub-8152689763446464~5176796366')
-        self.ads.new_banner('ca-app-pub-8152689763446464/1243809262', top_pos=True)
+        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=True)
         self.ads.request_banner()
         self.ads.show_banner()
         return
@@ -7863,7 +7863,7 @@ class Menu(Screen):
 class HowToPage(Screen):
     def ads(self):
         self.ads = KivMob('ca-app-pub-8152689763446464~5176796366')
-        self.ads.new_banner('ca-app-pub-8152689763446464/1243809262', top_pos=True)
+        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=True)
         self.ads.request_banner()
         self.ads.show_banner()
         return
@@ -7925,7 +7925,7 @@ class Bundled(App):
             return True
         
     def ads(self):
-        self.ads = KivMob('ca-app-pub-3940256099942544~3347511713')
+        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366')
         self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
         self.ads.request_banner()
         self.ads.show_banner()
