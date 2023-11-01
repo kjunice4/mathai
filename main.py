@@ -7824,6 +7824,24 @@ class Area_of_Circle(Screen):
 
     def __init__(self, **kwargs):
         super(Area_of_Circle, self).__init__(**kwargs)
+        
+    #ADS FOR IOS
+    """
+    def ads(self):
+        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
+        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
+        self.ads.request_banner()
+        self.ads.show_banner()
+        return 
+    """
+    
+    #ADS FOR ANDROID
+    def ads(self):
+        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
+        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
+        self.ads.request_banner()
+        self.ads.show_banner()
+        return
             
     layouts = []
     def steps(self,radius):
@@ -7853,17 +7871,39 @@ class Homepage(Screen):
     pass            
 
 class Menu(Screen):
+    #ADS FOR IOS
+    """
     def ads(self):
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366')
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=True)
+        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
+        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
+        self.ads.request_banner()
+        self.ads.show_banner()
+        return 
+    """
+    
+    #ADS FOR ANDROID
+    def ads(self):
+        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
+        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
         self.ads.request_banner()
         self.ads.show_banner()
         return
 
 class HowToPage(Screen):
+    #ADS FOR IOS
+    """
     def ads(self):
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366')
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=True)
+        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
+        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
+        self.ads.request_banner()
+        self.ads.show_banner()
+        return 
+    """
+    
+    #ADS FOR ANDROID
+    def ads(self):
+        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
+        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
         self.ads.request_banner()
         self.ads.show_banner()
         return
@@ -7923,13 +7963,24 @@ class Bundled(App):
         if key == 27:
             sm.current = sm.current
             return True
-        
+    
+    #ADS FOR IOS
+    """
     def ads(self):
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366')
+        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
         self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
         self.ads.request_banner()
         self.ads.show_banner()
         return 
+    """
+    
+    #ADS FOR ANDROID
+    def ads(self):
+        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
+        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
+        self.ads.request_banner()
+        self.ads.show_banner()
+        return
     
     def build(app):
         return sm
