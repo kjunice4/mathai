@@ -7838,7 +7838,7 @@ class Area_of_Circle(Screen):
     #ADS FOR ANDROID
     def ads(self):
         self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
+        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
         self.ads.request_banner()
         self.ads.show_banner()
         return
@@ -7884,7 +7884,7 @@ class Menu(Screen):
     #ADS FOR ANDROID
     def ads(self):
         self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
+        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
         self.ads.request_banner()
         self.ads.show_banner()
         return
@@ -7903,7 +7903,7 @@ class HowToPage(Screen):
     #ADS FOR ANDROID
     def ads(self):
         self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
+        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
         self.ads.request_banner()
         self.ads.show_banner()
         return
@@ -7977,7 +7977,7 @@ class Bundled(App):
     #ADS FOR ANDROID
     def ads(self):
         self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
+        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
         self.ads.request_banner()
         self.ads.show_banner()
         return
