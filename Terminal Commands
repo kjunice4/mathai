@@ -1,0 +1,107 @@
+youtubnSudo https://buildozer.readthedocs.io/en/latest/installation.html#android-on-ubuntu-20-04-64bit
+
+NEVER RUN $sudo apt-get uninstall python
+
+IF Ubuntu crashes and loss of memory:
+ps aux | grep -i apt
+Sudo kill root#
+
+If SSL Error, update pip and run:
+$ sudo apt-get install libssl-dev
+$ wget http://www.openssl.org/source/openssl-1.0.1g.tar.gz.md5
+https://python-for-android.readthedocs.io/en/latest/troubleshooting/#sslerror-can-t-connect-to-https-url-because-the-ssl-module-is-not-available
+
+https://blogiestools.com/ubuntu-22-04-openssl-error-fixing/
+
+For apps that inquire mpmath, sympy: download directly from org site and extract file from download and store in directory. EX: Download mpmath-0.19 -> extract mpmath (store in directory)
+
+Matplotlib located at computer/lib/python3/dist-packages
+
+
+ORIGINAL WAY TO CLONE REPOSITORY AND DEPLOY APP ON ANDROID PHONE:
+
+Sudo apt install git
+
+git clone https://github.com/kivy/buildozer.git
+
+cd buildozer
+
+sudo apt-get install python3.11
+
+sudo apt-get install -y python3-setuptools
+
+sudo python3 setup.py install
+
+cd ..
+
+git clone https://github.com/kjunice4/(KSquared app name)
+cd (KSQUARED APP NAME HERE)
+
+buildozer init
+
+sudo apt update
+
+pip3 install --user --upgrade buildozer (if NDK is missing)
+
+sudo apt install -y git zip unzip openjdk-11-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev liblzma-dev
+
+sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libwscale-dev libavformat-dev 
+
+IF CYTHON ERRORS:
+https://github.com/kivy/buildozer/blob/master/docs/source/installation.rst
+
+pip install --user --upgrade cython virtualenv
+
+sudo apt-get install cython3
+
+buildozer android debug deploy run
+
+#INSTALLATION~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sudo apt install python3
+
+sudo apt update
+
+pip install git+https://github.com/misl6/buildozer.git@feat/aab-support
+
+pip install cython
+
+echo 'export PATH=$PATH:~/.local/bin/' >> .bashrc
+
+source .bashrc
+
+#Buildozer
+#Go to app file
+#IMPORTANT: If you are uploading a new aab file to google, change the version number so google will accept it!!!!!! EX: LINE 31 # (str) Application versioning (method 1) version = 0.2
+buildozer init
+
+#Change in buildozer.spec
+Application Requirements: requirements = python3,kivy,numpy,colorama
+android.release_artifact = aab
+HAVE COLORAMA, MPMATH AND SYMPY IN APPLICATION BUNDLING FILE!!!!
+
+
+#Create apk file
+buildozer android debug deploy run
+
+#Create aab file, needs the apk to convert to aab
+buildozer -v android release
+
+#Create the Key, go to KSquared/app/bin (signing aab file)
+mkdir -p ~/keystores/
+
+keytool -genkey -v -keystore ~/keystores/mykey.keystore -alias bundledapp -keyalg RSA -keysize 2048 -validity 100000
+
+keytool -importkeystore -srckeystore ~/keystores/mykey.keystore -destkeystore ~/keystores/mykey.keystore -deststoretype pkcs12
+
+export P4A_RELEASE_KEYSTORE=~/keystores/mykey.keystore
+export P4A_RELEASE_KEYSTORE_PASSWD=Kmkj52619
+export P4A_RELEASE_KEYALIAS_PASSWD=Kmkj52619
+export P4A_RELEASE_KEYALIAS=myname
+
+#Rebuild
+buildozer -v android release
+
+
+
+
+
