@@ -39,6 +39,9 @@ cd (KSQUARED APP NAME HERE)
 
 buildozer init
 
+Add sympy (see below) {colorama,mpmath already added in Github} 
+git clone git://github.com/sympy/sympy.git
+
 sudo apt update
 
 pip3 install --user --upgrade buildozer (if NDK is missing)
@@ -100,7 +103,6 @@ export P4A_RELEASE_KEYALIAS=myname
 
 #Rebuild
 buildozer -v android release
-
 
 
 
