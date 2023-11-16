@@ -32,7 +32,7 @@ Builder.load_string("""
             font_size: '20sp'
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
-            height: 100
+            height: 200
             text: "KSquared-Mathematics"
             on_release:
                 app.root.current = "Menu"
@@ -42,7 +42,7 @@ Builder.load_string("""
             font_size: '20sp'
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
-            height: 100
+            height: 200
             text: "A Junice Industries Product"
             on_release:
                 app.root.current = "Menu"
@@ -52,7 +52,7 @@ Builder.load_string("""
             font_size: '20sp'
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
-            height: 100
+            height: 200
             text: "Tap anywhere to Continue"
             on_release:
                 app.root.current = "Menu"
@@ -7871,42 +7871,10 @@ class Homepage(Screen):
     pass            
 
 class Menu(Screen):
-    #ADS FOR IOS
-    """
-    def ads(self):
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return 
-    """
-    
-    #ADS FOR ANDROID
-    def ads(self):
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return
+    pass
 
 class HowToPage(Screen):
-    #ADS FOR IOS
-    """
-    def ads(self):
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return 
-    """
-    
-    #ADS FOR ANDROID
-    def ads(self):
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return
+    pass
 
 sm = ScreenManager()
 
