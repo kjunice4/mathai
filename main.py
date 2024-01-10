@@ -7280,7 +7280,7 @@ Builder.load_string("""
                 text: y.text
                 multiline: False
                 hint_text: "f(x) ="
-                font_size: '35sp'
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10
@@ -7290,7 +7290,7 @@ Builder.load_string("""
                 text: domain.text
                 multiline: False
                 hint_text:"Domain = min,max,sequence"
-                font_size: '35sp'
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10  
@@ -7357,9 +7357,9 @@ class Domain_and_Range(Screen):
                 y = str(eval(y))
                 print("Y = ",y)
                 
-                self.ids.list_of_steps.add_widget(Label(text= "Domain | Range" ,font_size = '20sp', size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text= "x | y" ,font_size = '20sp', size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text= str(domain) + " | " + str(y) ,font_size = '20sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Domain " +'[color=33CAFF]' + "|" + '[/color]' + " Range" ,font_size = '20sp', markup=True, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "x " +'[color=33CAFF]' + "|" + '[/color]' + " y" ,font_size = '20sp', markup=True, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= str(domain) +'[color=33CAFF]' + " | " + '[/color]' + str(y) ,font_size = '20sp', markup=True, size_hint_y= None, height=100))
                 self.layouts.append(layout)
                 
             elif comma_count == 1 and y.count("x") > 0:
@@ -7374,8 +7374,8 @@ class Domain_and_Range(Screen):
                 print("loop start")
                 print(len(empty_domain))
                 
-                self.ids.list_of_steps.add_widget(Label(text= "Domain | Range" ,font_size = '20sp', size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text= "x | y" ,font_size = '20sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Domain " +'[color=33CAFF]' + "|" + '[/color]' + " Range" ,font_size = '20sp', markup=True, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "x " +'[color=33CAFF]' + "|" + '[/color]' + " y" ,font_size = '20sp', markup=True, size_hint_y= None, height=100))
                 self.layouts.append(layout)
                 
                 while i < len(empty_domain):
@@ -7388,7 +7388,7 @@ class Domain_and_Range(Screen):
                     print("y_solved",y_solved)
                     range_y.append(y_solved)
                     
-                    self.ids.list_of_steps.add_widget(Label(text= str(empty_domain[i]) + " | " + str(y_solved) ,font_size = '20sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= str(empty_domain[i]) +'[color=33CAFF]' + "|" + '[/color]' + str(y_solved) ,font_size = '20sp', markup=True, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     i = i + 1
@@ -7411,8 +7411,8 @@ class Domain_and_Range(Screen):
                     range_y = []
                     print("loop start")
                     
-                    self.ids.list_of_steps.add_widget(Label(text= "Domain | Range" ,font_size = '20sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "x | y" ,font_size = '20sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Domain " +'[color=33CAFF]' + "|" + '[/color]' + " Range" ,font_size = '20sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "x " +'[color=33CAFF]' + "|" + '[/color]' + " y" ,font_size = '20sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     while i < len(sequence_list):
