@@ -606,22 +606,6 @@ class Basic(Screen):
     def __init__(self, **kwargs):
         super(Basic, self).__init__(**kwargs)
         
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return 
-
-        """
-        #ADS FOR ANDROID
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Basic Calculator")
-            
     layouts = []
     def steps(self,entry):
         print()
@@ -773,22 +757,6 @@ class Exponents_steps(Screen):
     def __init__(self, **kwargs):
         super(Exponents_steps, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Exponents_steps")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Exponents_steps") 
-        """
-
     layouts = []
     def steps(self,entry):
         print()
@@ -969,22 +937,6 @@ class Percentage_Calculator(Screen):
     def __init__(self, **kwargs):
         super(Percentage_Calculator, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Percentage_Calculator")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Percentage_Calculator") 
-        """
-            
     layouts = []
     def increase(self,entry):
         layout = GridLayout(cols=1,size_hint_y= None)
@@ -1136,22 +1088,6 @@ class PEMDAS(Screen):
     def __init__(self, **kwargs):
         super(PEMDAS, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at PEMDAS")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at PEMDAS") 
-        """
-                
     layouts = []
     def steps(self,entry):
         layout = GridLayout(cols=1,size_hint_y= None)
@@ -1429,13 +1365,14 @@ class PEMDAS(Screen):
             print(a)
             if a.count("/") > 0:
                 while i < len(a):
-                    a = a.replace(" / ","/")
-                    print("div",a)
+                    a = a.replace(" ","")
+                    print()
+                    print("div:",a)
                     found_div = a.find("/")
                     if found_div == -1:
                         break
                     print(found_div)
-                    div_right_side = a[found_div:]
+                    div_right_side = a[found_div:].replace(" ","")
                     print("div_right_side",div_right_side)
                     div_right_space= div_right_side.find(" ")
                     if div_right_space == -1:
@@ -1842,22 +1779,6 @@ class Fractions(Screen):
     def __init__(self, **kwargs):
         super(Fractions, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Fractions")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Fractions") 
-        """
-
     layouts = []
     def add(self,entry):
         layout = GridLayout(cols=1,size_hint_y= None)
@@ -3699,22 +3620,6 @@ class Pythagorean(Screen):
     def __init__(self, **kwargs):
         super(Pythagorean, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Pythagorean")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Pythagorean") 
-        """
-            
     layouts = []
     def steps(self,entry):
         print("entry ",entry)
@@ -4029,22 +3934,6 @@ class Quadratic_Formula_Solver(Screen):
     def __init__(self, **kwargs):
         super(Quadratic_Formula_Solver, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Quadratic_Formula_Solver")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Quadratic_Formula_Solver") 
-        """
-
     layouts = []
     def steps(self,entry):
         print("entry ",entry)
@@ -4538,22 +4427,6 @@ class Decimals_converter(Screen):
     def __init__(self, **kwargs):
         super(Decimals_converter, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Decimals_converter")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Decimals_converter") 
-        """
-            
     layouts = []
     def convert_dec_to_frac(self,entry):
         print("entry ",entry)
@@ -4693,22 +4566,6 @@ class Fractions_converter(Screen):
     def __init__(self, **kwargs):
         super(Fractions_converter, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Fractions_converter")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Fractions_converter") 
-        """
-        
     layouts = []
     def convert_frac_to_perc(self,entry):
         print("entry ",entry)
@@ -4818,22 +4675,6 @@ class Percentages_converter(Screen):
     def __init__(self, **kwargs):
         super(Percentages_converter, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Percentages_converter")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Percentages_converter") 
-        """
-    
     layouts = []
     def convert_perc_to_frac(self,entry):
         print("entry ",entry)
@@ -5169,22 +5010,6 @@ class Statistical_Calculator(Screen):
     def __init__(self, **kwargs):
         super(Statistical_Calculator, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Statistical_Calculator")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Statistical_Calculator") 
-        """
-            
     layouts = []
     def mmm(self,entry):
         layout = GridLayout(cols=1,size_hint_y= None)
@@ -5455,22 +5280,6 @@ class FOIL(Screen):
     def __init__(self, **kwargs):
         super(FOIL, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at FOIL")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at FOIL") 
-        """
-            
     layouts = []
     def steps(self,entry):
         print("entry ",entry)
@@ -6352,22 +6161,6 @@ class Tip_Calculator(Screen):
     def __init__(self, **kwargs):
         super(Tip_Calculator, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Tip_Calculator")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Tip_Calculator") 
-        """
-            
     layouts = []
     def steps(self,entry):
         layout = GridLayout(cols=1,size_hint_y= None)
@@ -6870,22 +6663,6 @@ class Derivatives(Screen):
     def __init__(self, **kwargs):
         super(Derivatives, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Derivatives")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Derivatives") 
-        """
-        
     layouts = []
     def derive(self,entry):
         layout = GridLayout(cols=1,size_hint_y= None)
@@ -7041,22 +6818,6 @@ class Integration(Screen):
     def __init__(self, **kwargs):
         super(Integration, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Integration")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Integration") 
-        """
-                
     layouts = []
     def Integrate(self,entry):
         layout = GridLayout(cols=1,size_hint_y= None)
@@ -7370,22 +7131,6 @@ class Limits(Screen):
     def __init__(self, **kwargs):
         super(Limits, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Limits")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Limits") 
-        """
-            
     layouts = []
     def Limit(self,entry):
         layout = GridLayout(cols=1,size_hint_y= None)
@@ -7535,7 +7280,7 @@ Builder.load_string("""
                 text: y.text
                 multiline: False
                 hint_text: "f(x) ="
-                font_size: '20sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10
@@ -7545,7 +7290,7 @@ Builder.load_string("""
                 text: domain.text
                 multiline: False
                 hint_text:"Domain = min,max,sequence"
-                font_size: '20sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10  
@@ -7576,22 +7321,6 @@ class Domain_and_Range(Screen):
     def __init__(self, **kwargs):
         super(Domain_and_Range, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Domain_and_Range")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Domain_and_Range") 
-        """
-                
     layouts = []
     def steps(self,entry):
         print()
@@ -7607,8 +7336,8 @@ class Domain_and_Range(Screen):
             y = entry[:amp]
             print("y:",y)
             
-            self.ids.list_of_steps.add_widget(Label(text= "y = " + y.replace(" ","").replace("y=","").replace("+"," + ").replace("-"," - ") ,font_size = '15sp', size_hint_y= None, height=100))
-            self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '15sp', size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "y = " + y.replace(" ","").replace("y=","").replace("+"," + ").replace("-"," - ") ,font_size = '20sp', size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '20sp', size_hint_y= None, height=100))
             self.layouts.append(layout)
             
             domain = entry[amp+1:]
@@ -7626,10 +7355,11 @@ class Domain_and_Range(Screen):
                     y = y.replace("*","")
                 y = y.replace("^","**")
                 y = str(eval(y))
+                print("Y = ",y)
                 
-                self.ids.list_of_steps.add_widget(Label(text= "Domain | Range" ,font_size = '15sp', size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text= "x | y" ,font_size = '15sp', size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text= str(domain) + " | " + str(y) ,font_size = '15sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Domain | Range" ,font_size = '20sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "x | y" ,font_size = '20sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= str(domain) + " | " + str(y) ,font_size = '20sp', size_hint_y= None, height=100))
                 self.layouts.append(layout)
                 
             elif comma_count == 1 and y.count("x") > 0:
@@ -7644,8 +7374,8 @@ class Domain_and_Range(Screen):
                 print("loop start")
                 print(len(empty_domain))
                 
-                self.ids.list_of_steps.add_widget(Label(text= "Domain | Range" ,font_size = '15sp', size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text= "x | y" ,font_size = '15sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Domain | Range" ,font_size = '20sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "x | y" ,font_size = '20sp', size_hint_y= None, height=100))
                 self.layouts.append(layout)
                 
                 while i < len(empty_domain):
@@ -7658,7 +7388,7 @@ class Domain_and_Range(Screen):
                     print("y_solved",y_solved)
                     range_y.append(y_solved)
                     
-                    self.ids.list_of_steps.add_widget(Label(text= str(empty_domain[i]) + " | " + str(y_solved) ,font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= str(empty_domain[i]) + " | " + str(y_solved) ,font_size = '20sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     i = i + 1
@@ -7681,8 +7411,8 @@ class Domain_and_Range(Screen):
                     range_y = []
                     print("loop start")
                     
-                    self.ids.list_of_steps.add_widget(Label(text= "Domain | Range" ,font_size = '15sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "x | y" ,font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Domain | Range" ,font_size = '20sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "x | y" ,font_size = '20sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     while i < len(sequence_list):
@@ -7695,7 +7425,7 @@ class Domain_and_Range(Screen):
                         print("y_solved",y_solved)
                         range_y.append(y_solved)
                         
-                        self.ids.list_of_steps.add_widget(Label(text= str(sequence_list[i]) + " | " + str(y_solved) ,font_size = '15sp', size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= str(sequence_list[i]) + " | " + str(y_solved) ,font_size = '20sp', size_hint_y= None, height=100))
                         self.layouts.append(layout)
                         
                         i = i + 1
@@ -7703,11 +7433,11 @@ class Domain_and_Range(Screen):
                     print("range_y",range_y)
                     
                 else:
-                    self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '20sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
             else:
-                self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '20sp', size_hint_y= None, height=100))
                 self.layouts.append(layout)
                 
         except Exception:
@@ -7823,22 +7553,6 @@ class Area_of_Square(Screen):
     def __init__(self, **kwargs):
         super(Area_of_Square, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Area_of_Square")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Area_of_Square") 
-        """
-            
     layouts = []
     def steps(self,entry):
         print()
@@ -7972,22 +7686,6 @@ class Area_of_Triangle(Screen):
     def __init__(self, **kwargs):
         super(Area_of_Triangle, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Area_of_Triangle")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Area_of_Triangle") 
-        """
-            
     layouts = []
     def steps(self,entry):
         print()
@@ -8129,22 +7827,6 @@ class Area_of_Circle(Screen):
     def __init__(self, **kwargs):
         super(Area_of_Circle, self).__init__(**kwargs)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Area_of_Circle")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Area_of_Circle")  
-        """
-        
     layouts = []
     def steps(self,radius):
         print()
@@ -8170,65 +7852,14 @@ class Area_of_Circle(Screen):
             self.layouts.append(layout)  
 
 class Homepage(Screen):
-    def __init__(self, **kwargs):
-        super(Homepage, self).__init__(**kwargs)
+    pass
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Homepage")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Homepage")  
-        """
-
 class Menu(Screen):
-    def __init__(self, **kwargs):
-        super(Menu, self).__init__(**kwargs)
+    pass
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Menu")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Menu")  
-        """
-
 class HowToPage(Screen):
-   def __init__(self, **kwargs):
-       super(HowToPage, self).__init__(**kwargs)
+   pass
        
-       #ADS FOR ANDROID    
-       self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-       self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-       self.ads.request_banner()
-       self.ads.show_banner()
-       return print("ad called and shown at HowToPage")        
-
-       #ADS FOR IOS
-       """
-       self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-       self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-       self.ads.request_banner()
-       self.ads.show_banner()
-       return print("ad called and shown at HowToPage")  
-       """
-
 sm = ScreenManager()
 
 #App Skeleton
@@ -8278,6 +7909,22 @@ class Bundled(App):
     def __init__(self, **kwargs):
         super(Bundled, self).__init__(**kwargs)
         Window.bind(on_keyboard=self._key_handler)
+        
+        #ADS FOR ANDROID    
+        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
+        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
+        self.ads.request_banner()
+        self.ads.show_banner()
+        return print("ad called and shown at Homepage")        
+
+        #ADS FOR IOS
+        """
+        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
+        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
+        self.ads.request_banner()
+        self.ads.show_banner()
+        return print("ad called and shown at Homepage")  
+        """
     
     def _key_handler(self, instance, key, *args):
         print("key:",key)
