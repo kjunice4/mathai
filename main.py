@@ -7290,7 +7290,7 @@ Builder.load_string("""
                 text: domain.text
                 multiline: False
                 hint_text:"Domain = min,max,sequence"
-                font_size: '20sp'
+                font_size: '25sp'
                 size_hint_y: None
                 height: 200
                 padding: 10  
@@ -7298,7 +7298,7 @@ Builder.load_string("""
             Button:
                 id: steps
                 text: "Calculate"   
-                font_size: '20sp'
+                font_size: '25sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
                 height: 200
