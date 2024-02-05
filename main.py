@@ -8080,7 +8080,7 @@ class System_Of_Equations(Screen):
                 if entry_list[i] == '':
                     entry_list.pop(i)
                     print("entry_list removed empty element")
-                    self.ids.list_of_steps.add_widget(Label(text= "Missing element!" ,font_size = '20sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Missing element!" ,font_size = '15sp', size_hint_y= None, height=100))
                 i = i + 1
             
             # use the first 3 elements for equation1, the last 3 for equation2
@@ -8096,7 +8096,7 @@ class System_Of_Equations(Screen):
                 equation1 = entry_list_Equation1[0].replace("+","").replace(" ","") + "x + " + entry_list_Equation1[1].replace(" ","") + "y = " + entry_list_Equation1[2].replace("+","").replace(" ","")
                 equation1 = equation1.replace("+ -","- ")
                 print(equation1)
-                self.ids.list_of_steps.add_widget(Label(text= "Equation 1: " + equation1 ,font_size = '20sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Equation 1: " + equation1 ,font_size = '15sp', size_hint_y= None, height=100))
                 
                 entry_list_Equation2 = entry_list[3:]
                 print("entry_list_Equation2",entry_list_Equation2)
@@ -8104,30 +8104,30 @@ class System_Of_Equations(Screen):
                 equation2 = entry_list_Equation2[0].replace("+","").replace(" ","") + "x + " + entry_list_Equation2[1].replace(" ","") + "y = " + entry_list_Equation2[2].replace("+","").replace(" ","")
                 equation2 = equation2.replace("+ -","- ")
                 print(equation2)
-                self.ids.list_of_steps.add_widget(Label(text= "Equation 2: " + equation2 ,font_size = '20sp', size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '20sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Equation 2: " + equation2 ,font_size = '15sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '15sp', size_hint_y= None, height=100))
                 
                 #Find if Elimination or Manipulation is needed to solve
                 
                 if float(entry_list_Equation1[0].replace("+","").replace(" ","")) + float(entry_list_Equation2[0].replace("+","").replace(" ","")) == 0.0:
                     print("Found elimination for variable A")
                     
-                    self.ids.list_of_steps.add_widget(Label(text= "Solve by Elimination" ,font_size = '20sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=ff3364]' + "Eliminate The Following" + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + "Add The Following" + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "Solve by Elimination" ,font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=ff3364]' + "Eliminate The Following" + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + "Add The Following" + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                     variable_B_EQ1 = " + " + entry_list_Equation1[1].replace(" ","")
                     print("variable_B_EQ1: ",variable_B_EQ1)
                     variable_B_EQ1 = '[color=33CAFF]' + variable_B_EQ1.replace("+ -","- ") + '[/color]'
                     print("variable_B_EQ1 (with color!): ",variable_B_EQ1)
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=ff3364]' + entry_list_Equation1[0].replace("+","").replace(" ","") + "x" + '[/color]' + variable_B_EQ1 + "y = " + '[color=33CAFF]' + entry_list_Equation1[2].replace("+","").replace(" ","") + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=ff3364]' + entry_list_Equation1[0].replace("+","").replace(" ","") + "x" + '[/color]' + variable_B_EQ1 + "y = " + '[color=33CAFF]' + entry_list_Equation1[2].replace("+","").replace(" ","") + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                     variable_B_EQ2 = " + " + entry_list_Equation2[1].replace(" ","")
                     print("variable_B_EQ2: ",variable_B_EQ2)
                     variable_B_EQ2 = '[color=33CAFF]' + variable_B_EQ2.replace("+ -","- ") + '[/color]'
                     print("variable_B_EQ2 (with color!): ",variable_B_EQ2)
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=ff3364]' + entry_list_Equation2[0].replace("+","").replace(" ","") + "x" + '[/color]' + variable_B_EQ2 + "y = " + '[color=33CAFF]' + entry_list_Equation2[2].replace("+","").replace(" ","") + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= " + ___________________________",font_size = '20sp', size_hint_y= None, height=10, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=ff3364]' + entry_list_Equation2[0].replace("+","").replace(" ","") + "x" + '[/color]' + variable_B_EQ2 + "y = " + '[color=33CAFF]' + entry_list_Equation2[2].replace("+","").replace(" ","") + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= " + ___________________________",font_size = '15sp', size_hint_y= None, height=10, markup=True))
 
                     constant_Y = entry_list_Equation1[1].replace(" ","") + " + "  + entry_list_Equation2[1].replace(" ","")
                     print('constant_Y: ',constant_Y)
@@ -8139,14 +8139,14 @@ class System_Of_Equations(Screen):
                     answer_evaled = str(eval(answer))
                     print("answer_evaled",answer_evaled)
 
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + constant_Y_solved + '[/color]' + "y = " + '[color=33CAFF]' + answer_evaled + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + constant_Y_solved + '[/color]' + "y = " + '[color=33CAFF]' + answer_evaled + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                     y_equals = str(eval(str(answer_evaled + "/" + constant_Y_solved)))
                     print('y_equals: ',y_equals)
 
-                    self.ids.list_of_steps.add_widget(Label(text= "y = " + '[color=33CAFF]' + y_equals + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '20sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "Solved for y, Use Equation 1 to solve for x",font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "y = " + '[color=33CAFF]' + y_equals + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Solved for y, Use Equation 1 to solve for x",font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                     print()
                     print("Solving for X with equation1: ",equation1)
@@ -8174,62 +8174,62 @@ class System_Of_Equations(Screen):
                     answer_from_EQ1 = equation1_with_y_equals[equal_sign_index+1:]
                     print("answer_from_EQ1: ",answer_from_EQ1)
                     
-                    self.ids.list_of_steps.add_widget(Label(text= str(acoef) + "x " + '[color=33CAFF]' + str(bcoef_yvar) + '[/color]' + " = " + str(answer_from_EQ1),font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= str(acoef) + "x " + '[color=33CAFF]' + str(bcoef_yvar_evaled) + '[/color]' + " = " + str(answer_from_EQ1),font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= str(acoef) + "x " + '[color=33CAFF]' + str(bcoef_yvar) + '[/color]' + " = " + str(answer_from_EQ1),font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= str(acoef) + "x " + '[color=33CAFF]' + str(bcoef_yvar_evaled) + '[/color]' + " = " + str(answer_from_EQ1),font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                     if bcoef_yvar_evaled.count("+") == 1:
                         print()
                         print("Found the plus sign, must subtract from both sides")
-                        self.ids.list_of_steps.add_widget(Label(text= str(acoef) + "x " + '[color=33CAFF]' + str(bcoef_yvar_evaled) + '[/color]' + '[color=ff3364]' + " - " + str(bcoef_yvar_evaled).replace("+","") + '[/color]' + " = " + str(answer_from_EQ1) + '[color=ff3364]' + " - " + str(bcoef_yvar_evaled).replace("+","") + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                        self.ids.list_of_steps.add_widget(Label(text= str(acoef) + "x " + '[color=33CAFF]' + str(bcoef_yvar_evaled) + '[/color]' + '[color=ff3364]' + " - " + str(bcoef_yvar_evaled).replace("+","") + '[/color]' + " = " + str(answer_from_EQ1) + '[color=ff3364]' + " - " + str(bcoef_yvar_evaled).replace("+","") + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
                         
                         answer_bcoef_and_y_evaled = str(eval(str(str(answer_from_EQ1) + "-" + str(bcoef_yvar_evaled))))
                         print("answer_bcoef_and_y_evaled: ",answer_bcoef_and_y_evaled)
                         
-                        self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + str(acoef) + '[/color]' + "x = " + '[color=33CAFF]' + str(answer_bcoef_and_y_evaled) + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                        self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + str(acoef) + '[/color]' + "x = " + '[color=33CAFF]' + str(answer_bcoef_and_y_evaled) + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
                         
                         acoef_answer_bcoef_and_y_evaled = str(eval(str(str(answer_bcoef_and_y_evaled) + "/" + str(acoef))))
                         print("acoef_answer_bcoef_and_y_evaled: ",acoef_answer_bcoef_and_y_evaled)
-                        self.ids.list_of_steps.add_widget(Label(text= "x = " + '[color=33CAFF]' + str(acoef_answer_bcoef_and_y_evaled) + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                        self.ids.list_of_steps.add_widget(Label(text= "x = " + '[color=33CAFF]' + str(acoef_answer_bcoef_and_y_evaled) + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                     else:
                         print()
                         print("Found the minus sign, must add from both sides")
-                        self.ids.list_of_steps.add_widget(Label(text= str(acoef) + "x " + '[color=33CAFF]' + str(bcoef_yvar_evaled) + '[/color]' + '[color=ff3364]' + " + " + str(bcoef_yvar_evaled).replace("+","") + '[/color]' + " = " + str(answer_from_EQ1) + '[color=ff3364]' + " - " + str(bcoef_yvar_evaled).replace("+","") + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                        self.ids.list_of_steps.add_widget(Label(text= str(acoef) + "x " + '[color=33CAFF]' + str(bcoef_yvar_evaled) + '[/color]' + '[color=ff3364]' + " + " + str(bcoef_yvar_evaled).replace("+","") + '[/color]' + " = " + str(answer_from_EQ1) + '[color=ff3364]' + " - " + str(bcoef_yvar_evaled).replace("+","") + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
                         
                         answer_bcoef_and_y_evaled = str(eval(str(str(answer_from_EQ1) + "+" + str(bcoef_yvar_evaled))))
                         print("answer_bcoef_and_y_evaled: ",answer_bcoef_and_y_evaled)
                         
-                        self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + str(acoef) + '[/color]' + "x = " + '[color=33CAFF]' + str(answer_bcoef_and_y_evaled) + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                        self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + str(acoef) + '[/color]' + "x = " + '[color=33CAFF]' + str(answer_bcoef_and_y_evaled) + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
                         
                         acoef_answer_bcoef_and_y_evaled = str(eval(str(str(answer_bcoef_and_y_evaled) + "/" + str(acoef))))
                         print("acoef_answer_bcoef_and_y_evaled: ",acoef_answer_bcoef_and_y_evaled)
-                        self.ids.list_of_steps.add_widget(Label(text= "x = " + '[color=33CAFF]' + str(acoef_answer_bcoef_and_y_evaled) + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                        self.ids.list_of_steps.add_widget(Label(text= "x = " + '[color=33CAFF]' + str(acoef_answer_bcoef_and_y_evaled) + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
-                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '20sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "Final Answer:",font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= "x = " + '[color=33CAFF]' + str(acoef_answer_bcoef_and_y_evaled) + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= "y = " + '[color=33CAFF]' + str(y_equals) + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Final Answer:",font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "x = " + '[color=33CAFF]' + str(acoef_answer_bcoef_and_y_evaled) + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "y = " + '[color=33CAFF]' + str(y_equals) + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                 #Eliminate Y
                 elif float(entry_list_Equation1[1].replace("+","").replace(" ","")) + float(entry_list_Equation2[1].replace("+","").replace(" ","")) == 0.0:
                     print("Found elimination for variable B")
                     
-                    self.ids.list_of_steps.add_widget(Label(text= "Solve by Elimination" ,font_size = '20sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=ff3364]' + "Eliminate The Following" + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + "Add The Following" + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "Solve by Elimination" ,font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=ff3364]' + "Eliminate The Following" + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + "Add The Following" + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                     variable_b_EQ1 = "+ " + entry_list_Equation1[1]
                     print("variable_b_EQ1 : ",variable_b_EQ1)
                     variable_b_EQ1 = variable_b_EQ1.replace("+ -","- ")
                     print("variable_b_EQ1 cleaned: ",variable_b_EQ1)
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + entry_list_Equation1[0].replace("+","").replace(" ","") + "x " + '[/color]' + '[color=ff3364]' + variable_b_EQ1 + "y" + '[/color]' + " = "  + '[color=33CAFF]' + entry_list_Equation1[2].replace("+","").replace(" ","") + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + entry_list_Equation1[0].replace("+","").replace(" ","") + "x " + '[/color]' + '[color=ff3364]' + variable_b_EQ1 + "y" + '[/color]' + " = "  + '[color=33CAFF]' + entry_list_Equation1[2].replace("+","").replace(" ","") + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                     variable_b_EQ2 = "+ " + entry_list_Equation2[1]
                     print("variable_b_EQ2: ",variable_b_EQ2)
                     variable_b_EQ2 = variable_b_EQ2.replace("+ -","- ")
                     print("variable_b_EQ2 cleaned: ",variable_b_EQ2)
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + entry_list_Equation2[0].replace("+","").replace(" ","") + "x " + '[/color]' + '[color=ff3364]' + variable_b_EQ2 + "y" + '[/color]' + " = "  + '[color=33CAFF]' + entry_list_Equation2[2].replace("+","").replace(" ","") + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= " + ___________________________",font_size = '20sp', size_hint_y= None, height=10, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + entry_list_Equation2[0].replace("+","").replace(" ","") + "x " + '[/color]' + '[color=ff3364]' + variable_b_EQ2 + "y" + '[/color]' + " = "  + '[color=33CAFF]' + entry_list_Equation2[2].replace("+","").replace(" ","") + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= " + ___________________________",font_size = '15sp', size_hint_y= None, height=10, markup=True))
 
 
                     constant_x = entry_list_Equation1[0].replace(" ","") + " + "  + entry_list_Equation2[0].replace(" ","")
@@ -8242,14 +8242,14 @@ class System_Of_Equations(Screen):
                     answer_evaled = str(eval(str(answer)))
                     print("answer_evaled",answer_evaled)
 
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + constant_x_solved + '[/color]' + "x = " + '[color=33CAFF]' + answer_evaled + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + constant_x_solved + '[/color]' + "x = " + '[color=33CAFF]' + answer_evaled + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                     y_equals = str(eval(str(answer_evaled + "/" + constant_x_solved)))
                     print('y_equals: ',y_equals)
 
-                    self.ids.list_of_steps.add_widget(Label(text= "x = " + '[color=33CAFF]' + y_equals + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '20sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "Solved for x, Use Equation 1 to solve for y",font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "x = " + '[color=33CAFF]' + y_equals + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Solved for x, Use Equation 1 to solve for y",font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                     print()
                     print("Solving for Y with equation1: ",equation1)
@@ -8279,50 +8279,50 @@ class System_Of_Equations(Screen):
                     answer = equation1_with_y_equals[equal_sign+1:]
                     print("answer: ",answer)
 
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + bcoef_xvar + '[/color]' + bcoef + "y = " + answer,font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + bcoef_xvar_evaled + '[/color]' + bcoef + "y = " + answer,font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + bcoef_xvar + '[/color]' + bcoef + "y = " + answer,font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + bcoef_xvar_evaled + '[/color]' + bcoef + "y = " + answer,font_size = '15sp', size_hint_y= None, height=100, markup=True))
 
                     if float(bcoef_xvar_evaled) >= 0.0:
                         print("Found positive number, subtract on both sides.")
-                        self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + bcoef_xvar_evaled + '[/color]' + " - " + '[color=ff3364]' + bcoef_xvar_evaled + '[/color]' + bcoef + "y = " + answer + '[color=ff3364]' + " - " + bcoef_xvar_evaled + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                        self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + bcoef_xvar_evaled + '[/color]' + " - " + '[color=ff3364]' + bcoef_xvar_evaled + '[/color]' + bcoef + "y = " + answer + '[color=ff3364]' + " - " + bcoef_xvar_evaled + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
                         
                         answer_minus_bcoef_xvar_evaled = str(eval(str(answer) + "-" + str(bcoef_xvar_evaled)))
                         print("answer_minus_bcoef_xvar_evaled: ",answer_minus_bcoef_xvar_evaled)
                         
-                        self.ids.list_of_steps.add_widget(Label(text= bcoef + "y = " + '[color=33CAFF]' + answer_minus_bcoef_xvar_evaled + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                        self.ids.list_of_steps.add_widget(Label(text= bcoef + "y = " + '[color=33CAFF]' + answer_minus_bcoef_xvar_evaled + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
 
                         y_equals = str(answer_minus_bcoef_xvar_evaled) + "/" + str(bcoef)
                         y_equals = str(eval(y_equals))
                         print("y_equals: ",y_equals)
                         
-                        self.ids.list_of_steps.add_widget(Label(text= "y = " + '[color=33CAFF]' + y_equals + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                        self.ids.list_of_steps.add_widget(Label(text= "y = " + '[color=33CAFF]' + y_equals + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
 
                         
                     else:
                         print("Found negative number, add on both sides.")
-                        self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + bcoef_xvar_evaled + '[/color]' + " - " + '[color=ff3364]' + bcoef_xvar_evaled + '[/color]' + bcoef + "y = " + answer + '[color=ff3364]' + " - " + bcoef_xvar_evaled + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                        self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + bcoef_xvar_evaled + '[/color]' + " - " + '[color=ff3364]' + bcoef_xvar_evaled + '[/color]' + bcoef + "y = " + answer + '[color=ff3364]' + " - " + bcoef_xvar_evaled + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
                         
                         answer_minus_bcoef_xvar_evaled = str(eval(str(answer) + "+" + str(bcoef_xvar_evaled)))
                         print("answer_minus_bcoef_xvar_evaled: ",answer_minus_bcoef_xvar_evaled)
                         
-                        self.ids.list_of_steps.add_widget(Label(text= bcoef + "y = " + '[color=33CAFF]' + answer_minus_bcoef_xvar_evaled + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                        self.ids.list_of_steps.add_widget(Label(text= bcoef + "y = " + '[color=33CAFF]' + answer_minus_bcoef_xvar_evaled + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
 
                         y_equals = str(answer_minus_bcoef_xvar_evaled) + "/" + str(bcoef)
                         y_equals = str(eval(y_equals))
                         print("y_equals: ",y_equals)
                         
-                        self.ids.list_of_steps.add_widget(Label(text= "y = " + '[color=33CAFF]' + y_equals + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                        self.ids.list_of_steps.add_widget(Label(text= "y = " + '[color=33CAFF]' + y_equals + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                 else: #Use Manipulation
                     print("Use Manipulation")
-                    self.ids.list_of_steps.add_widget(Label(text= "Solve by Manipulation" ,font_size = '20sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "Take X coefficients, multiply each equation by the other X coefficient" ,font_size = '20sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '20sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Solve by Manipulation" ,font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Take X coefficients, multiply each equation by the other X coefficient" ,font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '15sp', size_hint_y= None, height=100))
 
                     equation1 = entry_list_Equation1[0].replace("+","").replace(" ","") + "x + " + entry_list_Equation1[1].replace(" ","") + "y = " + entry_list_Equation1[2].replace("+","").replace(" ","")
                     equation1 = equation1.replace("+ -","- ")
                     print(equation1)
-                    self.ids.list_of_steps.add_widget(Label(text= "Equation 1: " + equation1 ,font_size = '20sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Equation 1: " + equation1 ,font_size = '15sp', size_hint_y= None, height=100))
                     
                     entry_list_Equation2 = entry_list[3:]
                     print("entry_list_Equation2",entry_list_Equation2)
@@ -8330,8 +8330,8 @@ class System_Of_Equations(Screen):
                     equation2 = entry_list_Equation2[0].replace("+","").replace(" ","") + "x + " + entry_list_Equation2[1].replace(" ","") + "y = " + entry_list_Equation2[2].replace("+","").replace(" ","")
                     equation2 = equation2.replace("+ -","- ")
                     print(equation2)
-                    self.ids.list_of_steps.add_widget(Label(text= "Equation 2: " + equation2 ,font_size = '20sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '20sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Equation 2: " + equation2 ,font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '15sp', size_hint_y= None, height=100))
                     
                     #Check if equation1 X Coefficient is positive or negative and if equation2 X Coefficient is positive or negative
                     #If + , + : Flip Equation1 to Negative and leave Equation2 as Positive
@@ -8364,9 +8364,9 @@ class System_Of_Equations(Screen):
                         manip1 = entry_list_Equation1[0].replace("+","").replace(" ","")
                         manip2 = entry_list_Equation2[0].replace("+","").replace(" ","")
                     
-                    self.ids.list_of_steps.add_widget(Label(text= "Solve by Elimination" ,font_size = '20sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + manip2 + '[/color]' + "(" + equation1 + ")" ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + manip1 + '[/color]' + "(" + equation2 + ")" ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "Solve by Elimination" ,font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + manip2 + '[/color]' + "(" + equation1 + ")" ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + manip1 + '[/color]' + "(" + equation2 + ")" ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
 
                     # use Manip1 and Manip2 to multiply equations
                     
@@ -8389,12 +8389,12 @@ class System_Of_Equations(Screen):
                     print("equation1: ",equation1)
                     print("equation2: ",equation2)
                     
-                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=ff3364]' + "Eliminate The Following" + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + "Add The Following" + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= equation1_display,font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= equation2_display ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= " + ___________________________",font_size = '20sp', size_hint_y= None, height=10, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=ff3364]' + "Eliminate The Following" + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + "Add The Following" + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= equation1_display,font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= equation2_display ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= " + ___________________________",font_size = '15sp', size_hint_y= None, height=10, markup=True))
                     
                     add_B_Coeff = str(eval(str(B_Coefficient_eq1 + "+" +B_Coefficient_eq2)))
                     print("add_B_Coeff: ",add_B_Coeff)
@@ -8402,7 +8402,7 @@ class System_Of_Equations(Screen):
                     added_answer = str(eval(str(Answer_eq1 + "+" + Answer_eq2)))
                     print("added_answer: ",added_answer)
                     
-                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' +  add_B_Coeff + "y" + '[/color]' + " = " + added_answer + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' +  add_B_Coeff + "y" + '[/color]' + " = " + added_answer + '[/color]' ,font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                     y_equals = str(eval(str(added_answer + "/" + add_B_Coeff)))
                     print("y_equals: ",y_equals)
@@ -8410,12 +8410,12 @@ class System_Of_Equations(Screen):
                     if str(y_equals) == "-0.0":
                         y_equals = 0.0
                     
-                    self.ids.list_of_steps.add_widget(Label(text= "y = " + '[color=33CAFF]' +  y_equals + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '20sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "Solve for x with y plugged into equation 1",font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "y = " + '[color=33CAFF]' +  y_equals + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Solve for x with y plugged into equation 1",font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                     equation1 = str(A_Coefficient_eq1 + "x + " + '[color=33CAFF]' +  B_Coefficient_eq1 + "(" + y_equals + '[/color]' + ") = " + Answer_eq1).replace("+ -","- ")
-                    self.ids.list_of_steps.add_widget(Label(text= equation1.replace("+ -","- "),font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= equation1.replace("+ -","- "),font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                     B_Coeff_and_y_equals_evaled = str(eval(str(B_Coefficient_eq1 + "*" +y_equals)))
                     print("B_Coeff_and_y_equals_evaled: ",B_Coeff_and_y_equals_evaled)
@@ -8424,26 +8424,26 @@ class System_Of_Equations(Screen):
                         B_Coeff_and_y_equals_evaled = 0.0
                     
                     equation1 = str(A_Coefficient_eq1 + "x + " + '[color=33CAFF]' +  B_Coeff_and_y_equals_evaled + '[/color]' + " = " + Answer_eq1).replace("+ -","- ")
-                    self.ids.list_of_steps.add_widget(Label(text= equation1.replace("+ -","- "),font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= equation1.replace("+ -","- "),font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                     Answer_eq1__dividedby__B_Coeff_and_y_equals_evaled = str(eval(str(Answer_eq1+"/"+B_Coeff_and_y_equals_evaled)))
                     print("Answer_eq1__dividedby__B_Coeff_and_y_equals_evaled: ",Answer_eq1__dividedby__B_Coeff_and_y_equals_evaled)
                     equation1 = str(A_Coefficient_eq1 + "x" + " = " + '[color=33CAFF]' +  Answer_eq1__dividedby__B_Coeff_and_y_equals_evaled + '[/color]').replace("+ -","- ")
-                    self.ids.list_of_steps.add_widget(Label(text= equation1.replace("+ -","- "),font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= equation1.replace("+ -","- "),font_size = '15sp', size_hint_y= None, height=100, markup=True))
                     
                     x_equals = str(eval(str(Answer_eq1__dividedby__B_Coeff_and_y_equals_evaled+"/"+A_Coefficient_eq1)))
                     print("x_equals: ",x_equals)
-                    self.ids.list_of_steps.add_widget(Label(text= "x = " + '[color=33CAFF]' + x_equals + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= "x = " + '[color=33CAFF]' + str(x_equals) + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
-                    self.ids.list_of_steps.add_widget(Label(text= "y = " + '[color=33CAFF]' + str(y_equals) + '[/color]',font_size = '20sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "x = " + '[color=33CAFF]' + x_equals + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "x = " + '[color=33CAFF]' + str(x_equals) + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
+                    self.ids.list_of_steps.add_widget(Label(text= "y = " + '[color=33CAFF]' + str(y_equals) + '[/color]',font_size = '15sp', size_hint_y= None, height=100, markup=True))
             else:
                 print("CANNOT USE ENTRY LIST, NOT LENGTH OF 6")
                 print("Length of entry_list = ",str(len(entry_list)))
                 
                 
         except Exception:
-            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '20sp', size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
             self.layouts.append(layout)  
 
 class Homepage(Screen):
