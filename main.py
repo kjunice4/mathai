@@ -33,7 +33,6 @@ Builder.load_string("""
             font_size: '20sp'
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
-            height: 200
             text: "A Junice Industries Product"
             on_release:
                 app.root.current = "Menu"
@@ -43,7 +42,6 @@ Builder.load_string("""
             font_size: '20sp'
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
-            height: 200
             text: "Tap anywhere to Continue"
             on_release:
                 app.root.current = "Menu"
