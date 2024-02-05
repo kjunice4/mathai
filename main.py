@@ -23,20 +23,11 @@ Builder.load_string("""
         cols: 1
         
         Button:
+            height: 800
             background_normal: "aimath.png"
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left"
-                
-        Button:
-            font_size: '20sp'
-            background_color: 0, 0 , 0 , 1
-            size_hint_y: None
-            height: 200
-            text: "AI Math"
-            on_release:
-                app.root.current = "Menu"
-                root.manager.transition.direction = "left" 
                 
         Button:
             font_size: '20sp'
