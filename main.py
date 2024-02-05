@@ -23,7 +23,7 @@ Builder.load_string("""
         cols: 1
         
         Button:
-            background_normal: "KSquared_Logo.png"
+            background_normal: "aimath.png"
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left"
@@ -33,7 +33,7 @@ Builder.load_string("""
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
             height: 200
-            text: "KSquared-Mathematics"
+            text: "AI Math"
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left" 
@@ -92,7 +92,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "How to Use KSquared-Mathematics"
+                text: "How to Use AI Math"
                 on_release:
                     app.root.current = "HowToPage"
                     root.manager.transition.direction = "left"
@@ -383,7 +383,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "How to Use KSquared-Mathematics"
+                text: "How to Use AI Math"
                 on_release:
                     app.root.current = "HowToPage"
                     root.manager.transition.direction = "left"
@@ -403,10 +403,10 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "Share KSquared-Mathematics"
+                text: "Share AI Math"
                     
             Image:
-                source: 'KSquared_QR.png'
+                source: 'AImath_QR.png'
                 size_hint_y: None
                 height: 800
                 width: 800
@@ -436,7 +436,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "How to use KSquared-Mathematics"
+                text: "How to use AI Math"
             
             Button:
                 id: steps
