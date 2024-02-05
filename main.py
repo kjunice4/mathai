@@ -8304,7 +8304,7 @@ class System_Of_Equations(Screen):
                 else: #Use Manipulation
                     print("Use Manipulation")
                     self.ids.list_of_steps.add_widget(Label(text= "Solve by Manipulation" ,font_size = '15sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "Take X coefficients, multiply each equation by the other X coefficient" ,font_size = '10sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Take X coefficients, multiply each equation by the other X coefficient" ,font_size = '12sp', size_hint_y= None, height=100))
                     self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '15sp', size_hint_y= None, height=100))
 
                     equation1 = entry_list_Equation1[0].replace("+","").replace(" ","") + "x + " + entry_list_Equation1[1].replace(" ","") + "y = " + entry_list_Equation1[2].replace("+","").replace(" ","")
