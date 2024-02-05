@@ -7943,7 +7943,7 @@ Builder.load_string("""
                     text: a_entry_eq1.text
                     hint_text: "+/- a"
                     multiline: False
-                    font_size: '35sp'
+                    font_size: '30sp'
                     size_hint_y: None
                     height: 200
                     
@@ -7958,7 +7958,7 @@ Builder.load_string("""
                     text: b_entry_eq1.text
                     hint_text: "+/- b"
                     multiline: False
-                    font_size: '35sp'
+                    font_size: '30sp'
                     size_hint_y: None
                     height: 200
                     
@@ -7973,7 +7973,7 @@ Builder.load_string("""
                     text: c_entry_eq1.text
                     hint_text: "+/- c"
                     multiline: False
-                    font_size: '35sp'
+                    font_size: '30sp'
                     size_hint_y: None
                     height: 200
             
@@ -7989,7 +7989,7 @@ Builder.load_string("""
                     text: a_entry_eq2.text
                     hint_text: "+/- a"
                     multiline: False
-                    font_size: '35sp'
+                    font_size: '30sp'
                     size_hint_y: None
                     height: 200
                     
@@ -8004,7 +8004,7 @@ Builder.load_string("""
                     text: b_entry_eq2.text
                     hint_text: "+/- b"
                     multiline: False
-                    font_size: '35sp'
+                    font_size: '30sp'
                     size_hint_y: None
                     height: 200
                     
@@ -8019,7 +8019,7 @@ Builder.load_string("""
                     text: c_entry_eq2.text
                     hint_text: "+/- c"
                     multiline: False
-                    font_size: '35sp'
+                    font_size: '30sp'
                     size_hint_y: None
                     height: 200      
             
@@ -8304,7 +8304,7 @@ class System_Of_Equations(Screen):
                 else: #Use Manipulation
                     print("Use Manipulation")
                     self.ids.list_of_steps.add_widget(Label(text= "Solve by Manipulation" ,font_size = '15sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "Take X coefficients, multiply each equation by the other X coefficient" ,font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Take X coefficients, multiply each equation by the other X coefficient" ,font_size = '10sp', size_hint_y= None, height=100))
                     self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '15sp', size_hint_y= None, height=100))
 
                     equation1 = entry_list_Equation1[0].replace("+","").replace(" ","") + "x + " + entry_list_Equation1[1].replace(" ","") + "y = " + entry_list_Equation1[2].replace("+","").replace(" ","")
