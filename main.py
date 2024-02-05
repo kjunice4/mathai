@@ -7966,13 +7966,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     height: 200
-                    text: "y"
-                    
-                Label:
-                    font_size: '20sp'
-                    size_hint_y: None
-                    height: 200
-                    text: "="
+                    text: "y ="
                     
                 TextInput:
                     id: c_entry_eq1
@@ -8018,13 +8012,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     height: 200
-                    text: "y"
-                    
-                Label:
-                    font_size: '20sp'
-                    size_hint_y: None
-                    height: 200
-                    text: "="
+                    text: "y ="
                     
                 TextInput:
                     id: c_entry_eq2
