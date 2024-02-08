@@ -386,7 +386,7 @@ Builder.load_string("""
                 text: "Visit Junice Industries"
                 on_release:
                     import webbrowser
-                    webbrowser.open('https://www.juniceindustries.com') 
+                    webbrowser.open('https://www.juniceindustries.com/mathai') 
                     
             Label:
                 font_size: '20sp'
@@ -4903,7 +4903,7 @@ Builder.load_string("""
                 text: entry.text
                 hint_text: "Numbers seperated by a comma"
                 multiline: False
-                font_size: '20sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10
@@ -4913,7 +4913,7 @@ Builder.load_string("""
                 text: dev.text
                 hint_text: "1,2 or 3 Deviations"
                 multiline: False
-                font_size: '15sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10
@@ -4924,7 +4924,7 @@ Builder.load_string("""
                 text: perc.text
                 hint_text: "nth Percentile"
                 multiline: False
-                font_size: '15sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10
@@ -7264,7 +7264,7 @@ Builder.load_string("""
                 hint_text: "f(x) ="
                 font_size: '35sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10
                     
             TextInput:
@@ -7274,7 +7274,7 @@ Builder.load_string("""
                 hint_text:"Domain = min,max,sequence"
                 font_size: '25sp'
                 size_hint_y: None
-                height: 100
+                height: 200
                 padding: 10  
                 
             Button:
