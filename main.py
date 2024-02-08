@@ -11,7 +11,6 @@ import numpy as np
 import sympy as sym
 from colorama import Back, Style 
 from sympy import Limit, Symbol, S, diff, integrate
-from kivmob import KivMob
 
 #Opening Page
 Builder.load_string("""
@@ -23,8 +22,8 @@ Builder.load_string("""
         cols: 1
         
         Button:
-            height: 800
-            background_normal: "aimath.png"
+            height: 500
+            background_normal: "MathAI.png"
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left"
@@ -33,6 +32,7 @@ Builder.load_string("""
             font_size: '20sp'
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
+            height: 300
             text: "A Junice Industries Product"
             on_release:
                 app.root.current = "Menu"
@@ -42,6 +42,7 @@ Builder.load_string("""
             font_size: '20sp'
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
+            height: 200
             text: "Tap anywhere to Continue"
             on_release:
                 app.root.current = "Menu"
@@ -81,7 +82,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "How to Use AI Math"
+                text: "How to Use Math AI"
                 on_release:
                     app.root.current = "HowToPage"
                     root.manager.transition.direction = "left"
@@ -372,7 +373,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "How to Use AI Math"
+                text: "How to Use Math AI"
                 on_release:
                     app.root.current = "HowToPage"
                     root.manager.transition.direction = "left"
@@ -392,7 +393,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "Share AI Math"
+                text: "Share Math AI"
                     
             Image:
                 source: 'AImath_QR.png'
@@ -425,7 +426,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "How to use AI Math"
+                text: "How to use Math AI"
             
             Button:
                 id: steps
@@ -536,7 +537,7 @@ Builder.load_string("""
                 padding:10
                 spacing:10
                 size_hint: 1, None
-                width:300
+                width:200
                 size_hint_y: None
                 height: self.minimum_height 
 
@@ -575,7 +576,7 @@ Builder.load_string("""
                     text: Base_entry.text
                     hint_text: "Entry:"
                     multiline: False
-                    font_size: '20sp'
+                    font_size: '35sp'
                     size_hint_y: None
                     height: 200
                     padding: 10
@@ -707,7 +708,7 @@ Builder.load_string("""
                     text: Base_entry.text
                     hint_text: "Base:"
                     multiline: False
-                    font_size: '20sp'
+                    font_size: '35sp'
                     size_hint_y: None
                     height: 200
                     padding: 10
@@ -725,7 +726,7 @@ Builder.load_string("""
                     text: Power_entry.text
                     hint_text: "Power:"
                     multiline: False
-                    font_size: '20sp'
+                    font_size: '35sp'
                     size_hint_y: None
                     height: 200
                     padding: 10              
@@ -4907,7 +4908,28 @@ Builder.load_string("""
                 height: 200
                 padding: 10
             
-                    
+            TextInput:
+                id: dev
+                text: dev.text
+                hint_text: "1,2 or 3 Deviations"
+                multiline: False
+                font_size: '15sp'
+                size_hint_y: None
+                height: 200
+                padding: 10
+                input_filter: lambda text, from_undo: text[:1 - len(dev.text)] 
+            
+            TextInput:
+                id: perc
+                text: perc.text
+                hint_text: "nth Percentile"
+                multiline: False
+                font_size: '15sp'
+                size_hint_y: None
+                height: 200
+                padding: 10
+                input_filter: lambda text, from_undo: text[:3 - len(perc.text)]           
+            
             Button:
                 id: mmm
                 text: "Mean, Median & Mode"   
@@ -4918,39 +4940,19 @@ Builder.load_string("""
                 padding: 10, 10
                 on_release:
                     list_of_steps.clear_widgets() 
-                    Statistical_Calculator.mmm(entry.text)    
-                
-            BoxLayout:
-                cols: 2
-                padding:10
-                spacing:10
-                size_hint: 1, None
-                width:300
+                    Statistical_Calculator.mmm(entry.text)     
+                    
+            Button:
+                id: sd
+                text: "Standard Deviation"   
+                font_size: '20sp'
                 size_hint_y: None
-                height: self.minimum_height 
-                    
-                TextInput:
-                    id: dev
-                    text: dev.text
-                    hint_text: "1,2 or 3 Deviations"
-                    multiline: False
-                    font_size: '15sp'
-                    size_hint_y: None
-                    height: 200
-                    padding: 10
-                    input_filter: lambda text, from_undo: text[:1 - len(dev.text)] 
-                    
-                Button:
-                    id: sd
-                    text: "Standard Deviation"   
-                    font_size: '15sp'
-                    size_hint_y: None
-                    background_color: 0, 0 , 1 , 1
-                    height: 200
-                    padding: 10, 10
-                    on_release:
-                        list_of_steps.clear_widgets() 
-                        Statistical_Calculator.sd(entry.text + "&" + dev.text)  
+                background_color: 0, 0 , 1 , 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    list_of_steps.clear_widgets() 
+                    Statistical_Calculator.sd(entry.text + "&" + dev.text)  
                     
             Button:
                 id: var
@@ -4964,37 +4966,17 @@ Builder.load_string("""
                     list_of_steps.clear_widgets() 
                     Statistical_Calculator.var(entry.text)  
                     
-            BoxLayout:
-                cols: 2
-                padding:10
-                spacing:10
-                size_hint: 1, None
-                width:300
+            Button:
+                id: percentile
+                text: "Percentile"   
+                font_size: '20sp'
                 size_hint_y: None
-                height: self.minimum_height 
-                    
-                TextInput:
-                    id: perc
-                    text: perc.text
-                    hint_text: "nth Percentile"
-                    multiline: False
-                    font_size: '15sp'
-                    size_hint_y: None
-                    height: 200
-                    padding: 10
-                    input_filter: lambda text, from_undo: text[:3 - len(perc.text)] 
-                    
-                Button:
-                    id: percentile
-                    text: "Percentile"   
-                    font_size: '15sp'
-                    size_hint_y: None
-                    background_color: 0, 0 , 1 , 1
-                    height: 200
-                    padding: 10, 10
-                    on_release:
-                        list_of_steps.clear_widgets() 
-                        Statistical_Calculator.perc(entry.text + "%" + perc.text)  
+                background_color: 0, 0 , 1 , 1
+                height: 200
+                padding: 10, 10
+                on_release:
+                    list_of_steps.clear_widgets() 
+                    Statistical_Calculator.perc(entry.text + "%" + perc.text)  
                           
             GridLayout:
                 id: list_of_steps
@@ -5112,7 +5094,7 @@ class Statistical_Calculator(Screen):
                 self.layouts.append(layout)
                 
         except Exception:
-            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input, missing standard deviation entry" ,font_size = '15sp', size_hint_y= None, height=100))
             self.layouts.append(layout)
             
     def var(self,entry):
@@ -5182,7 +5164,7 @@ class Statistical_Calculator(Screen):
             
             self.ids.list_of_steps.add_widget(Label(text= perc + " is in the " + str(nth) + " Percentile"  ,font_size = '15sp', size_hint_y= None, height=100))
         except Exception:
-            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input, missing percentile entry" ,font_size = '15sp', size_hint_y= None, height=100))
             self.layouts.append(layout)
                 
 
@@ -6324,7 +6306,7 @@ Builder.load_string("""
                 text: entry.text
                 hint_text: "f(x)="
                 multiline: False
-                font_size: '20sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10              
@@ -6334,7 +6316,7 @@ Builder.load_string("""
                 text: prime.text
                 hint_text: "# of times to derive"
                 multiline: False
-                font_size: '20sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10            
@@ -6345,7 +6327,7 @@ Builder.load_string("""
                 text: respect.text
                 hint_text: "With respect to: x, y or z"
                 multiline: False
-                font_size: '20sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10  
@@ -6356,7 +6338,7 @@ Builder.load_string("""
                 text: value.text
                 hint_text: "Respect = Value"
                 multiline: False
-                font_size: '20sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10  
@@ -6457,7 +6439,7 @@ Builder.load_string("""
                 text: entry.text
                 hint_text: "f(x)="
                 multiline: False
-                font_size: '20sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10              
@@ -6467,7 +6449,7 @@ Builder.load_string("""
                 text: prime.text
                 hint_text: "# of times to integrate"
                 multiline: False
-                font_size: '20sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10              
@@ -6478,7 +6460,7 @@ Builder.load_string("""
                 text: respect.text
                 hint_text: "With respect to: x, y or z"
                 multiline: False
-                font_size: '20sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10  
@@ -6489,7 +6471,7 @@ Builder.load_string("""
                 text: value.text
                 hint_text: "Definite Integral: a,b"
                 multiline: False
-                font_size: '20sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10  
@@ -6582,7 +6564,7 @@ Builder.load_string("""
                 text: entry.text
                 hint_text: "lim:"
                 multiline: False
-                font_size: '20sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10              
@@ -6592,7 +6574,7 @@ Builder.load_string("""
                 text: range.text
                 hint_text: "x -> n:"
                 multiline: False
-                font_size: '20sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -6602,7 +6584,7 @@ Builder.load_string("""
                 text: direction.text
                 hint_text: "direction: + or -"
                 multiline: False
-                font_size: '20sp'
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -7280,9 +7262,9 @@ Builder.load_string("""
                 text: y.text
                 multiline: False
                 hint_text: "f(x) ="
-                font_size: '20sp'
+                font_size: '35sp'
                 size_hint_y: None
-                height: 200
+                height: 100
                 padding: 10
                     
             TextInput:
@@ -7292,7 +7274,7 @@ Builder.load_string("""
                 hint_text:"Domain = min,max,sequence"
                 font_size: '25sp'
                 size_hint_y: None
-                height: 200
+                height: 100
                 padding: 10  
                 
             Button:
@@ -8483,22 +8465,6 @@ class Bundled(App):
         super(Bundled, self).__init__(**kwargs)
         Window.bind(on_keyboard=self._key_handler)
         
-        #ADS FOR ANDROID    
-        self.ads = KivMob('ca-app-pub-8152689763446464~6355612676') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/1127336722', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Homepage")        
-
-        #ADS FOR IOS
-        """
-        self.ads = KivMob('ca-app-pub-8152689763446464~5176796366') 
-        self.ads.new_banner('ca-app-pub-8152689763446464/2349511953', top_pos=False)
-        self.ads.request_banner()
-        self.ads.show_banner()
-        return print("ad called and shown at Homepage")  
-        """
-    
     def _key_handler(self, instance, key, *args):
         print("key:",key)
         if key == 27:
