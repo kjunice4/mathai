@@ -168,7 +168,7 @@ Builder.load_string("""
             Button:
                 text: "Basic Calculator"   
                 font_size: '20sp'
-                background_color: 1, 0 , 1 , 1
+                background_normal: "BlueButton.png"
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -180,7 +180,7 @@ Builder.load_string("""
                 text: "Fractions Calculator"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 1, 0, 1, 1
+                background_normal: "BlueButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -191,7 +191,7 @@ Builder.load_string("""
                 text: "Percentage Calculator"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 1, 0, 1, 1
+                background_normal: "BlueButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -209,7 +209,7 @@ Builder.load_string("""
             Button:
                 text: "Derivatives Calculator"
                 font_size: '20sp'
-                background_color: 0, 1, 1, 1
+                background_normal: "BlueButton.png"
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -220,7 +220,7 @@ Builder.load_string("""
             Button:
                 text: "Integration Calculator"
                 font_size: '20sp'
-                background_color: 0, 1, 1, 1
+                background_normal: "BlueButton.png"
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -231,7 +231,7 @@ Builder.load_string("""
             Button:
                 text: "Limits Calculator"
                 font_size: '20sp'
-                background_color: 0, 1, 1, 1
+                background_normal: "BlueButton.png"
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -250,7 +250,7 @@ Builder.load_string("""
                 text: "Decimals Converter"
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1, 0, 1
+                background_normal: "BlueButton.png"
                 height: 200
                 on_release:
                     app.root.current = "Decimals_converter"
@@ -260,7 +260,7 @@ Builder.load_string("""
                 text: "Fractions Converter"
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1, 0, 1
+                background_normal: "BlueButton.png"
                 height: 200
                 on_release:
                     app.root.current = "Fractions_converter"
@@ -269,7 +269,7 @@ Builder.load_string("""
             Button:
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1, 0, 1
+                background_normal: "BlueButton.png"
                 height: 200
                 text: "Percentages Converter"
                 on_release:
@@ -288,7 +288,7 @@ Builder.load_string("""
                 text: "Pythagorean Calculator"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 1, 0, 1, 1
+                background_normal: "BlueButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -299,7 +299,7 @@ Builder.load_string("""
                 text: "Area of Square Calculator"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 1, 0, 1, 1
+                background_normal: "BlueButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -310,7 +310,7 @@ Builder.load_string("""
                 text: "Area of Triangle Calculator"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 1, 0, 1, 1
+                background_normal: "BlueButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -320,7 +320,7 @@ Builder.load_string("""
             Button:
                 text: "Area of Circle Calculator"   
                 font_size: '20sp'
-                background_color: 1, 0 , 1 , 1
+                background_normal: "BlueButton.png"
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -340,7 +340,7 @@ Builder.load_string("""
                 text: "Statistical Calculator"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 1, 0, 0, 1
+                background_normal: "BlueButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -357,7 +357,7 @@ Builder.load_string("""
                 
             Button:
                 font_size: '20sp'
-                background_color: 5, 0, 1, 1
+                background_normal: "RedButton.png"
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
