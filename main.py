@@ -431,7 +431,7 @@ Builder.load_string("""
                 text: "Menu"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 0 , 1 , 1
+                background_normal: "BlueButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -545,7 +545,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     on_release:
                         app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
@@ -555,7 +555,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -584,7 +584,7 @@ Builder.load_string("""
                 text: "Calculate"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1 , 0 , 1
+                background_normal: "GreenButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -652,7 +652,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                text: "Exponents Solver"
+                text: "Exponents Calculator"
             
             BoxLayout:
                 cols: 2
@@ -669,7 +669,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     on_release:
                         app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
@@ -679,7 +679,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -735,7 +735,7 @@ Builder.load_string("""
                 text: "Calculate"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1 , 0 , 1
+                background_normal: "GreenButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -847,7 +847,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -859,7 +859,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -902,7 +902,7 @@ Builder.load_string("""
                     text: "Increase"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 1 , 0 , 1
+                    background_normal: "GreenButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -914,7 +914,7 @@ Builder.load_string("""
                     text: "Decrease"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -1032,7 +1032,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -1044,7 +1044,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -1066,7 +1066,7 @@ Builder.load_string("""
                 text: "Calculate"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1 , 0 , 1
+                background_normal: "GreenButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -1642,7 +1642,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     on_release:
                         app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
@@ -1653,7 +1653,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -3520,7 +3520,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     on_release:
                         app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
@@ -3530,7 +3530,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -3591,7 +3591,7 @@ Builder.load_string("""
                 text: "Calculate"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1 , 0 , 1
+                background_normal: "GreenButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -3823,7 +3823,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -3905,7 +3905,7 @@ Builder.load_string("""
                     text: "Calculate"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 1 , 0 , 1
+                    background_normal: "GreenButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -4064,7 +4064,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     height: 200
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     text: "Back"
                     on_release:
                         app.root.current = "Menu"
@@ -4075,7 +4075,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -4119,7 +4119,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     on_release:
                         list_of_steps.clear_widgets() 
                         Percentages_converter.convert_perc_to_frac(input.text)
@@ -4129,7 +4129,7 @@ Builder.load_string("""
                     text: "Decimal"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -4180,7 +4180,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     height: 200
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     text: "Back"
                     on_release:
                         app.root.current = "Menu"
@@ -4191,7 +4191,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -4273,7 +4273,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     on_release:
                         list_of_steps.clear_widgets() 
                         Fractions_converter.convert_frac_to_perc(Whole.text + "(" + Numerator.text + "/" + Denomenator.text + ")")
@@ -4283,7 +4283,7 @@ Builder.load_string("""
                     text: "Decimal"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -4335,7 +4335,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     height: 200
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     text: "Back"
                     on_release:
                         app.root.current = "Menu"
@@ -4346,7 +4346,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -4390,7 +4390,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     on_release:
                         list_of_steps.clear_widgets() 
                         Decimals_converter.convert_dec_to_frac(input.text)
@@ -4400,7 +4400,7 @@ Builder.load_string("""
                     text: "Percent"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -4869,7 +4869,7 @@ Builder.load_string("""
                     font_size: '20sp'
                     size_hint_y: None
                     height: 200
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     padding: 10, 10
                     on_release:
                         app.root.current = "Menu"
@@ -4880,7 +4880,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -4926,7 +4926,7 @@ Builder.load_string("""
                 text: "Mean, Median & Mode"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1 , 0 , 1
+                background_normal: "GreenButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -4938,7 +4938,7 @@ Builder.load_string("""
                 text: "Standard Deviation"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 0 , 1 , 1
+                background_normal: "BlueButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -4950,7 +4950,7 @@ Builder.load_string("""
                 text: "Variance"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1 , 0 , 1
+                background_normal: "GreenButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -4962,7 +4962,7 @@ Builder.load_string("""
                 text: "Percentile"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 0 , 1 , 1
+                background_normal: "BlueButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -5199,7 +5199,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     on_release:
                         app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
@@ -5209,7 +5209,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -5232,7 +5232,7 @@ Builder.load_string("""
                 text: "Calculate"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1 , 0 , 1
+                background_normal: "GreenButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -6056,7 +6056,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     on_release:
                         app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
@@ -6066,7 +6066,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -6113,7 +6113,7 @@ Builder.load_string("""
                 text: "Calculate"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1 , 0 , 1
+                background_normal: "GreenButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -6270,7 +6270,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -6282,7 +6282,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -6348,7 +6348,7 @@ Builder.load_string("""
                     text: "Derivative"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 1 , 0 , 1
+                    background_normal: "GreenButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -6403,7 +6403,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -6415,7 +6415,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -6529,7 +6529,7 @@ Builder.load_string("""
                     text: "Menu"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -6541,7 +6541,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -7223,7 +7223,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     on_release:
                         app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
@@ -7233,7 +7233,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -7273,7 +7273,7 @@ Builder.load_string("""
                 text: "Calculate"   
                 font_size: '25sp'
                 size_hint_y: None
-                background_color: 0, 1 , 0 , 1
+                background_normal: "GreenButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -7458,7 +7458,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     on_release:
                         app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
@@ -7468,7 +7468,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -7505,7 +7505,7 @@ Builder.load_string("""
                 text: "Calculate"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1 , 0 , 1
+                background_normal: "GreenButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -7585,7 +7585,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     on_release:
                         app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
@@ -7595,7 +7595,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -7638,7 +7638,7 @@ Builder.load_string("""
                 text: "Calculate"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1 , 0 , 1
+                background_normal: "GreenButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -7739,7 +7739,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     on_release:
                         app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
@@ -7749,7 +7749,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -7779,7 +7779,7 @@ Builder.load_string("""
                 text: "Calculate"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1 , 0 , 1
+                background_normal: "GreenButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -7864,7 +7864,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
-                    background_color: 0, 0 , 1 , 1
+                    background_normal: "BlueButton.png"
                     on_release:
                         app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
@@ -7874,7 +7874,7 @@ Builder.load_string("""
                     text: "Clear All"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 0 , 0 , 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -7990,7 +7990,7 @@ Builder.load_string("""
                 text: "Calculate"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1 , 0 , 1
+                background_normal: "GreenButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
