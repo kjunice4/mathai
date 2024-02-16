@@ -29,11 +29,8 @@ Builder.load_string("""
                 root.manager.transition.direction = "left"
                 
         Button:
-            font_size: '20sp'
-            background_color: 0, 0 , 0 , 1
-            size_hint_y: None
-            height: 400
-            text: "A Junice Industries Product"
+            height: 500
+            background_normal: "JuniceIndustries_Logo.png"
             on_release:
                 app.root.current = "Menu"
                 root.manager.transition.direction = "left" 
@@ -42,7 +39,7 @@ Builder.load_string("""
             font_size: '20sp'
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
-            height: 400
+            height: 200
             text: "Tap anywhere to Continue"
             on_release:
                 app.root.current = "Menu"
@@ -78,7 +75,7 @@ Builder.load_string("""
                 
             Button:
                 font_size: '20sp'
-                background_color: 5, 0, 1, 1
+                background_normal: "RedButton.png"
                 size_hint_y: None
                 height: 200
                 text: "How to Use Math AI"
@@ -92,7 +89,19 @@ Builder.load_string("""
                 height: 200
                 padding: 10, 10
                 text: "Algebra"
-                
+            
+            Variable_Calculator    
+            
+            Button:
+                text: "Variable Calculator"
+                font_size: '20sp'
+                size_hint_y: None
+                height: 200
+                background_normal: "BlueButton.png"
+                on_release:
+                    app.root.current = "Variable_Calculator"
+                    root.manager.transition.direction = "left"   
+            
             Button:
                 text: "Domain and Range"
                 font_size: '20sp'
@@ -168,7 +177,7 @@ Builder.load_string("""
             Button:
                 text: "Basic Calculator"   
                 font_size: '20sp'
-                background_normal: "BlueButton.png"
+                background_normal: "OrangeButton.png"
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -180,7 +189,7 @@ Builder.load_string("""
                 text: "Fractions Calculator"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_normal: "BlueButton.png"
+                background_normal: "OrangeButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -191,7 +200,7 @@ Builder.load_string("""
                 text: "Percentage Calculator"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_normal: "BlueButton.png"
+                background_normal: "OrangeButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -209,7 +218,7 @@ Builder.load_string("""
             Button:
                 text: "Derivatives Calculator"
                 font_size: '20sp'
-                background_normal: "BlueButton.png"
+                background_normal: "RedButton.png"
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -220,7 +229,7 @@ Builder.load_string("""
             Button:
                 text: "Integration Calculator"
                 font_size: '20sp'
-                background_normal: "BlueButton.png"
+                background_normal: "RedButton.png"
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -231,7 +240,7 @@ Builder.load_string("""
             Button:
                 text: "Limits Calculator"
                 font_size: '20sp'
-                background_normal: "BlueButton.png"
+                background_normal: "RedButton.png"
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -288,7 +297,7 @@ Builder.load_string("""
                 text: "Pythagorean Calculator"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_normal: "BlueButton.png"
+                background_normal: "GreenButton2.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -299,7 +308,7 @@ Builder.load_string("""
                 text: "Area of Square Calculator"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_normal: "BlueButton.png"
+                background_normal: "GreenButton2.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -310,7 +319,7 @@ Builder.load_string("""
                 text: "Area of Triangle Calculator"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_normal: "BlueButton.png"
+                background_normal: "GreenButton2.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -320,7 +329,7 @@ Builder.load_string("""
             Button:
                 text: "Area of Circle Calculator"   
                 font_size: '20sp'
-                background_normal: "BlueButton.png"
+                background_normal: "GreenButton2.png"
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -340,7 +349,7 @@ Builder.load_string("""
                 text: "Statistical Calculator"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_normal: "BlueButton.png"
+                background_normal: "DarkPurpleButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -371,6 +380,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
+                background_normal: "BlueButton.png"
                 text: "Visit JuniceIndustries.com"
                 on_release:
                     import webbrowser
@@ -1704,7 +1714,7 @@ Builder.load_string("""
                     text: "+"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 1, 0, 1
+                    background_normal: "GreenButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -1728,7 +1738,7 @@ Builder.load_string("""
                     text: "x"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 1, 0, 1
+                    background_normal: "GreenButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -3803,7 +3813,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
-                    background_color: 0, 0 , 1, 1
+                    background_normal: "BlueButton.png"
                     on_release:
                         app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
@@ -6093,7 +6103,7 @@ Builder.load_string("""
                 text: respect.text
                 hint_text: "With respect to: x, y or z"
                 multiline: False
-                font_size: '35sp'
+                font_size: '30sp'
                 size_hint_y: None
                 height: 200
                 padding: 10  
@@ -6226,7 +6236,7 @@ Builder.load_string("""
                 text: respect.text
                 hint_text: "With respect to: x, y or z"
                 multiline: False
-                font_size: '35sp'
+                font_size: '30sp'
                 size_hint_y: None
                 height: 200
                 padding: 10  
@@ -6248,7 +6258,7 @@ Builder.load_string("""
                 text: "Integrate"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1, 0 , 1
+                background_normal: "GreenButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -6336,16 +6346,6 @@ Builder.load_string("""
                 padding: 10              
             
             TextInput:
-                id: range
-                text: range.text
-                hint_text: "x -> n:"
-                multiline: False
-                font_size: '35sp'
-                size_hint_y: None
-                height: 200
-                padding: 10, 10
-                
-            TextInput:
                 id: direction
                 text: direction.text
                 hint_text: "direction: + or -"
@@ -6365,11 +6365,21 @@ Builder.load_string("""
                 size_hint_y: None
                 height: self.minimum_height
                 
+                TextInput:
+                    id: range
+                    text: range.text
+                    hint_text: "x -> n:"
+                    multiline: False
+                    font_size: '35sp'
+                    size_hint_y: None
+                    height: 200
+                    padding: 10, 10
+                
                 Button:
                     text: "\u221E"  
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 1, 1, 0 , 1
+                    background_normal: "BlueButton.png"
                     height: 200
                     padding: 10, 10
                     on_release: 
@@ -6379,7 +6389,7 @@ Builder.load_string("""
                     text: "-\u221E"  
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 1, 1, 1
+                    background_normal: "RedButton.png"
                     height: 200
                     padding: 10, 10
                     on_release: 
@@ -6390,7 +6400,7 @@ Builder.load_string("""
                 text: "Limit"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 1, 0 , 1
+                background_normal: "GreenButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -8171,6 +8181,295 @@ class System_Of_Equations(Screen):
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
             self.layouts.append(layout)  
 
+Builder.load_string("""
+<Variable_Calculator>
+    id:Variable_Calculator
+    name:"Variable_Calculator"
+    
+    ScrollView:
+        name: "Scroll"
+        do_scroll_x: False
+        do_scroll_y: True
+        
+        GridLayout:
+            cols: 1
+            padding:10
+            spacing:10
+            size_hint: 1, None
+            width:200
+            height: self.minimum_height
+            
+            GridLayout:
+                id: banner_ad
+                cols: 1
+                size_hint: 1, None
+                height: self.minimum_height  
+            
+            Label:
+                font_size: '20sp'
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                text: "Variable Calculator"
+            
+            BoxLayout:
+                cols: 2
+                padding:10
+                spacing:10
+                size_hint: 1, None
+                width:300
+                size_hint_y: None
+                height: self.minimum_height 
+
+                Button:
+                    text: "Menu"   
+                    font_size: '20sp'
+                    size_hint_y: None
+                    height: 200
+                    padding: 10, 10
+                    background_normal: "BlueButton.png"
+                    on_release:
+                        app.root.current = "Menu"
+                        root.manager.transition.direction = "right" 
+                        
+                Button:
+                    id: steps
+                    text: "Clear All"   
+                    font_size: '20sp'
+                    size_hint_y: None
+                    background_normal: "RedButton.png"
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        entry.text = ""
+                        list_of_steps.clear_widgets()       
+                        
+            Label:
+                font_size: '20sp'
+                size_hint_y: None
+                height: 200
+                padding: 10, 10
+                text: "f(x) = y"
+                
+            BoxLayout:
+                cols: 2
+                id: steps
+                size_hint_y: None
+                height: self.minimum_height 
+                padding: 5,5         
+        
+                TextInput:
+                    id: entry
+                    text: entry.text
+                    hint_text: "f(x) = y"
+                    multiline: False
+                    font_size: '35sp'
+                    size_hint_y: None
+                    height: 200
+                    padding: 10
+                    
+            Button:
+                id: steps
+                text: "Calculate"   
+                font_size: '20sp'
+                size_hint_y: None
+                background_normal: "GreenButton.png"
+                height: 200
+                padding: 10, 10
+                on_release:
+                    list_of_steps.clear_widgets() 
+                    Variable_Calculator.steps(entry.text)    
+                       
+            GridLayout:
+                id: list_of_steps
+                cols: 1
+                size_hint: 1, None
+                height: self.minimum_height   
+
+""")
+
+class Variable_Calculator(Screen):
+    sm = ScreenManager()
+
+    def __init__(self, **kwargs):
+        super(Variable_Calculator, self).__init__(**kwargs)
+        
+    layouts = []
+    def steps(self,entry):
+        print()
+        layout = GridLayout(cols=1,size_hint_y= None)
+        self.ids.list_of_steps.add_widget(layout)
+        self.layouts.append(layout)
+        
+        try:
+            print("entry",entry)
+            
+            if entry.count("=") == 1:
+                print("found equal sign")
+                
+                equal_sign_index = entry.find("=")
+                function = entry[:equal_sign_index]
+                answer = entry[equal_sign_index+1:]
+                
+                print("function: ",function)
+                print("answer: ",answer)
+
+                self.ids.list_of_steps.add_widget(Label(text= function + " = " + answer,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+
+                if function.count("x") == 1 and answer != "":
+                    print()
+                    print("Found 1 x variable, ready to solve")
+                    
+                    #Check for any other symbols +,-,*,/ in function, then solve through that permutation
+                    if function.count("+") > 0 or function.count("-") > 0 or function.count("*") > 0 or function.count("/") > 0:
+                        #Find x and coefficient. Store it for later.
+                        function = function.replace(" ","").replace("+"," +").replace("-"," -").replace("*"," *").replace("/"," /").replace("x","x ")
+                        print("function: ",function)
+                        
+                        function_list = function.split()
+                        print("function_list: ",function_list)
+                        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
+                        i = 0 
+                        while i < len(function_list):
+                            print()
+                            if i == 0:
+                                if function_list[i].count("x") == 0:
+                                    first_element_display = function_list[i]
+                                    function_list[i] = "+" + function_list[i]
+                                    print("function_list[i] adjusted at first entry: ",function_list[i])
+                                    function = function.replace(first_element_display,function_list[i]).replace("++","+").replace("+-","-").replace("-+","-")
+                                    print('function: ',function)
+                                    self.ids.list_of_steps.add_widget(Label(text= "Quick edit of adding '+' to first element" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                    self.ids.list_of_steps.add_widget(Label(text= function.replace(first_element_display,function_list[i]).replace("++","+").replace("+-","-").replace("-+","-") + " = " + answer,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                    self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                
+                            if function_list[i].count("x") > 0: #To find x and coefficient for later
+                                print()
+                                print("Found the x!")
+                                coefficient = function_list[i].replace("x","")
+                                print("coefficient: ",coefficient)
+
+                            elif function_list[i].count("*") > 0:
+                                print()
+                                print("Found a multiply sign, manipulate answer with divide")
+                                print('function: ',function)
+                                value_to_manipulate = function_list[i]
+                                self.ids.list_of_steps.add_widget(Label(text= "Found a multiply sign, manipulate answer with divide" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + value_to_manipulate.replace("*","") + '[/color]' + " / (" + function + ") = (" + answer + ") / " + '[color=33CAFF]' + value_to_manipulate.replace("*","") + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                
+                                answer = str(eval(str(answer + "/" + function_list[i].replace("*",""))))
+                                print("answer: ",answer)
+                                function = function.replace(value_to_manipulate,"")
+                                print('function: ',function)
+
+                                self.ids.list_of_steps.add_widget(Label(text= function + " = " + answer ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                
+                            elif function_list[i].count("/") > 0:
+                                print()
+                                print("Found a divide sign, manipulate answer with mutliply")
+                                print('function: ',function)
+                                value_to_manipulate = function_list[i]
+                                self.ids.list_of_steps.add_widget(Label(text= "Found a divide sign, manipulate answer with mutliply" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + value_to_manipulate.replace("/","") + '[/color]' + " / (" + function + ") = (" + answer + ") / " + '[color=33CAFF]' + value_to_manipulate.replace("/","") + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                
+                                answer = str(eval(str(answer + "*" + function_list[i].replace("/",""))))
+                                print("answer: ",answer)
+                                function = function.replace(value_to_manipulate,"")
+                                print('function: ',function)
+
+                                self.ids.list_of_steps.add_widget(Label(text= function + " = " + answer ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+
+                                
+                            elif function_list[i].count("+") > 0:
+                                print()
+                                print("Found a plus sign, manipulate answer with negative")
+                                print('function: ',function)
+                                value_to_manipulate = function_list[i]
+                                self.ids.list_of_steps.add_widget(Label(text= "Found a plus sign, manipulate answer with negative" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + value_to_manipulate + '[/color]' + " - (" + function + ") = (" + answer + ") - " + '[color=33CAFF]' + value_to_manipulate + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                
+                                answer = str(eval(str(answer + "-" + function_list[i].replace("+",""))))
+                                print("answer: ",answer)
+                                function = function.replace(value_to_manipulate,"")
+                                print('function: ',function)
+
+                                self.ids.list_of_steps.add_widget(Label(text= function + " = " + answer ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+
+                            elif function_list[i].count("-") > 0:
+                                print()
+                                print("Found a minus sign, manipulate answer with positive")
+                                print('function: ',function)
+                                value_to_manipulate = function_list[i]
+                                self.ids.list_of_steps.add_widget(Label(text= "Found a minus sign, manipulate answer with positive" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + value_to_manipulate.replace("-","+") + '[/color]' + " + (" + function + ") = (" + answer + ") + " + '[color=33CAFF]' + value_to_manipulate.replace("-","+") + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                
+                                answer = str(eval(str(answer + "+" + function_list[i].replace("-",""))))
+                                print("answer: ",answer)
+                                function = function.replace(value_to_manipulate,"")
+                                print('function: ',function)
+
+                                self.ids.list_of_steps.add_widget(Label(text= function + " = " + answer ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                
+                            else:
+                                print("Breaking, nothing left in loop")
+                                break
+                            
+                            
+                            
+                            i = i + 1
+                            print("i = ",i)
+                            
+                        print()
+                        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+                        print("Cofficient = ",coefficient)
+                        print("Answer = ",answer)
+                        
+                        self.ids.list_of_steps.add_widget(Label(text= "Next, solve for x" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                        self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + coefficient + '[/color]' + "x = " +'[color=33CAFF]' + answer + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                        x_solved = str(eval(str(float(answer)/float(coefficient))))  
+                        print("x_solved: ",x_solved)
+                        self.ids.list_of_steps.add_widget(Label(text= "x = " + x_solved,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+
+                        
+                    elif function.count("x") == 1 and answer != "":
+                        
+                        coefficient = function.replace("x","")
+                        print("Cofficient = ",coefficient)
+                        print("Answer = ",answer)
+                        
+                        self.ids.list_of_steps.add_widget(Label(text= "Next, solve for x" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                        self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + coefficient + '[/color]' + "x = " +'[color=33CAFF]' + answer + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                        x_solved = str(eval(str(float(answer)/float(coefficient))))  
+                        print("x_solved: ",x_solved)
+                        self.ids.list_of_steps.add_widget(Label(text= "x = " + x_solved,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+
+                    
+                    
+                    
+                else:
+                    print("Invalid x variable entry")
+                    self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                
+            elif entry.count("=") > 1:
+                print("Too Many Equal Signs")
+                self.ids.list_of_steps.add_widget(Label(text= "Too Many Equal Signs" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                
+            elif entry.count("=") == 0:
+                print("No Equal Sign Found")
+                self.ids.list_of_steps.add_widget(Label(text= "No Equal Sign Found" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                
+            
+        except Exception:
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input Overall" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+            self.layouts.append(layout)  
+                
+
 class Homepage(Screen):
     pass
         
@@ -8203,7 +8502,8 @@ sm.add_widget(Domain_and_Range(name="Domain_and_Range"))
 sm.add_widget(PEMDAS(name="PEMDAS")) 
 sm.add_widget(FOIL(name="FOIL"))
 sm.add_widget(Quadratic_Formula_Solver(name="Quadratic_Formula_Solver"))
-sm.add_widget(System_Of_Equations(name="System_Of_Equations"))   
+sm.add_widget(System_Of_Equations(name="System_Of_Equations")) 
+sm.add_widget(Variable_Calculator(name="Variable_Calculator"))   
 
 #Geometry
 sm.add_widget(Pythagorean(name="Pythagorean"))    
