@@ -107,7 +107,7 @@ Builder.load_string("""
                 text: "Exponents Calculator"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 0, 1, 1
+                background_normal: "BlueButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -118,7 +118,7 @@ Builder.load_string("""
                 text: "FOIL Method"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 0, 1, 1
+                background_normal: "BlueButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -129,7 +129,7 @@ Builder.load_string("""
                 text: "PEMDAS"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 0, 1, 1
+                background_normal: "BlueButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -140,7 +140,7 @@ Builder.load_string("""
                 text: "Quadratic Calculator"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 0, 1, 1
+                background_normal: "BlueButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -151,7 +151,7 @@ Builder.load_string("""
                 text: "System of Equations"   
                 font_size: '20sp'
                 size_hint_y: None
-                background_color: 0, 0, 1, 1
+                background_normal: "BlueButton.png"
                 height: 200
                 padding: 10, 10
                 on_release:
@@ -203,7 +203,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                background_color: 0, 0, 1, 1
+                background_normal: "BlueButton.png"
                 text: "Calculus"
                 
             Button:
@@ -281,7 +281,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                background_color: 0, 0, 1, 1
+                background_normal: "BlueButton.png"
                 text: "Geometry"
             
             Button:
@@ -333,7 +333,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                background_color: 0, 0, 1, 1
+                background_normal: "BlueButton.png"
                 text: "Statistics"
             
             Button:
@@ -352,7 +352,7 @@ Builder.load_string("""
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
-                background_color: 0, 0, 1, 1
+                background_normal: "BlueButton.png"
                 text: "Other"
                 
             Button:
@@ -1726,7 +1726,7 @@ Builder.load_string("""
                     text: "-"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 0, 1, 1
+                    background_normal: "BlueButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
@@ -1750,7 +1750,7 @@ Builder.load_string("""
                     text: "÷"   
                     font_size: '20sp'
                     size_hint_y: None
-                    background_color: 0, 0, 1, 1
+                    background_normal: "BlueButton.png"
                     height: 200
                     padding: 10, 10
                     on_release:
