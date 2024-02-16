@@ -32,7 +32,7 @@ Builder.load_string("""
             font_size: '20sp'
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
-            height: 300
+            height: 400
             text: "A Junice Industries Product"
             on_release:
                 app.root.current = "Menu"
@@ -42,7 +42,7 @@ Builder.load_string("""
             font_size: '20sp'
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
-            height: 200
+            height: 400
             text: "Tap anywhere to Continue"
             on_release:
                 app.root.current = "Menu"
@@ -81,7 +81,6 @@ Builder.load_string("""
                 background_color: 5, 0, 1, 1
                 size_hint_y: None
                 height: 200
-                padding: 10, 10
                 text: "How to Use Math AI"
                 on_release:
                     app.root.current = "HowToPage"
@@ -97,10 +96,9 @@ Builder.load_string("""
             Button:
                 text: "Domain and Range"
                 font_size: '20sp'
-                background_color: 0, 0 , 1 , 1
                 size_hint_y: None
                 height: 200
-                padding: 10, 10
+                background_normal: "BlueButton.png"
                 on_release:
                     app.root.current = "Domain_and_Range"
                     root.manager.transition.direction = "left"    
@@ -1735,13 +1733,6 @@ Builder.load_string("""
                         list_of_steps.clear_widgets() 
                         Fractions.sub(a.text + "$" + b.text) 
                         
-            BoxLayout:
-                cols: 2
-                id: steps
-                size_hint_y: None
-                height: self.minimum_height 
-                padding: 5,5  
-    
                 Button:
                     id: steps
                     text: "x"   
@@ -4903,7 +4894,7 @@ Builder.load_string("""
                 text: entry.text
                 hint_text: "Numbers seperated by a comma"
                 multiline: False
-                font_size: '35sp'
+                font_size: '25sp'
                 size_hint_y: None
                 height: 200
                 padding: 10
