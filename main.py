@@ -8356,7 +8356,7 @@ class Variable_Calculator(Screen):
                                 print("Found a multiply sign, manipulate answer with divide")
                                 print('function: ',function)
                                 value_to_manipulate = function_list[i]
-                                self.ids.list_of_steps.add_widget(Label(text= "Found a multiply sign, manipulate answer with divide" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                self.ids.list_of_steps.add_widget(Label(text= "Found a multiply sign, manipulate answer with divide" ,font_size = '15sp', size_hint_y= None, height=100,markup = True))
                                 self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + value_to_manipulate.replace("*","") + '[/color]' + " / (" + function + ") = (" + answer + ") / " + '[color=33CAFF]' + value_to_manipulate.replace("*","") + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
                                 
                                 answer = str(eval(str(answer + "/" + function_list[i].replace("*",""))))
@@ -8372,7 +8372,7 @@ class Variable_Calculator(Screen):
                                 print("Found a divide sign, manipulate answer with mutliply")
                                 print('function: ',function)
                                 value_to_manipulate = function_list[i]
-                                self.ids.list_of_steps.add_widget(Label(text= "Found a divide sign, manipulate answer with mutliply" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                self.ids.list_of_steps.add_widget(Label(text= "Found a divide sign, manipulate answer with mutliply" ,font_size = '15sp', size_hint_y= None, height=100,markup = True))
                                 self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + value_to_manipulate.replace("/","") + '[/color]' + " / (" + function + ") = (" + answer + ") / " + '[color=33CAFF]' + value_to_manipulate.replace("/","") + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
                                 
                                 answer = str(eval(str(answer + "*" + function_list[i].replace("/",""))))
@@ -8389,7 +8389,7 @@ class Variable_Calculator(Screen):
                                 print("Found a plus sign, manipulate answer with negative")
                                 print('function: ',function)
                                 value_to_manipulate = function_list[i]
-                                self.ids.list_of_steps.add_widget(Label(text= "Found a plus sign, manipulate answer with negative" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                self.ids.list_of_steps.add_widget(Label(text= "Found a plus sign, manipulate answer with negative" ,font_size = '15sp', size_hint_y= None, height=100,markup = True))
                                 self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + value_to_manipulate + '[/color]' + " - (" + function + ") = (" + answer + ") - " + '[color=33CAFF]' + value_to_manipulate + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
                                 
                                 answer = str(eval(str(answer + "-" + function_list[i].replace("+",""))))
@@ -8405,7 +8405,7 @@ class Variable_Calculator(Screen):
                                 print("Found a minus sign, manipulate answer with positive")
                                 print('function: ',function)
                                 value_to_manipulate = function_list[i]
-                                self.ids.list_of_steps.add_widget(Label(text= "Found a minus sign, manipulate answer with positive" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
+                                self.ids.list_of_steps.add_widget(Label(text= "Found a minus sign, manipulate answer with positive" ,font_size = '15sp', size_hint_y= None, height=100,markup = True))
                                 self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + value_to_manipulate.replace("-","+") + '[/color]' + " + (" + function + ") = (" + answer + ") + " + '[color=33CAFF]' + value_to_manipulate.replace("-","+") + '[/color]' ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
                                 
                                 answer = str(eval(str(answer + "+" + function_list[i].replace("-",""))))
@@ -8468,7 +8468,7 @@ class Variable_Calculator(Screen):
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input Overall" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
             self.layouts.append(layout)  
-                
+     
 
 class Homepage(Screen):
     pass
