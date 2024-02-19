@@ -4065,7 +4065,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     background_normal: "BlueButton.png"
-                    text: "Back"
+                    text: "Menu"
                     on_release:
                         app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
@@ -4181,7 +4181,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     background_normal: "BlueButton.png"
-                    text: "Back"
+                    text: "Menu"
                     on_release:
                         app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
@@ -4336,7 +4336,7 @@ Builder.load_string("""
                     size_hint_y: None
                     height: 200
                     background_normal: "BlueButton.png"
-                    text: "Back"
+                    text: "Menu"
                     on_release:
                         app.root.current = "Menu"
                         root.manager.transition.direction = "right" 
