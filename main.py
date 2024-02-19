@@ -8531,14 +8531,23 @@ class Bundled(App):
     def _key_handler(self, instance, key, *args):
         print("key:",key)
         print("Current Page via key handler:",sm.current)
-        if key == 27 and sm.current == "Homepage":
+        
+        if key == 27 and sm.current == "Homepage" or key == 27 and sm.current == "Menu":
             sm.current = sm.current
+            print("moving back to Menu, if")
             return True
-        elif key == 27 and sm.current != "Homepage" or sm.current != "Menu":
+            
+        elif key == 27 and sm.current != "Homepage" or key == 27 and sm.current != "Menu":
             sm.current = "Menu"
             sm.transition.direction = "right"
+            print("moving back to Menu, elif")
             return True
-    
+        
+        else:
+            sm.current = sm.current
+            print("moving back to Menu, else")
+            return True
+        
     def build(app):
         return sm
 
