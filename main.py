@@ -7169,8 +7169,8 @@ class Domain_and_Range(Screen):
                     range_y = []
                     print("loop start")
                     
-                    self.ids.list_of_steps.add_widget(Label(text= "Domain " +'[color=33CAFF]' + "|" + '[/color]' + " Range" ,font_size = '20sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "x " +'[color=33CAFF]' + "|" + '[/color]' + " y" ,font_size = '20sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Domain " +'[color=33CAFF]' + "|" + '[/color]' + " Range" ,font_size = '20sp', markup=True, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "x " +'[color=33CAFF]' + "|" + '[/color]' + " y" ,font_size = '20sp', markup=True, size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     while i < len(sequence_list):
