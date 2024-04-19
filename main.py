@@ -1319,14 +1319,13 @@ class PEMDAS(Screen):
             print(a)
             if a.count("/") > 0:
                 while i < len(a):
-                    a = a.replace(" ","")
-                    print()
-                    print("div:",a)
+                    a = a.replace(" / ","/")
+                    print("div",a)
                     found_div = a.find("/")
                     if found_div == -1:
                         break
                     print(found_div)
-                    div_right_side = a[found_div:].replace(" ","")
+                    div_right_side = a[found_div:]
                     print("div_right_side",div_right_side)
                     div_right_space= div_right_side.find(" ")
                     if div_right_space == -1:
@@ -1351,17 +1350,17 @@ class PEMDAS(Screen):
                     
                     if evaled.count("-") == 1:
                         evaled = "(" + evaled + ")"
-
+                        
                     print()
                     print()
                     #print("Division to Solve : ",a[:div_left_space],Back.GREEN,div_range,Style.RESET_ALL,a[found_div+div_right_space+1:])
                     self.ids.list_of_steps.add_widget(Label(text="Division Step : " , font_size = '15sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:div_left_space] + '[color=33CAFF]' + div_range + '[/color]' + a[found_div+div_right_space+1:],markup=True, font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:div_left_space] + '[color=33CAFF]' + div_range + '[/color]' + a[found_div+div_right_space:],markup=True, font_size = '15sp', size_hint_y= None, height=100))
                     
                     print()
                     #print("Division Solved :   ", a[:div_left_space],Back.GREEN,evaled,Style.RESET_ALL,a[found_div+div_right_space+1:])
                     self.ids.list_of_steps.add_widget(Label(text="Division Solved : " , font_size = '15sp', size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:div_left_space] + '[color=33CAFF]' + evaled + '[/color]' + a[found_div+div_right_space+1:],markup=True, font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:div_left_space] + '[color=33CAFF]' + evaled + '[/color]' + a[found_div+div_right_space:],markup=True, font_size = '15sp', size_hint_y= None, height=100))
                     self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = '15sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
@@ -8487,7 +8486,7 @@ sm.add_widget(Limits(name="Limits"))
 sm.add_widget(Statistical_Calculator(name="Statistical_Calculator")) 
 
 #Current
-sm.current = "Homepage"   
+sm.current = "Menu"   
 print("Current Page:",sm.current)
 
 class Bundled(App):
