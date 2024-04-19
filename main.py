@@ -56,17 +56,6 @@ Builder.load_string("""
                 padding: 10, 10
                 text: "Algebra"
             
-            Variable_Calculator    
-            
-            Button:
-                text: "Variable Calculator"
-                font_size: '20sp'
-                size_hint_y: None
-                height: 200
-                background_normal: "BlueButton.png"
-                on_release:
-                    app.root.current = "Variable_Calculator"
-                    root.manager.transition.direction = "left"   
             
             Button:
                 text: "Domain and Range"
@@ -8435,6 +8424,20 @@ class Variable_Calculator(Screen):
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input Overall" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
             self.layouts.append(layout)  
+
+
+
+Button:
+    text: "Variable Calculator"
+    font_size: '20sp'
+    size_hint_y: None
+    height: 200
+    background_normal: "BlueButton.png"
+    on_release:
+        app.root.current = "Variable_Calculator"
+        root.manager.transition.direction = "left" 
+
+
 """
 
         
