@@ -12,40 +12,6 @@ import sympy as sym
 from colorama import Back, Style 
 from sympy import Limit, Symbol, S, diff, integrate
 
-#Opening Page
-Builder.load_string("""
-<Homepage>:
-    id: Homepage
-    name: "Homepage"
-    
-    GridLayout:
-        cols: 1
-        
-        Button:
-            height: 500
-            background_normal: "MathAI.png"
-            on_release:
-                app.root.current = "Menu"
-                root.manager.transition.direction = "left"
-                
-        Button:
-            height: 500
-            background_normal: "JuniceIndustries_Logo.png"
-            on_release:
-                app.root.current = "Menu"
-                root.manager.transition.direction = "left" 
-                
-        Button:
-            font_size: '20sp'
-            background_color: 0, 0 , 0 , 1
-            size_hint_y: None
-            height: 200
-            text: "Tap anywhere to Continue"
-            on_release:
-                app.root.current = "Menu"
-                root.manager.transition.direction = "left" 
-                
-""")
 
 # Menu
 Builder.load_string("""
@@ -8181,7 +8147,8 @@ class System_Of_Equations(Screen):
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
             self.layouts.append(layout)  
 
-Builder.load_string("""
+"""
+Builder.load_string(
 <Variable_Calculator>
     id:Variable_Calculator
     name:"Variable_Calculator"
@@ -8286,7 +8253,7 @@ Builder.load_string("""
                 size_hint: 1, None
                 height: self.minimum_height   
 
-""")
+
 
 class Variable_Calculator(Screen):
     sm = ScreenManager()
@@ -8468,10 +8435,8 @@ class Variable_Calculator(Screen):
         except Exception:
             self.ids.list_of_steps.add_widget(Label(text= "Invalid Input Overall" ,font_size = '20sp', size_hint_y= None, height=100,markup = True))
             self.layouts.append(layout)  
-     
+"""
 
-class Homepage(Screen):
-    pass
         
 class Menu(Screen):
     pass
@@ -8482,7 +8447,6 @@ class HowToPage(Screen):
 sm = ScreenManager()
 
 #App Skeleton
-sm.add_widget(Homepage(name="Homepage"))
 sm.add_widget(Menu(name="Menu"))     
 sm.add_widget(HowToPage(name="HowToPage"))
 
@@ -8503,7 +8467,7 @@ sm.add_widget(PEMDAS(name="PEMDAS"))
 sm.add_widget(FOIL(name="FOIL"))
 sm.add_widget(Quadratic_Formula_Solver(name="Quadratic_Formula_Solver"))
 sm.add_widget(System_Of_Equations(name="System_Of_Equations")) 
-sm.add_widget(Variable_Calculator(name="Variable_Calculator"))   
+#sm.add_widget(Variable_Calculator(name="Variable_Calculator"))   
 
 #Geometry
 sm.add_widget(Pythagorean(name="Pythagorean"))    
