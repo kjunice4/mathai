@@ -851,6 +851,17 @@ Builder.load_string("""
                 size_hint_y: None
                 height: self.minimum_height 
                 padding: 5,5   
+                
+                Button:
+                    text: "Of"   
+                    font_size: '20sp'
+                    size_hint_y: None
+                    background_normal: "BlueButton.png"
+                    height: 200
+                    padding: 10, 10
+                    on_release:
+                        list_of_steps.clear_widgets() 
+                        Percentage_Calculator.of(number.text + "&" + perc.text)   
                     
                 Button:
                     id: steps
@@ -940,6 +951,29 @@ class Percentage_Calculator(Screen):
            
            self.ids.list_of_steps.add_widget(Label(text= perc + "% of " + number + " = " + amount,font_size = '15sp', size_hint_y= None, height=100))
            self.ids.list_of_steps.add_widget(Label(text= number + " - " + amount + " = " + decrease,font_size = '15sp', size_hint_y= None, height=100))
+           self.layouts.append(layout)
+           
+        except Exception:
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
+            self.layouts.append(layout)  
+            
+    def of(self,entry):
+        layout = GridLayout(cols=1,size_hint_y= None)
+        self.ids.list_of_steps.add_widget(layout)
+        self.layouts.append(layout)
+        
+        try:
+           print("Of",entry)
+           
+           number = entry[:entry.find("&")]
+           print("Number",number)
+           perc = entry[entry.find("&")+1:]
+           print("Perc",perc)
+           
+           amount = str(float(number) * float(perc) / 100)
+           print("amount",amount)
+           
+           self.ids.list_of_steps.add_widget(Label(text= perc + "% of " + number + " = " + amount,font_size = '15sp', size_hint_y= None, height=100))
            self.layouts.append(layout)
            
         except Exception:
